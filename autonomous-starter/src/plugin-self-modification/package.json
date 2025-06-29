@@ -14,14 +14,14 @@
   "dependencies": {
     "@elizaos/core": "workspace:*",
     "fast-xml-parser": "^4.3.2",
-    "jsonpath-plus": "^7.2.0",
+    "jsonpath-plus": "^10.3.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0",
-    "vitest": "^1.0.0"
+    "vitest": "^3.2.4"
   },
   "files": [
     "dist"
