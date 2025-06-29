@@ -1,0 +1,49 @@
+name: "Create CPP Implementation Stages Issues"
+on:
+  workflow_dispatch:
+
+jobs:
+  create_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Generate and create issues for stages 1-6
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const stages = [
+              {
+                title: "Stage 1 – CPP Implementation: System Bootstrapping",
+                body: "Define the initial system architecture, repositories, and baseline C++ scaffolding. - [ ] Establish build system\n- [ ] Setup project structure\n- [ ] Integrate with CI for baseline builds"
+              },
+              {
+                title: "Stage 2 – CPP Implementation: Core Cognitive Primitives",
+                body: "Implement foundational data structures and core algorithms. - [ ] Define memory representation (consider hypergraph encoding)\n- [ ] Implement basic task orchestration primitives\n- [ ] Draft symbolic/connectionist fusion stubs"
+              },
+              {
+                title: "Stage 3 – CPP Implementation: Attention Allocation Layer",
+                body: "Construct attention management and allocation subsystem. - [ ] Design ECAN-inspired module\n- [ ] Integrate activation spreading\n- [ ] Test resource prioritization flows"
+              },
+              {
+                title: "Stage 4 – CPP Implementation: Reasoning Engine",
+                body: "Develop logic and reasoning machinery. - [ ] Implement PLN-like inference core\n- [ ] Integrate uncertain reasoning\n- [ ] Design pattern matcher for AtomSpace traversal"
+              },
+              {
+                title: "Stage 5 – CPP Implementation: Learning and Adaptation",
+                body: "Enable program evolution and learning. - [ ] Integrate MOSES-style evolutionary search\n- [ ] Set up optimization pipelines\n- [ ] Design hooks for pattern extraction and adaptation"
+              },
+              {
+                title: "Stage 6 – CPP Implementation: Embodiment & Integration",
+                body: "Connect cognitive core to virtual or physical agents. - [ ] Integrate sensory/motor data interfaces\n- [ ] Prototype perception-action loop\n- [ ] Validate system-level coherence"
+              }
+            ];
+            for (const stage of stages) {
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: stage.title,
+                body: stage.body,
+              });
+              console.log(`Created issue: ${issue.data.html_url}`);
+            }
