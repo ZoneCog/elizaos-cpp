@@ -13,9 +13,7 @@ interface RequestError {
 // Helper function to extract file ID from catbox URL
 function extractFileIdFromUrl(url: string): string | null {
   const patterns = [
-    /files\.catbox\.moe\/([^\/]+)/,
-    /catbox\.moe\/([^\/]+)/,
-    /^([a-zA-Z0-9]+\.[a-zA-Z0-9]+)$/
+    /^([a-zA-Z0-9]+\.[a-zA-Z0-9]+)$/, // Strictly match valid file IDs (e.g., "abc123.jpg")
   ];
   
   for (const pattern of patterns) {
@@ -127,8 +125,22 @@ export async function GET(request: NextRequest) {
     }
 
     // Extract the actual file ID if a full URL was provided
-    const actualFileId = extractFileIdFromUrl(fileId) || fileId;
+    const actualFileId = extractFileIdFromUrl(fileId);
     
+    if (!actualFileId) {
+      return NextResponse.json(
+        { error: "Invalid file parameter" },
+        { 
+          status: 400,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+          },
+        }
+      );
+    }
+
     // Construct the catbox file URL
     const catboxUrl = `https://files.catbox.moe/${actualFileId}`;
     
