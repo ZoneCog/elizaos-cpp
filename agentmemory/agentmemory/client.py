@@ -134,7 +134,7 @@ def get_client(client_type=None):
     pm = get_plugin_manager()
     pm.hook.declare_client(factory_map=factory_map)
     if client_type not in factory_map:
-        raise RuntimeError("Unknown client type: {client_type}")
+        raise RuntimeError(f"Unknown client type: {client_type}")
     client = factory_map[client_type]()
 
     return client
