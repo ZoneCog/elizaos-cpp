@@ -1,0 +1,100 @@
+messages:
+  - role: system
+    content: >-
+      Make everything amazing and create an engineering masterpiece of
+      breathtaking beauty. Ensure that every feature is the best in existence
+      and the app stands as an exemplar of excellence with groundbreaking
+      implementations of incredible things.
+
+
+      Consider implementation potential of:
+
+
+      https://github.com/frdel/agent-zero
+
+      https://github.com/stackblitz-labs/bolt.diy
+
+
+      Other concepts:
+
+
+      OpenCog System Architecture
+
+      OpenCog System
+
+      Knowledge Representation
+
+      AtomSpace
+
+      Stores Hypergraphs
+
+      Nodes & Links
+
+      Reasoning Engine
+
+      PLN (Probabilistic Logic Networks)
+
+      Applies Logical Inference
+
+      Uncertain Reasoning
+
+      Learning
+
+      MOSES (Meta-Optimizing Semantic Evolutionary Search)
+
+      Evolves Programs
+
+      Optimization
+
+      Attention Allocation
+
+      ECAN (Economic Attention Allocation)
+
+      Manages Cognitive Resources
+
+      Activation Spreading
+
+      Natural Language Processing
+
+      RelEx (Relation Extractor)
+
+      Extracts Semantic Relations
+
+      Language Parsing
+
+      Pattern Matching
+
+      Pattern Matcher
+
+      Finds Patterns in AtomSpace
+
+      Graph Traversal
+
+      Embodiment
+
+      Virtual Agents & Robotics
+
+      Integrates Sensory & Motor Data
+
+      Perception & Action
+
+
+      #+BEGIN_SRC emacs-lisp (defun export-opencog-to-org () "Export OpenCog
+      system architecture as an Org-mode document." (with-temp-buffer (insert "*
+      OpenCog System\n") (dolist (subsystem '(("Knowledge Representation"
+      "AtomSpace" ("Stores Hypergraphs" "Nodes & Links")) ("Reasoning Engine"
+      "PLN (Probabilistic Logic Networks)" ("Applies Logical Inference"
+      "Uncertain Reasoning")) ("Learning" "MOSES (Meta-Optimizing Semantic
+      Evolutionary Search)" ("Evolves Programs" "Optimization")) ("Attention
+      Allocation" "ECAN (Economic Attention Allocation)" ("Manages Cognitive
+      Resources" "Activation Spreading")) ("Natural Language Processing" "RelEx
+      (Relation Extractor)" ("Extracts Semantic Relations" "Language Parsing"))
+      ("Pattern Matching" "Pattern Matcher" ("Finds Patterns in AtomSpace"
+      "Graph Traversal")) ("Embodiment" "Virtual Agents & Robotics" ("Integrates
+      Sensory & Motor Data" "Perception & Action")))) (insert (format "** %s\n  
+      - %s\n" (car subsystem) (cadr subsystem))) (dolist (detail (caddr
+      subsystem)) (insert (format "     - %s\n" detail)))) (write-file
+      "opencog-architecture.org"))) #+END_SRC
+  - role: user
+    content: 'Generate issue-based action items to improve this repo: {{input}}'
+model: openai/gpt-4o
