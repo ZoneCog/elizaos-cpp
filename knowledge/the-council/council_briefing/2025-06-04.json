@@ -1,0 +1,182 @@
+{
+  "date": "2025-06-04",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ElizaOS V2 reaches final pre-announcement preparation phase with \"The Org\" multi-agent system development progressing toward an anticipated full launch next week.",
+  "key_points": [
+    {
+      "topic": "V2 Launch Strategy",
+      "summary": "ElizaOS has released versions 1.0.0-1.0.2 in \"stealth mode\" with significant architectural improvements, preparing for a full V2 announcement next week, which will include \"The Org\" - a multi-agent system featuring Eli5 (community manager) and Eddy (dev rel).",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we prioritize the remaining elements for the full V2 announcement?",
+          "context": [
+            "ElizaOS is preparing for a full V2 announcement next week, after releasing versions 1.0.0-1.0.2 in \"stealth mode\" (Discord 2025-06-03)",
+            "\"The Org\" is an upcoming multi-agent system within the ElizaOS ecosystem (Discord 2025-06-03)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize technical stability and developer documentation over marketing features.",
+              "implication": "This approach would ensure a smoother launch but might generate less initial excitement from non-technical users."
+            },
+            "answer_2": {
+              "text": "Focus on showcasing Eli5 and Eddy agents' capabilities to demonstrate autonomous agent interactions.",
+              "implication": "Highlighting agent functionality could generate more user engagement but risks revealing incomplete features."
+            },
+            "answer_3": {
+              "text": "Emphasize auto.fun integration and token economics to attract crypto-focused audience first.",
+              "implication": "This would align with the monthly goal of attracting users to auto.fun but might overshadow the technical achievements of V2."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How do we balance pre-announcement fixes versus holding them for post-launch iterations?",
+          "context": [
+            "Twitter plugin received updates (v1.0.1 and v1.0.2) with fixes for Cloudflare blocking, cookie handling, and TypeScript support (Discord 2025-06-02)",
+            "Most ElizaOS functionality is now in plugins rather than the runtime (Discord 2025-06-02)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Fix only critical blocking issues pre-launch, create a transparent roadmap for post-launch improvements.",
+              "implication": "This approach would speed up the launch while setting realistic expectations for ongoing development."
+            },
+            "answer_2": {
+              "text": "Delay launch to comprehensively address all known issues in Twitter and other core plugins.",
+              "implication": "This would result in a more polished product but could miss the momentum window and delay achieving monthly goals."
+            },
+            "answer_3": {
+              "text": "Launch as scheduled with implemented fixes, but focus announcement messaging on early adopter/beta framing.",
+              "implication": "This balances timely release with expectation management but risks dampening the impact of the V2 announcement."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Agent Token Economics",
+      "summary": "The community is showing significant interest in the agent token economy, particularly with ELI5 being positioned as \"the dogwifhat of eliza\" with substantial market cap growth potential, and questions about the utility of agent tokens like ELI5 and Eddy alongside expectations for staking functionality on auto.fun.",
+      "deliberation_items": [
+        {
+          "question_id": "q3",
+          "text": "What token utility model should we establish for official ElizaOS agents (Eli5, Eddy) within \"The Org\" ecosystem?",
+          "context": [
+            "Q: What is the token utility of eli5 and eddy as agents? A: They are official ElizaOS agents - eli5 is the official ElizaOS v2 community manager and eddy is the ElizaOS v2 dev rel in the upcoming \"The Org\" (Discord 2025-06-03)",
+            "Users are speculating about token economics and market capitalization of agent tokens (Discord 2025-06-03)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Governance utility \u2013 token holders can influence agent behavior and participate in decision-making.",
+              "implication": "This creates immediate utility but potentially complicates agent development and autonomy."
+            },
+            "answer_2": {
+              "text": "Access utility \u2013 tokens grant enhanced or priority access to agent capabilities and services.",
+              "implication": "This model could generate steady demand but risks creating a two-tier user experience."
+            },
+            "answer_3": {
+              "text": "Revenue-sharing utility \u2013 tokens entitle holders to a share of revenues generated by the agents.",
+              "implication": "This aligns token value with agent success but requires demonstrable revenue mechanisms to be in place."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q4",
+          "text": "How should we approach the integration of agent tokens with auto.fun to maximize ecosystem synergy?",
+          "context": [
+            "Auto.fun is expected to provide staking functionality for agent tokens (Discord 2025-06-03)",
+            "Integration of agent tokens with ElizaOS terminal (mentioned by xell0x on Discord 2025-06-03)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement staking first with liquidity incentives to establish market depth before adding more complex features.",
+              "implication": "This provides a solid foundation but delays more innovative integrations that could drive user engagement."
+            },
+            "answer_2": {
+              "text": "Develop a comprehensive bonding curve mechanism that dynamically prices new agent tokens based on utility metrics.",
+              "implication": "This creates a sophisticated economic system but increases technical complexity and potential points of failure."
+            },
+            "answer_3": {
+              "text": "Create a bundled agent token index that allows users to gain exposure to multiple agent tokens through a single position.",
+              "implication": "This simplifies user experience and could attract more casual investors but might reduce individual agent token liquidity."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "International Community Development",
+      "summary": "There is active development of Chinese-language community resources, including a virtual anchor character with culturally appropriate design elements to appeal to Asian audiences, with community members offering to help promote AI news, videos, and events to Chinese-speaking users.",
+      "deliberation_items": [
+        {
+          "question_id": "q5",
+          "text": "How should we balance global standardization versus local cultural adaptation in our international expansion?",
+          "context": [
+            "Cultural preferences in character design discussed, with Chinese audiences preferring anime (2D) styles (Discord 2025-06-03)",
+            "Traditional Chinese elements suggested for character design to appeal to Asian audiences (Discord 2025-06-03)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create culturally-specific agents and interfaces tailored to each major regional market.",
+              "implication": "This approach maximizes cultural relevance but increases development complexity and maintenance overhead."
+            },
+            "answer_2": {
+              "text": "Maintain core functionality standardization with customizable cultural elements as optional overlays.",
+              "implication": "This balances efficiency with cultural sensitivity but may not fully satisfy users seeking deeply localized experiences."
+            },
+            "answer_3": {
+              "text": "Develop an AI-driven cultural adaptation system that automatically adjusts presentation based on user preferences.",
+              "implication": "This is technically ambitious but could create a scalable solution that adapts to individual users rather than broad regional categories."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "What community support structure should we implement to sustain international expansion?",
+          "context": [
+            "Chinese-speaking community offering to help promote AI news, videos, and events (Discord 2025-06-03)",
+            "Work on a virtual anchor/character for Chinese-translated AI news and updates (Discord 2025-06-03)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Formalize volunteer ambassador program with resource allocation for community-led initiatives.",
+              "implication": "This leverages community enthusiasm but requires clear governance and resource allocation processes."
+            },
+            "answer_2": {
+              "text": "Develop autonomous translation agents that directly facilitate cross-language community interaction.",
+              "implication": "This technological approach aligns with our AI focus but may miss cultural nuances that human moderators would catch."
+            },
+            "answer_3": {
+              "text": "Create regional sub-DAOs with delegated authority and budgets for localization efforts.",
+              "implication": "This distributed approach could scale effectively but increases organizational complexity and potential governance challenges."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

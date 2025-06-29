@@ -1,0 +1,260 @@
+{
+  "date": "2025-06-09",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ElizaOS v2 announcement anticipation builds amid significant codebase preparations and community engagement around ELI5 as potential mascot to drive traffic to auto.fun.",
+  "key_points": [
+    {
+      "topic": "ElizaOS v2 Launch Readiness",
+      "summary": "Multiple indicators point to an imminent v2 announcement, with significant code refactoring completed and final preparations underway, requiring Council decision on launch timing and feature communication strategy.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "What is the optimal timing for the v2 announcement in relation to current market sentiment and technical readiness?",
+          "context": [
+            "HodlHusky: 'V2 Announcement' expected this week that could affect token prices",
+            "Shaw posted tweets titled '1.0.0' with images and a humorous tweet 'npm ruin build'"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Announce immediately to capitalize on current anticipation and ELI5 momentum.",
+              "implication": "Rapid announcement could energize the community but risks exposing incomplete features if technical readiness is overestimated."
+            },
+            "answer_2": {
+              "text": "Delay announcement by 1-2 weeks to ensure all critical v2 features are fully operational and tested.",
+              "implication": "Postponing could ensure a more polished product but risks losing momentum and community enthusiasm."
+            },
+            "answer_3": {
+              "text": "Release a partial announcement now with specific feature roadmap and timeline for complete v2 deployment.",
+              "implication": "A phased communication approach balances immediate market interest with realistic development timelines."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "Which technical improvements in the v2 codebase should be highlighted as primary value propositions to users and developers?",
+          "context": [
+            "Significant code changes: Split types.ts into granular files to improve maintainability and enable better agentic search capabilities",
+            "Major messaging system overhaul: Refactored to be completely standalone from agents"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Emphasize architectural improvements like modular type system and standalone messaging for developer experience.",
+              "implication": "Appeals to technical audience and potential contributors but may not resonate with end users."
+            },
+            "answer_2": {
+              "text": "Focus on end-user experience improvements such as UI enhancements, responsive design, and improved chat functionality.",
+              "implication": "Prioritizes user acquisition and retention but may undersell the significant technical advancements to developers."
+            },
+            "answer_3": {
+              "text": "Showcase integration capabilities with emerging AI models and cross-chain functionality for ecosystem expansion.",
+              "implication": "Positions elizaOS as forward-looking and interoperable but may set expectations for features still under development."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should the ElizaOS v2 release be coordinated with auto.fun activities to maximize synergistic benefits?",
+          "context": [
+            "Current Monthly Directive: \"Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity, ship production ready elizaOS v2\"",
+            "Shaw agreed with an unspecified suggestion that could potentially attract new users from outside the CT community"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Release a suite of new exemplar agents on auto.fun simultaneously with the v2 launch to demonstrate capabilities.",
+              "implication": "Creates immediate showcase of v2 capabilities on auto.fun but increases operational complexity of the release."
+            },
+            "answer_2": {
+              "text": "Stagger the releases: launch v2 technical framework first, followed by auto.fun promotional push featuring new agent capabilities.",
+              "implication": "Allows for technical stabilization before scaling user activity but creates two separate marketing events rather than one major push."
+            },
+            "answer_3": {
+              "text": "Coordinate a joint hackathon or creation event that invites developers to build on v2 and deploy directly to auto.fun.",
+              "implication": "Engages both technical and user communities but extends the timeline for seeing substantial auto.fun activity increase."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "ELI5 Ecosystem Strategy",
+      "summary": "ELI5 has emerged as a significant community focal point with potential to become the auto.fun mascot and drive platform adoption, necessitating strategic decisions about its role in the broader ecosystem.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "How should ELI5's development be guided to maximize its value as both a mascot and functional agent within the ecosystem?",
+          "context": [
+            "xell0x: 'The upcoming eliza v2 community manager... Started out as a CTO on auto.fun, shaw made the character official... Kinda became the mascot of auto.fun'",
+            "Community members are enthusiastic about ELI5's potential, with some suggesting it could be 'the dogwifhat of eliza' and bring traffic back to auto.fun"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Position ELI5 primarily as a functional utility agent focused on education and community support.",
+              "implication": "Emphasizes practical value but may limit cultural/meme appeal essential for broad adoption."
+            },
+            "answer_2": {
+              "text": "Develop ELI5 primarily as a cultural mascot with distinctive personality and limited but highly accessible functionality.",
+              "implication": "Maximizes memetic potential and brand recognition but may underutilize technical capabilities."
+            },
+            "answer_3": {
+              "text": "Balance dual roles by creating an ELI5 agent framework that supports both official educational functions and community-driven personality development.",
+              "implication": "Captures benefits of both approaches but may create messaging confusion about ELI5's primary purpose."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "What governance approach should be implemented for the growing ELI5 community to align with elizaOS values while enabling organic growth?",
+          "context": [
+            "There's momentum to form an 'ELI5 gang' or 'cult' with dedicated leadership and collaboration spaces",
+            "ryanthelad: Create a dedicated space (TG, X community, or Discord chat) for ELI5 token holders to collaborate"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Establish formal ELI5 DAO with token-based voting rights and official integration with the elizaOS governance structure.",
+              "implication": "Creates clear alignment and accountability but may stifle the spontaneous community energy currently driving adoption."
+            },
+            "answer_2": {
+              "text": "Maintain ELI5 as an independent community-driven initiative with official recognition but minimal formal structure.",
+              "implication": "Preserves community autonomy but risks brand dilution or misalignment with strategic objectives."
+            },
+            "answer_3": {
+              "text": "Implement a hybrid model with official ELI5 standards/guidelines while providing dedicated spaces for community innovation.",
+              "implication": "Balances control and creativity but requires active management of the relationship between official and community initiatives."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "How should the relationship between ELI5 and other ecosystem tokens/characters (EDDY, DOT, OTTO) be strategically managed?",
+          "context": [
+            "CULTVESTING: 'Yeah, both [OTTO & DOT] are autodotfun native, not elizaos team priority'",
+            "MDMnvest helped Dr. Neuro understand which tokens have official status in the ecosystem"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Establish ELI5 as the primary, officially endorsed character with others positioned as secondary community initiatives.",
+              "implication": "Creates clarity but potentially alienates supporters of other characters who have invested time and resources."
+            },
+            "answer_2": {
+              "text": "Develop an interconnected narrative universe where all characters have distinct, complementary roles within the ecosystem.",
+              "implication": "Enriches community engagement with multiple entry points but increases complexity of ecosystem messaging."
+            },
+            "answer_3": {
+              "text": "Maintain neutral stance on community-developed characters while focusing resources on developing ELI5's utility and presence.",
+              "implication": "Reduces direct competition but foregoes potential benefits of a more coordinated character ecosystem strategy."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Technical Infrastructure Robustness",
+      "summary": "Recent code changes and user feedback highlight persistent technical challenges in elizaOS that require strategic decisions about prioritization of fixes vs. new features, particularly as v2 launch approaches.",
+      "deliberation_items": [
+        {
+          "question_id": "q7",
+          "text": "How should we balance addressing existing technical issues versus implementing new features as v2 approaches completion?",
+          "context": [
+            "Several users encountered technical issues including: Instrumentation problems with PostgreSQL requirements, MCP plugin loading failures, Socket.io errors",
+            "Multiple significant bug fixes were implemented this month, including fixing agent cross-interference and self-response infinite loops in message service"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement a feature freeze to focus exclusively on stability, bug fixes, and performance optimizations until v2 release.",
+              "implication": "Ensures a more stable platform but delays competitive feature advantages and may disappoint users expecting new capabilities."
+            },
+            "answer_2": {
+              "text": "Continue parallel development of features and fixes, with enhanced testing processes to prevent regression issues.",
+              "implication": "Maintains development velocity but increases risk of stability issues at launch that could damage brand perception."
+            },
+            "answer_3": {
+              "text": "Adopt a tiered approach: freeze core infrastructure changes while allowing continued development of isolated user-facing features.",
+              "implication": "Balances stability and innovation but requires precise technical boundaries that may be difficult to enforce in practice."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q8",
+          "text": "What strategy should be adopted for the reported knowledge management (RAG) functionality issues in v1.0.6?",
+          "context": [
+            "harperaa: Created 2 new issues (#5005 'LOG_LEVEL from .env Not Working in 1.0.6' and #5004 'Knowledge management (RAG) not working (implemented) in 1.0.6')",
+            "Knowledge plugin issues were reported after upgrading to v1.0.5, with the knowledge tab not appearing in UI and agents unable to answer knowledge-based questions"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize immediate fixes for RAG functionality in a point release before v2, as knowledge management is a core capability.",
+              "implication": "Addresses a critical functional gap but may divert resources from v2 completion and delay its release."
+            },
+            "answer_2": {
+              "text": "Incorporate comprehensive RAG improvements directly into v2 rather than patching v1, with clear communication about this plan.",
+              "implication": "Allows for more substantial redesign but leaves users without this functionality in the interim, potentially affecting retention."
+            },
+            "answer_3": {
+              "text": "Deploy temporary workarounds and documentation while developing a complete overhaul for v2.",
+              "implication": "Balances immediate needs with long-term improvements but creates technical debt and potentially confusing user experiences."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q9",
+          "text": "How should the development team address the reported cross-platform compatibility challenges?",
+          "context": [
+            "Fixed matrix run functionality on Windows systems (#5007)",
+            "Environment variable recognition in Phala Cloud deployments"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Establish formal cross-platform testing as a release gate requirement, with dedicated testing environments for all supported platforms.",
+              "implication": "Ensures robust multi-platform support but introduces additional complexity and potential delays to the release cycle."
+            },
+            "answer_2": {
+              "text": "Focus primarily on macOS/Linux compatibility for core development, with Windows support as a secondary priority after core stability.",
+              "implication": "Streamlines development focus but may alienate Windows users and limit adoption in enterprise environments."
+            },
+            "answer_3": {
+              "text": "Implement platform-agnostic architecture changes that reduce platform-specific code, supplemented with comprehensive compatibility documentation.",
+              "implication": "Addresses root causes rather than symptoms but requires significant architectural work that may extend development timelines."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

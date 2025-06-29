@@ -1,0 +1,132 @@
+name: Sync Knowledge Sources
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # Runs daily at 1:00 UTC
+  workflow_dispatch:  # Allow manual triggering
+
+# Add permissions configuration
+permissions:
+  contents: write  # Allow pushing to the repository
+
+jobs:
+  sync-sources:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper comparisons
+          token: ${{ secrets.GH_PAT }}  # Use PAT for authentication
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+      
+      # Step 1: Create directory structure if it doesn't exist
+      - name: Ensure directories exist
+        run: |
+          mkdir -p docs
+          mkdir -p github
+          mkdir -p daily-silk
+          mkdir -p ai-news
+          mkdir -p clanktank/episodes
+          mkdir -p the-council/episodes
+      
+      # Step 2: ElizaOS Docs
+      - name: Sync ElizaOS Documentation
+        continue-on-error: true # Added for robustness
+        run: |
+          # Clone the repo temporarily
+          git clone -b develop --depth 1 https://github.com/elizaOS/eliza.git temp-elizaos # Changed branch
+          
+          # Use tar to find and copy markdown files while preserving directory structure
+          find temp-elizaos/packages/docs -name "*.md" -o -name "*.mdx" | tar -cf - -T - | tar -xf - --strip-components=3 -C docs/
+          
+          # Clean up
+          rm -rf temp-elizaos
+      
+      # Step 3: Daily Silk Docs
+      - name: Sync Daily Silk Documentation
+        continue-on-error: true # Added for robustness
+        run: |
+          # Clone the repo temporarily
+          git clone --depth 1 https://github.com/madjin/daily-silk.git temp-daily-silk
+          
+          # Copy only markdown files from data directory
+          find temp-daily-silk/data -name "*.md" | tar -cf - -T - | tar -xf - --strip-components=2 -C daily-silk/
+          
+          # Clean up
+          rm -rf temp-daily-silk
+      
+      # Step 4: GitHub Activity Logs
+      - name: Sync GitHub Activity Logs
+        continue-on-error: true # Added for robustness
+        run: |
+          # Clone the repo temporarily
+          git clone -b _data --single-branch https://github.com/elizaos/elizaos.github.io.git temp-github-data
+          
+          # Copy files from the correct paths
+          rsync -av temp-github-data/data/elizaos_eliza/ github/
+          rsync -av temp-github-data/data/dump/ github/
+
+          # Clean up
+          rm -rf temp-github-data
+           
+      # Step 5: Sync AI News (ElizaOS & Hyperfy)
+      - name: Sync AI News (ElizaOS & Hyperfy)
+        continue-on-error: true # Added for robustness
+        run: |
+          # Clone the repo temporarily
+          git clone -b gh-pages https://github.com/M3-org/ai-news.git temp-ai-news
+          
+          # Copy the elizaos and hyperfy folders
+          rsync -av --delete temp-ai-news/elizaos/ ai-news/elizaos/
+          rsync -av --delete temp-ai-news/hyperfy/ ai-news/hyperfy/
+          
+          # Clean up
+          rm -rf temp-ai-news
+
+      # Step 6: Sync Clanktank Episodes
+      - name: Sync Clanktank Episodes
+        continue-on-error: true # Added for robustness
+        run: |
+          # Clone the repo temporarily
+          git clone --depth 1 https://github.com/m3-org/clanktank.git temp-clanktank
+          
+          # Copy JSON files from episodes directory
+          rsync -av --include="*.json" --exclude="*" temp-clanktank/episodes/ clanktank/episodes/
+          
+          # Clean up
+          rm -rf temp-clanktank
+
+      # Step 7: Sync The-Council Episodes
+      - name: Sync The-Council Episodes
+        continue-on-error: true # Added for robustness
+        run: |
+          # Clone the repo temporarily
+          git clone --depth 1 https://github.com/m3-org/the-council.git temp-the-council
+          
+          # Copy JSON files from episodes directory
+          rsync -av --include="*.json" --exclude="*" temp-the-council/episodes/ the-council/episodes/
+          
+          # Clean up
+          rm -rf temp-the-council
+
+      # Step 8: Commit and push changes
+      - name: Commit and push if changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git add docs/ github/ daily-silk/ ai-news/ clanktank/ the-council/
+          
+          # Check if there are any changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Daily Knowledge Sync: $(date +%Y-%m-%d)"
+            git push "https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git"
+          fi

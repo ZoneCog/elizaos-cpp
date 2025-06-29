@@ -1,0 +1,17 @@
+.env
+*.env
+.env*
+/data
+/generatedImages
+.pglite
+elizadb/*
+.eliza/*
+bun.lock
+node_modules/
+
+local_**
+cache/*
+models/*
+
+dist/*
+elizadb/*

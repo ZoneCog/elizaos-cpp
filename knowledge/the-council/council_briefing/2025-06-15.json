@@ -1,0 +1,209 @@
+{
+  "date": "2025-06-15",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ElizaOS faces a critical communications challenge with the sudden suspension of its main Twitter account (149K followers), requiring rapid adaptation of social media strategy while maintaining V2 release momentum.",
+  "key_points": [
+    {
+      "topic": "Social Media Crisis Management",
+      "summary": "The suspension of ElizaOS's Twitter account with 149K followers threatens visibility and user acquisition, necessitating both recovery efforts and development of a multi-platform communication strategy.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we prioritize our response to the Twitter account suspension?",
+          "context": [
+            "ElizaOS's X (Twitter) account with 149K followers has been suspended due to API policy violations",
+            "\u8f9e\u5c18\u9e3d\u9e3d: We haven't abandoned the Twitter account. We're treating this as urgent and have contacted X to expedite resolution. Farcaster is only being prepared as a backup option"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus all resources on account restoration, delaying other initiatives if necessary.",
+              "implication": "Prioritizes restoring our established social presence but risks delaying product development and may leave us vulnerable to similar disruptions in the future."
+            },
+            "answer_2": {
+              "text": "Pursue account restoration while rapidly developing Farcaster as our primary alternative platform.",
+              "implication": "Balances recovery efforts with platform diversification, creating resilience at the cost of divided attention and resources."
+            },
+            "answer_3": {
+              "text": "Accept the account loss and pivot entirely to a multi-platform strategy with Farcaster as the centerpiece.",
+              "implication": "Embraces decentralization principles but sacrifices an established audience of 149K followers and risks appearing unstable to the community."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What technical measures should we implement to prevent similar platform-specific disruptions in the future?",
+          "context": [
+            "The Twitter plugin has been updated to use the PRO $200/month plan for individual users",
+            "Accounts with \"gmgn\" tags were flagged for \"inauthenticity\""
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Develop custom API rate-limiting and compliance monitoring tools for our plugins.",
+              "implication": "Creates robust safeguards against future suspensions but requires significant engineering resources that could delay other priorities."
+            },
+            "answer_2": {
+              "text": "Implement a centralized communications orchestrator that automatically adjusts posting behavior based on platform policies.",
+              "implication": "Provides adaptive protection across multiple platforms but introduces a potential single point of failure in our communications system."
+            },
+            "answer_3": {
+              "text": "Establish platform-specific agent personas with differentiated content strategies to distribute risk.",
+              "implication": "Diversifies our communications approach but increases management complexity and may dilute brand consistency."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we leverage this disruption to advance our decentralization principles?",
+          "context": [
+            "The team is planning to deploy communications across multiple platforms",
+            "Community members debated whether to fight for restoration or focus on alternative platforms"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Launch an initiative to create our own decentralized social protocol integrated with elizaOS.",
+              "implication": "Aligns perfectly with our mission but represents a major scope expansion that would divert resources from core priorities."
+            },
+            "answer_2": {
+              "text": "Partner with existing decentralized social platforms to create emblematic integrations showcasing elizaOS capabilities.",
+              "implication": "Balances pragmatism with principles while creating valuable technical demonstrations and partnerships."
+            },
+            "answer_3": {
+              "text": "Develop a comprehensive cross-posting system that treats all platforms equally while emphasizing decentralized alternatives.",
+              "implication": "Provides immediate protection against platform risk while subtly advancing our values through content and emphasis."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Token Utility Evolution",
+      "summary": "Community discussions reveal strong interest in developing concrete token utility mechanisms, particularly around LLM access, agent capabilities, and trading competitions, which could accelerate adoption.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "Which token utility model should we prioritize developing first?",
+          "context": [
+            "cjft: Token-based utility SaaS/AaaS protocol that would provide LLMs for token holders without requiring their own API keys",
+            "cjft: Create agent network economy with staking mechanisms, trust scores, and capability broadcasting in a framework-agnostic web3 network"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "LLM access protocol where token holders receive API access without needing their own keys.",
+              "implication": "Creates immediate practical utility that could drive token adoption but requires managing significant API costs and infrastructure."
+            },
+            "answer_2": {
+              "text": "Agent capability marketplace with staking and reputation mechanisms for service provision.",
+              "implication": "Establishes a self-sustaining ecosystem that aligns with our long-term vision but requires more complex technical implementation and community bootstrapping."
+            },
+            "answer_3": {
+              "text": "Trading competition platform with measurable outcomes and token-based entry and rewards.",
+              "implication": "Leverages existing community strengths and showcases our technology while creating engaging content but may appeal to a narrower audience segment."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "How should we measure success for new token utility features?",
+          "context": [
+            "jin: Design agent trading competition with measurable outcomes",
+            "cjft: Create leaderboard system for best-performing agents"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Token price appreciation and market capitalization growth.",
+              "implication": "Provides clear financial validation but may incentivize short-term thinking over sustainable ecosystem development."
+            },
+            "answer_2": {
+              "text": "User growth metrics including new wallet connections, active agent deployments, and daily active users.",
+              "implication": "Focuses on adoption and engagement which are leading indicators of sustainability but may not immediately translate to token value."
+            },
+            "answer_3": {
+              "text": "Technical performance indicators like transaction volume, successful agent interactions, and service quality metrics.",
+              "implication": "Emphasizes system robustness and quality which supports long-term value but may undervalue the importance of community growth and sentiment."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "V2 Technical Stability",
+      "summary": "While ElizaOS V2 has been released (v1.0.8 and v1.0.9), users are experiencing significant plugin compatibility issues and feature gaps that threaten adoption and stability.",
+      "deliberation_items": [
+        {
+          "question_id": "q6",
+          "text": "How should we address the critical plugin compatibility issues in V2?",
+          "context": [
+            "Multiple users reported problems with the Twitter plugin's posting behavior, particularly with unwanted formatting in replies",
+            "The knowledge plugin was reported as non-functional despite recent updates to version 1.0.5",
+            "Johannes Weniger: Knowledge plugin installation failures despite version update to 1.0.5"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Launch an emergency patch cycle focusing exclusively on fixing the most widely-used plugins.",
+              "implication": "Rapidly restores core functionality for most users but risks overlooking less common but potentially critical issues."
+            },
+            "answer_2": {
+              "text": "Develop an automated LLM-based plugin migration tool to accelerate the transition of all plugins to V2.",
+              "implication": "Systematically addresses the entire ecosystem but introduces a dependency on LLM quality and may produce inconsistent results requiring manual review."
+            },
+            "answer_3": {
+              "text": "Roll back to a stable V1 version while maintaining V2 in a clearly marked beta state until all critical issues are resolved.",
+              "implication": "Ensures system stability and sets clear expectations but damages momentum and could create the perception of a failed launch."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q7",
+          "text": "What approach should we take to knowledge management functionality in V2?",
+          "context": [
+            "harperaa: Knowledge management (RAG) not working in 1.0.6",
+            "The knowledge plugin was reported as non-functional despite recent updates to version 1.0.5"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize a complete rewrite of the knowledge subsystem as a core V2 feature rather than a plugin.",
+              "implication": "Creates a robust foundation for all knowledge-based operations but represents a significant architecture change that could delay other features."
+            },
+            "answer_2": {
+              "text": "Partner with an established vector database provider to integrate their solution as our standard knowledge backend.",
+              "implication": "Leverages specialized expertise and infrastructure but creates an external dependency that may limit our control over this critical functionality."
+            },
+            "answer_3": {
+              "text": "Fix the existing knowledge plugin as a short-term solution while developing a decentralized knowledge protocol as a long-term replacement.",
+              "implication": "Balances immediate needs with strategic vision but requires maintaining two parallel systems during the transition period."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

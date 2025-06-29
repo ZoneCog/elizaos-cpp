@@ -1,0 +1,94 @@
+name: Extract Daily Facts
+
+on:
+  schedule:
+    # Runs daily at 1:30 AM UTC (after knowledge sync)
+    - cron: '30 1 * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  extract-facts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Need permission to write back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history to get all files
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Set execute permission for scripts
+        run: |
+          chmod +x scripts/extract-facts.py
+          chmod +x scripts/aggregate-sources.py
+
+      - name: Aggregate Sources for Today
+        id: aggregate_step
+        run: |
+          ./scripts/aggregate-sources.py # Defaults to today
+          echo "aggregated_json_file=the-council/aggregated/$(date +%Y-%m-%d).json" >> $GITHUB_OUTPUT
+
+      - name: Generate Fact Briefing from Aggregated Data
+        id: fact_gen_step
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          # COUNCIL_MONTHLY_GOAL: ${{ vars.COUNCIL_MONTHLY_GOAL_VAR || 'Default Goal' }} # Example if needed
+        run: |
+          INPUT_FILE="${{ steps.aggregate_step.outputs.aggregated_json_file }}"
+          OUTPUT_JSON_DIR="the-council/facts"
+          OUTPUT_MARKDOWN_DIR="hackmd/facts"
+          
+          # Ensure output directories exist
+          mkdir -p "$OUTPUT_JSON_DIR"
+          mkdir -p "$OUTPUT_MARKDOWN_DIR"
+
+          if [ -f "$INPUT_FILE" ]; then
+            # Use extract-facts.py with explicit input/output parameters
+            OUTPUT_JSON_FILE="$OUTPUT_JSON_DIR/$(date +%Y-%m-%d).json"
+            OUTPUT_MARKDOWN_FILE="$OUTPUT_MARKDOWN_DIR/$(date +%Y-%m-%d).md"
+            
+            ./scripts/extract-facts.py -i "$INPUT_FILE" -o "$OUTPUT_JSON_FILE" -md "$OUTPUT_MARKDOWN_FILE"
+            
+            echo "fact_json_file=$OUTPUT_JSON_FILE" >> $GITHUB_OUTPUT
+            echo "fact_markdown_file=$OUTPUT_MARKDOWN_FILE" >> $GITHUB_OUTPUT
+          else
+            echo "Input file $INPUT_FILE not found, skipping fact briefing generation."
+            exit 1
+          fi
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+
+      - name: Commit and push if changes
+        run: |
+          # Define the files to check and add
+          DAILY_FACT_JSON="the-council/facts/$(date +%Y-%m-%d).json"
+          DAILY_FACT_MARKDOWN="hackmd/facts/$(date +%Y-%m-%d).md"
+          PERMALINK_FACT_JSON="the-council/facts/daily.json"
+
+          # Create permalink for JSON fact file
+          if [ -f "$DAILY_FACT_JSON" ]; then
+            cp "$DAILY_FACT_JSON" "$PERMALINK_FACT_JSON"
+          fi 
+
+          # Check if any of the relevant files were created/modified
+          if [[ `git status --porcelain "$DAILY_FACT_JSON" "$DAILY_FACT_MARKDOWN" "$PERMALINK_FACT_JSON"` ]]; then
+            echo "Changes detected in fact briefing files."
+            git add "$DAILY_FACT_JSON" "$DAILY_FACT_MARKDOWN" "$PERMALINK_FACT_JSON"
+            git commit -m "Automated: Update daily fact briefing for $(date +%Y-%m-%d)"
+            git push
+          else
+            echo "No changes to commit for fact briefing."
+          fi 

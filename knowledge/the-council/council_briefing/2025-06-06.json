@@ -1,0 +1,262 @@
+{
+  "date": "2025-06-06",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ElizaOS v2 is technically ready but awaits official announcement while the team focuses on stabilizing plugins and addressing user concerns about auto.fun's market activity and creator onboarding.",
+  "key_points": [
+    {
+      "topic": "ElizaOS v2 Launch Strategy",
+      "summary": "ElizaOS v2 core and runtime are published but awaiting official announcement next week, with current focus on upgrading the plugin ecosystem and ensuring documentation completion.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we sequence the official v2 announcement relative to 'The Org' multi-agent system release?",
+          "context": [
+            "v2 is released but awaiting official announcement (mentioned by wire)",
+            "ElizaOS is preparing for a full V2 announcement next week, after releasing versions 1.0.0-1.0.2 in 'stealth mode' (from Discord summary)",
+            "'The Org' is an upcoming multi-agent system within the ElizaOS ecosystem (from Discord summary)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Announce v2 immediately and position 'The Org' as a follow-up showcase of v2's capabilities.",
+              "implication": "Creates two marketing moments but risks 'The Org' seeming like an afterthought rather than a core v2 feature."
+            },
+            "answer_2": {
+              "text": "Delay v2 announcement until 'The Org' is ready for simultaneous release to maximize impact.",
+              "implication": "Creates a stronger unified launch but risks further delays if 'The Org' development encounters issues."
+            },
+            "answer_3": {
+              "text": "Announce v2 with a teaser/preview of 'The Org' and set a specific near-term date for the full 'Org' launch.",
+              "implication": "Balances immediate v2 momentum with sustained interest through a scheduled follow-up showcase."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What should be our priority for the plugin ecosystem prior to the v2 announcement?",
+          "context": [
+            "Current work focused on upgrading the plugin ecosystem (mentioned by shaw)",
+            "The Twitter plugin was updated to v1.0.3 with support for targeted users and fixes for duplicate tweets",
+            "Bootstrap plugin identified as mandatory for agent functionality (answered by Stan \u26a1)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on fixing bugs in existing plugins to ensure stability for current users.",
+              "implication": "Prioritizes reliability over new functionality, potentially decreasing excitement about v2."
+            },
+            "answer_2": {
+              "text": "Develop showcase plugins that demonstrate new v2 capabilities with high visibility use cases.",
+              "implication": "Increases wow-factor for the announcement but may leave core plugins less polished."
+            },
+            "answer_3": {
+              "text": "Create comprehensive documentation and examples for building plugins in v2.",
+              "implication": "Empowers community developers to extend the ecosystem but may not produce enough first-party plugins for launch."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we measure success for the v2 release?",
+          "context": [
+            "ElizaOS v1.0.5 was released",
+            "On June 5, 2025, the elizaOS/eliza repository showed significant activity with 20 new pull requests (16 of which were merged), 3 new issues, and 19 active contributors participating in the project."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Developer adoption metrics (new agents created, plugin installations, GitHub stars).",
+              "implication": "Focuses on building the developer ecosystem but may not directly translate to end-user growth."
+            },
+            "answer_2": {
+              "text": "User engagement metrics (daily active users, message volume, agent interactions).",
+              "implication": "Prioritizes actual usage over developer activity, potentially at the cost of long-term ecosystem health."
+            },
+            "answer_3": {
+              "text": "Composite score combining developer adoption, user engagement, and cross-platform social signals.",
+              "implication": "Provides holistic measurement but increases complexity of analysis and may dilute focus on key drivers."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Revitalization Strategy",
+      "summary": "Community members suggest auto.fun needs a successful token launch to attract users, with a focus on marketing strategies like 'eli5' and onboarding more creators during the current 'launchpad meta'.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we balance short-term token-based marketing with long-term platform development for auto.fun?",
+          "context": [
+            "Suggestions to revive auto.fun platform through token-based marketing strategies (mentioned by xell0x)",
+            "User xell0x suggests leveraging 'eli5' as a marketing strategy, comparing it to how tokens like 'bonk' and 'wif' gained traction"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize a high-profile token launch campaign to quickly attract users and liquidity.",
+              "implication": "Maximizes short-term growth but may create unsustainable dynamics if platform features aren't mature."
+            },
+            "answer_2": {
+              "text": "Focus on improving platform features and UX before heavily marketing tokens.",
+              "implication": "Builds a more sustainable foundation but risks continued low adoption in the competitive launchpad market."
+            },
+            "answer_3": {
+              "text": "Launch a curated set of showcase tokens while simultaneously enhancing core platform capabilities.",
+              "implication": "Balances immediate market activity with platform development but divides team resources and focus."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What creator onboarding strategy would most effectively rejuvenate auto.fun?",
+          "context": [
+            "Discussion about onboarding creators to launch on autofun during 'launchpad meta' (mentioned by vas)",
+            "The suggestion is that auto.fun needs a successful token launch to attract users, as 'degens are irrational and dont care about fancy features, they only come if they think they can make money.'"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "High-touch recruitment of established Web3 creators with existing audiences.",
+              "implication": "Brings immediate credibility and users but may reinforce existing Web3 power structures rather than democratizing access."
+            },
+            "answer_2": {
+              "text": "Create a tiered incentive system to reward both new and established creators for launching on the platform.",
+              "implication": "Encourages diverse participation but requires significant resource allocation to incentive programs."
+            },
+            "answer_3": {
+              "text": "Develop specialized AI agent templates that make it exceptionally easy for non-technical creators to launch tokens and agents.",
+              "implication": "Lowers barriers to entry for mainstream creators but may result in lower-quality initial projects."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "Should we adopt 'eli5' as a strategic marketing play for auto.fun as suggested by the community?",
+          "context": [
+            "Consider adopting 'eli5' as a strategic marketing play for auto.fun (mentioned by xell0x)",
+            "'Eli5' (likely a meme token or character) as a marketing strategy, comparing it to how tokens like 'bonk' and 'wif' gained traction before broader adoption"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Launch 'eli5' as our flagship project to showcase the platform's capabilities.",
+              "implication": "Creates a focused narrative and potentially viral moment but risks the project being defined by a single token."
+            },
+            "answer_2": {
+              "text": "Incorporate 'eli5' as one of several official launches but not as the primary focus.",
+              "implication": "Captures interest in the concept without over-indexing on a single marketing approach."
+            },
+            "answer_3": {
+              "text": "Support community-led 'eli5' development rather than making it an official initiative.",
+              "implication": "Maintains platform neutrality and encourages organic community growth but provides less control over messaging."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Content Creation and Ecosystem Visibility",
+      "summary": "Content creation initiatives including YouTube channels for AI content are being discussed, while Twitter/X visibility shows thought leadership around AI agents, Web3 and 3D web technologies.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we integrate our content strategy with the upcoming v2 announcement?",
+          "context": [
+            "@elizaOS announced 'First holo agent in the Eliza plugin registry. A new layer of intelligence begins' and later tweeted 'When intelligence is composable, everything is upstream.'",
+            "Everyday we aggregate and summarize activity from @elizaos discord, GitHub, X, and have AI characters discuss our progress, hot topics, and questions in a 3d rendered show that runs on a browser (from @dankvr)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on technical documentation and tutorials to showcase v2's capabilities to developers.",
+              "implication": "Strengthens developer adoption but may not generate broader market enthusiasm."
+            },
+            "answer_2": {
+              "text": "Prioritize visually-striking 3D rendered content that demonstrates agent interactions in compelling ways.",
+              "implication": "Creates more shareable, attention-grabbing content but may overshadow the technical substance."
+            },
+            "answer_3": {
+              "text": "Launch a multi-format campaign with tiered content for different audiences (developers, crypto users, mainstream).",
+              "implication": "Reaches diverse audiences but requires significantly more content production resources."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "Which technical capabilities should we emphasize in our public-facing content to differentiate elizaOS?",
+          "context": [
+            "Several tweets highlighted advancements in web browser capabilities, particularly for 3D rendering.",
+            "@autodotfun shared related thoughts on AI infrastructure with 'i'm not here to disrupt, i'm here to stabilize the fun layer' and 'You don't need to write code to launch an agent, a token, or a new kind of coordination.'"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Emphasize multi-agent coordination and interaction capabilities unique to elizaOS v2.",
+              "implication": "Differentiates from single-agent frameworks but may be harder to demonstrate in simple content."
+            },
+            "answer_2": {
+              "text": "Showcase visual and 3D rendering capabilities to create more engaging and shareable content.",
+              "implication": "Creates more immediate visual impact but may not highlight elizaOS's core technical strengths."
+            },
+            "answer_3": {
+              "text": "Focus on Web3 integration features and token functionality that mainstream AI platforms lack.",
+              "implication": "Highlights a unique value proposition but may limit appeal to audiences primarily interested in AI rather than crypto."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we balance showcasing our own agents versus promoting community-created agents?",
+          "context": [
+            "Interest in building AI agents for various purposes including social media agents, voice agents, crypto trading agents, and SQL-reading agents for workflow automation",
+            "Official ElizaOS agents include Eli5 (community manager) and Eddy (dev rel)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize official ElizaOS agents to ensure quality and consistent messaging.",
+              "implication": "Maintains brand control but limits showcase of ecosystem diversity and community creativity."
+            },
+            "answer_2": {
+              "text": "Feature community-created agents prominently with minimal gatekeeping.",
+              "implication": "Demonstrates ecosystem vitality but risks showcasing problematic or low-quality agents."
+            },
+            "answer_3": {
+              "text": "Implement a curation system that highlights both official and community agents meeting quality standards.",
+              "implication": "Balances quality control with ecosystem representation but requires resources for review and curation."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

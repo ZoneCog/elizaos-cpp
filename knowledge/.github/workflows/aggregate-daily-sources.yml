@@ -1,0 +1,50 @@
+name: Aggregate Daily Sources
+
+on:
+  schedule:
+    # Runs daily at 1:30 UTC
+    - cron: '30 1 * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  generate-context:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Need permission to write back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x' # Use a recent Python version
+
+      - name: Set execute permission for script
+        run: chmod +x scripts/aggregate-sources.py
+
+      - name: Generate Daily Context Map
+        id: generate_map
+        run: ./scripts/aggregate-sources.py # Changed from .sh to .py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GITHUB_TOKEN is usually not needed by the script itself
+
+      - name: Create daily.json permalink
+        run: cp the-council/aggregated/$(date +%Y-%m-%d).json the-council/aggregated/daily.json
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+
+      - name: Commit and push if changes
+        run: |
+          # Check if the specific daily file or permalink file was created/modified
+          if [[ `git status --porcelain the-council/aggregated/$(date +%Y-%m-%d).json the-council/aggregated/daily.json` ]]; then
+            git add the-council/aggregated/$(date +%Y-%m-%d).json the-council/aggregated/daily.json
+            git commit -m "Automated: Generate context map for $(date +%Y-%m-%d) to aggregated/"
+            git push
+          else
+            echo "No changes to commit."
+          fi 

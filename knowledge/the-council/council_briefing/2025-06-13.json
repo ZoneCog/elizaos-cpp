@@ -1,0 +1,182 @@
+{
+  "date": "2025-06-13",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations.",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ElizaOS v1.0.8 release successfully merged with significant architectural improvements, API reorganization, and messaging system enhancements that strengthen the foundation for v2.",
+  "key_points": [
+    {
+      "topic": "V2 Architecture Readiness",
+      "summary": "Substantial architectural progress has been made toward v2 with the release of v1.0.8, featuring critical modularization, code organization improvements, and messaging system enhancements that create a more robust foundation.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "Which architectural improvement from the v1.0.8 release most directly supports our monthly goal of shipping production-ready elizaOS v2?",
+          "context": [
+            "ChristopherTrimboli: Merged PR #5051 \"chore: v1.0.8\" including significant changes across 24k+ additions and 20k+ deletions",
+            "lalalune: Led significant refactoring efforts including restructuring the message server (#4864, +68k/-50k lines) and splitting types into granular files (#4999, +5.8k/-12.9k lines)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "API restructuring into logical domain-based structure (#5010)",
+              "implication": "Improved API organization will make the system more maintainable for developers but may require significant documentation updates for users migrating from v1 to v2."
+            },
+            "answer_2": {
+              "text": "Split monolithic type definitions into granular, domain-specific files (#4999, #5020)",
+              "implication": "Granular type definitions will significantly improve developer experience and code organization, making the framework more extensible for v2 features."
+            },
+            "answer_3": {
+              "text": "Refactored message server to be completely separate and standalone from agents (#4864)",
+              "implication": "A standalone messaging system creates a more resilient architecture where agent failures don't compromise the entire system, crucial for production-grade v2 stability."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What should be our next focus area for architectural improvements to complete v2 readiness?",
+          "context": [
+            "harperaa: Knowledge management (RAG) not working (implemented) in 1.0.6 (#5004)",
+            "Fixed issue with inactive agents incorrectly shown as active in sidebar (#4929)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Complete implementation of the knowledge management (RAG) subsystem",
+              "implication": "Adding proper RAG capabilities would significantly enhance agent intelligence but requires substantial development effort."
+            },
+            "answer_2": {
+              "text": "Further decouple core services to enable distributed deployment models",
+              "implication": "Distributed deployment capabilities would improve scalability for auto.fun but may increase operational complexity."
+            },
+            "answer_3": {
+              "text": "Standardize plugin interfaces to improve third-party developer experience",
+              "implication": "Focusing on plugin standardization would accelerate ecosystem growth through third-party contributions but may require breaking changes."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Agent Activity Strategy",
+      "summary": "With the Twitter plugin now undergoing maintenance and documentation updates reflecting its deprecated status, we need to prioritize alternative channels for sustaining 24/7 agent activity on auto.fun.",
+      "deliberation_items": [
+        {
+          "question_id": "q3",
+          "text": "How should we prioritize social channels for 24/7 agent activity given the Twitter integration maintenance?",
+          "context": [
+            "madjin: PR #5046 \"chore: Update docs\" - Added deprecation notices to Twitter plugin and client documentation, removed Twitter from main intro/README featured connectors lists"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Pivot to Discord and Telegram integrations as primary social channels",
+              "implication": "Discord and Telegram offer strong API reliability but may reach a more limited audience than Twitter did."
+            },
+            "answer_2": {
+              "text": "Accelerate development of the Farcaster plugin as Twitter alternative",
+              "implication": "Farcaster provides greater decentralization alignment with our values but has a smaller user base than mainstream platforms."
+            },
+            "answer_3": {
+              "text": "Focus on auto.fun's native interfaces and reduce dependency on third-party platforms",
+              "implication": "Focusing inward creates a more controlled experience but may limit viral growth potential from external platform integrations."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q4",
+          "text": "What's the optimal agent activity strategy to attract new users to auto.fun with our current capabilities?",
+          "context": [
+            "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting)",
+            "elizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Deploy multiple specialized agents (trading, content creation, community management) working in concert",
+              "implication": "A multi-agent ecosystem demonstration showcases the platform's versatility but requires more complex coordination."
+            },
+            "answer_2": {
+              "text": "Focus on a single highly visible DegenSpartanAI trading agent with verifiable performance metrics",
+              "implication": "Concentrating on trading performance creates concrete value metrics but narrows the perceived use cases of the platform."
+            },
+            "answer_3": {
+              "text": "Prioritize interactive agents that directly engage with users through Q&A and personalized responses",
+              "implication": "User interaction focus builds community engagement but may be more resource-intensive to maintain quality experiences."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Developer Experience & Community Growth",
+      "summary": "Recent improvements in CLI commands, documentation, and plugin management indicate a strategic pivot toward improving developer onboarding and experience, which is essential for community growth.",
+      "deliberation_items": [
+        {
+          "question_id": "q5",
+          "text": "Which developer experience improvement would most effectively support our community growth goals?",
+          "context": [
+            "wtfsayo: Migrated CLI tests from Bats to Bun TypeScript (#4978, +10967/-5463 lines)",
+            "0xbbjoker: Added macOS setup guide (#4903)",
+            "wtfsayo: Added lockfile cleanup for GitHub fallback installations (#5009)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement automated debugging tools that help developers understand why their agents aren't working",
+              "implication": "Debugging tools address a common friction point but require significant development resources to build effectively."
+            },
+            "answer_2": {
+              "text": "Create a web-based visual agent builder that generates elizaOS-compatible code",
+              "implication": "A visual builder drastically lowers the entry barrier but may create expectations for continued low-code development patterns."
+            },
+            "answer_3": {
+              "text": "Develop comprehensive tutorials and templates for common agent use cases with step-by-step guides",
+              "implication": "Focusing on educational content builds developer skills more deeply but may have slower immediate adoption impact than visual tools."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "How should we balance code stability against the need for rapid feature development in our release strategy?",
+          "context": [
+            "wtfsayo: Fixed agent cross-interference and self-response infinite loops in message service (#4935, #4934)",
+            "Code changes across repositories show 758 commits with 119,975 additions and 94,360 deletions"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Institute a longer-term LTS (Long Term Support) release cadence with more extensive testing phases",
+              "implication": "LTS releases improve stability but may slow down innovation and responsiveness to community needs."
+            },
+            "answer_2": {
+              "text": "Maintain rapid release cadence with feature flags to allow users to opt into experimental features",
+              "implication": "Feature flags enable innovation while preserving stability for conservative users but increase code complexity."
+            },
+            "answer_3": {
+              "text": "Split the codebase into stable core and experimental modules with different release cadences",
+              "implication": "A split approach maintains core stability while enabling rapid experimentation in modules but requires careful API boundary management."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "date": "2025-06-12",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ElizaOS v1.0.7 and v1.0.8 were released this month with significant architectural improvements to the framework, including code organization through type splitting, API route restructuring, and enhanced developer experience.",
+  "key_points": [
+    {
+      "topic": "Knowledge Plugin Implementation Gap",
+      "summary": "Despite documentation indicating knowledge management (RAG) functionality should be available, the feature appears unimplemented in v1.0.6/v1.0.7, potentially impacting our ability to deliver sophisticated agent behavior for auto.fun.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we prioritize implementing knowledge management functionality given its importance to agent intelligence?",
+          "context": [
+            "harperaa: I am trying to get rag working and following docs, but that code is not implemented in 1.0.6. It appears to be commented as a placeholder.",
+            "The codebase has explicit TODO comments indicating that knowledge/memory functionality is intentionally unfinished. The character examples even reference a KNOWLEDGE provider that doesn't exist, suggesting this was planned but never implemented."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Immediately prioritize RAG implementation as a critical feature for v2 launch, delaying other planned features if necessary.",
+              "implication": "Will enhance agent intelligence for auto.fun showcase but may delay other planned v2 features."
+            },
+            "answer_2": {
+              "text": "Implement a minimally viable knowledge solution while continuing v2 development, with a comprehensive solution coming post-launch.",
+              "implication": "Balances immediate needs with v2 timeline, but agents may have limited knowledge capabilities at launch."
+            },
+            "answer_3": {
+              "text": "Focus on delivering v2 core architecture first, then implement knowledge management as the first major post-v2 feature.",
+              "implication": "Maintains v2 launch timeline but may limit agent sophistication during initial auto.fun showcase period."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What should we communicate to the community about the current state of knowledge management functionality?",
+          "context": [
+            "harperaa: Knowledge management (RAG) not working (implemented) in 1.0.6",
+            "Developer Comments Confirming This: The codebase has explicit TODO comments indicating that knowledge/memory functionality is intentionally unfinished."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Acknowledge the implementation gap and provide a clear roadmap for when knowledge management will be available.",
+              "implication": "Builds trust through transparency but may disappoint users expecting this functionality now."
+            },
+            "answer_2": {
+              "text": "Update documentation to remove references to unimplemented features while quietly developing the functionality.",
+              "implication": "Prevents further confusion but may appear as if we're removing promised features without explanation."
+            },
+            "answer_3": {
+              "text": "Release a limited preview version of knowledge management with clear beta labeling while continuing development.",
+              "implication": "Provides some functionality to users while setting appropriate expectations for limitations."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Agent Hosting and Loading Reliability",
+      "summary": "Users are experiencing significant issues with custom character loading after framework upgrades and agent configuration persistence, threatening our goal of showcasing reliable 24/7 agent activity.",
+      "deliberation_items": [
+        {
+          "question_id": "q3",
+          "text": "How can we improve the reliability and persistence of agents to ensure 24/7 operation for auto.fun?",
+          "context": [
+            "jonathanprozzi: After upgrading an existing project to use `@elizaos/core` version `1.0.7`, our custom character is no longer registered as an agent.",
+            "wtfsayo: Fixed agent cross-interference in DM channels where multiple agents would respond to messages intended for a single agent.",
+            "wtfsayo: Fixed infinite loop where multiple agents were responding to each other's messages, creating endless back-and-forth conversations."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement an automated testing system that validates agent stability across framework updates before release.",
+              "implication": "Will increase release quality but may slow down the pace of framework updates."
+            },
+            "answer_2": {
+              "text": "Create a dedicated Agent Reliability team focused on maintaining 24/7 uptime and implementing agent auto-recovery mechanisms.",
+              "implication": "Will improve agent persistence but requires additional resource allocation away from feature development."
+            },
+            "answer_3": {
+              "text": "Develop a containerized deployment solution that isolates agents from framework changes and provides automated monitoring/restart capabilities.",
+              "implication": "Ensures agent reliability while allowing framework development to proceed independently."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q4",
+          "text": "What approach should we take to ensure seamless upgrades for users' existing agent deployments?",
+          "context": [
+            "jonathanprozzi: We didn't change any config in the existing project but after upgrading to `1.0.7` Eliza is the only registered agent.",
+            "ChristopherTrimboli: Fixed custom character loading after upgrading to 1.0.7 (#5039)."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement comprehensive migration scripts that automatically update agent configurations during framework upgrades.",
+              "implication": "Provides seamless upgrades but increases the complexity of each release."
+            },
+            "answer_2": {
+              "text": "Establish a more conservative versioning policy with longer support for previous versions and clearer upgrade paths.",
+              "implication": "Reduces upgrade pain but may slow down the pace of innovation in the framework."
+            },
+            "answer_3": {
+              "text": "Create a dedicated upgrade guide with each release and a troubleshooting bot that helps users migrate their agents to new versions.",
+              "implication": "Balances innovation with user support without requiring complex automation."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Architectural Improvements for v2",
+      "summary": "Recent architectural improvements in v1.0.7 and v1.0.8 represent significant progress toward a stable v2 launch, including type splitting, API reorganization, and plugin system enhancements.",
+      "deliberation_items": [
+        {
+          "question_id": "q5",
+          "text": "How can we leverage the recent architectural improvements to accelerate the path to v2?",
+          "context": [
+            "Monthly Update: June was a transformative month for ElizaOS with significant architectural improvements across the framework. The team focused on enhancing modularity through plugin specifications, refactoring the message server to be standalone, and implementing comprehensive UI/UX improvements.",
+            "Split types.ts into granular files for better organization (#4999)",
+            "Refactored and split core types for improved clarity and maintainability (#5020)",
+            "Reorganized API routes into logical domain-based structure (#5010)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Stabilize and document the current architecture as v2-alpha, then begin focused development on remaining v2 features.",
+              "implication": "Provides a stable foundation for v2 but may result in feature development on an architecture that's still evolving."
+            },
+            "answer_2": {
+              "text": "Continue architectural refinements while gradually introducing v2 features, with an incremental release strategy.",
+              "implication": "Allows parallel progress on architecture and features but risks confusion about what constitutes the official v2 release."
+            },
+            "answer_3": {
+              "text": "Freeze architecture changes temporarily to focus entirely on implementing key v2 features on the current foundation.",
+              "implication": "Accelerates feature delivery but may require architectural changes later if current foundation proves insufficient."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "What should be our top priority for enhancing the developer experience to attract more contributors?",
+          "context": [
+            "cjft: Is there a process to become a contributor? A: Just make a PR and ship a good change",
+            "Added comprehensive Postman collection for elizaOS APIs (#5047)",
+            "Migrated CLI prompts from legacy 'prompts' library to modern '@clack/prompts' for better UX (#5016)",
+            "Added macOS setup guide to improve developer onboarding (#4903)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Develop comprehensive, interactive documentation with live code examples and agent templates.",
+              "implication": "Lowers the entry barrier for new contributors but requires significant resource investment in documentation."
+            },
+            "answer_2": {
+              "text": "Create a visual builder tool that allows contributors to develop agents and plugins with minimal coding.",
+              "implication": "Dramatically expands the potential contributor pool but may limit the sophistication of contributions."
+            },
+            "answer_3": {
+              "text": "Establish a contributor mentorship program and formalized contribution process with recognition mechanisms.",
+              "implication": "Builds a structured community but introduces organizational overhead and potential bureaucracy."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

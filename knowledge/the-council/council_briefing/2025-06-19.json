@@ -1,0 +1,209 @@
+{
+  "date": "2025-06-19",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "Recent major architectural improvements to elizaOS v2 are nearing completion, with server package separation, enhanced testing, and UI refinements positioning the platform for production readiness despite social platform challenges.",
+  "key_points": [
+    {
+      "topic": "Twitter/X Platform Access Crisis",
+      "summary": "The suspension of official ElizaOS and team accounts on Twitter/X presents significant challenges to our distribution strategy, with Twitter demanding a $50,000 monthly fee for reinstatement while we develop cross-platform alternatives.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we prioritize our distribution strategy in light of the Twitter/X account suspensions?",
+          "context": [
+            "Twitter/X account suspension issues: ElizaOS and Shaw accounts on X (Twitter) are suspended, Twitter reportedly asking for a $50,000 monthly fee for unbanning, which the team considers excessive.",
+            "Jin is working on automation solutions to distribute content across multiple platforms. Alternative domains secured (aixvc.fun and aixvc.fund)."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Pay the fee to reinstate our Twitter presence as our primary distribution channel.",
+              "implication": "Ensures immediate visibility on the dominant crypto-social platform but creates significant ongoing operational costs and platform dependency."
+            },
+            "answer_2": {
+              "text": "Accelerate Jin's cross-platform automation to distribute content across multiple platforms simultaneously.",
+              "implication": "Establishes platform-agnostic distribution while reducing dependency on any single provider, though will require time to build equivalent network effects."
+            },
+            "answer_3": {
+              "text": "Focus on alternative crypto-native platforms (Farcaster, Lens) and leverage community members' accounts for Twitter presence.",
+              "implication": "Aligns with decentralization values and reduces costs, but may significantly limit mainstream visibility in the short term."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What technical approaches should we prioritize to maintain agent capabilities across social platforms?",
+          "context": [
+            "Twitter/X plugin facing challenges with API transition from v1 to v2. v1 breaks ToS but v2 requires paid API access ($200/month for basic tier).",
+            "Free tier gives you 500 posts per month. (Odilitime)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Rebuild our plugins to work exclusively with official APIs, accepting the paid access requirements and limitations.",
+              "implication": "Ensures compliance and stability but increases operational costs and limits functionality to what platform APIs permit."
+            },
+            "answer_2": {
+              "text": "Develop a platform-agnostic social connector that abstracts platform-specific APIs behind a unified interface.",
+              "implication": "Creates long-term technical flexibility and reduces platform dependency, but significantly increases development complexity."
+            },
+            "answer_3": {
+              "text": "Optimize around free tier limitations by building intelligent posting schedulers and content prioritization systems.",
+              "implication": "Maximizes value within existing constraints at minimal cost, but may require substantial agent behavior redesign for efficiency."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "ElizaOS V2 Launch Readiness",
+      "summary": "The architectural foundation for ElizaOS V2 has made significant progress with server package separation, improved testing, and UI enhancements, though release timing remains flexible with a focus on quality rather than specific deadlines.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we approach the timing of ElizaOS V2 release relative to other product initiatives?",
+          "context": [
+            "V2 development is progressing well with no specific release timeline shared. Team is focused on building rather than setting specific release dates.",
+            "Spartan product might be released before V2, depending on development progress."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize V2 release before other initiatives to establish a stable foundation for the ecosystem.",
+              "implication": "Creates a solid technical foundation but may delay revenue-generating products that could attract users and capital."
+            },
+            "answer_2": {
+              "text": "Release DegenSpartanAI before V2 to generate momentum, visibility, and potentially revenue.",
+              "implication": "Accelerates market presence and potential revenue streams but creates technical debt as products will need to be migrated to V2 later."
+            },
+            "answer_3": {
+              "text": "Coordinate a synchronized release of V2 alongside initial DegenSpartanAI functionality.",
+              "implication": "Maximizes impact with a coordinated splash but increases complexity and could delay both releases if either encounters issues."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What critical architectural improvements in V2 should be highlighted in our communication strategy?",
+          "context": [
+            "Server Package Separation: Split server functionality into a separate `@elizaos/server` package while maintaining backward compatibility",
+            "Character Validation: Implemented Zod-based character validation with safe JSON parsing to improve robustness",
+            "Comprehensive Tests: Added detailed tests to core, server, project-starter, and plugin-starter packages"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Emphasize technical improvements like server separation and testing that appeal to developers.",
+              "implication": "Strengthens our position in the developer ecosystem but may not resonate with non-technical users or investors."
+            },
+            "answer_2": {
+              "text": "Focus on user experience enhancements like UI improvements and simplified agent creation.",
+              "implication": "Broadens appeal to non-technical users but risks underselling the significant architectural improvements to technical audiences."
+            },
+            "answer_3": {
+              "text": "Highlight enterprise-ready features like robustness, testing, and backward compatibility.",
+              "implication": "Positions the platform for institutional adoption but may alienate the crypto-native community seeking innovation over stability."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we balance feature completeness versus release timing for V2?",
+          "context": [
+            "Team is focused on building rather than setting specific release dates.",
+            "Gets better every week. Shaw has been helping us understand his designs and plans better, reducing conversion effort. (Odilitime)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Ship a minimally complete V2 sooner with core functionality, adding features in subsequent releases.",
+              "implication": "Accelerates time-to-market but risks negative first impressions if key features are missing or incomplete."
+            },
+            "answer_2": {
+              "text": "Ensure V2 includes all planned features before release, even if it means a longer development timeline.",
+              "implication": "Delivers a more complete product but risks market timing issues and allows competitors to potentially gain ground."
+            },
+            "answer_3": {
+              "text": "Implement a phased release strategy with progressive access expansion from core contributors to wider community.",
+              "implication": "Balances quality control with market momentum by gathering feedback incrementally, but creates complexity in managing multiple access tiers."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Platform Strategy",
+      "summary": "Auto.fun development continues with a focus on expanding platform functionality and supporting the builder ecosystem, with potential incentive mechanisms to drive AI16Z token value.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we approach Auto.fun's economic model to balance ecosystem growth with AI16Z token value?",
+          "context": [
+            "Plans to support the builder ecosystem.",
+            "Potential feature to use AutoFun platform fees to buy back AI16Z tokens."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement fee buybacks as the primary value accrual mechanism for AI16Z holders.",
+              "implication": "Creates direct token price support but risks prioritizing short-term token price over platform growth."
+            },
+            "answer_2": {
+              "text": "Focus on builder incentives and platform fee waivers to maximize ecosystem growth over immediate revenue.",
+              "implication": "Accelerates ecosystem expansion and network effects but delays direct token value accrual mechanisms."
+            },
+            "answer_3": {
+              "text": "Develop a hybrid model with progressive fee structures based on platform utilization and project success.",
+              "implication": "Balances growth incentives with sustainable economics but increases implementation complexity and may confuse users."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What product features should we prioritize to maximize Auto.fun's market differentiation and adoption?",
+          "context": [
+            "Development continues with focus on platform functionality expansion.",
+            "Auto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on novel tokenomics mechanics like bonding curves and liquidity NFTs for financial differentiation.",
+              "implication": "Creates unique financial mechanisms but risks prioritizing financial engineering over genuine product innovation."
+            },
+            "answer_2": {
+              "text": "Prioritize AI-generated marketing tools and low-code agent creation to streamline the token launch process.",
+              "implication": "Reduces barriers to entry for creators but may increase the quantity of launches without necessarily improving quality."
+            },
+            "answer_3": {
+              "text": "Develop integration pathways for AI projects to seamlessly incorporate ElizaOS agents into their token ecosystems.",
+              "implication": "Creates a vertically integrated ecosystem with strong competitive moats but increases technical complexity for projects."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

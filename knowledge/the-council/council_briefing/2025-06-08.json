@@ -1,0 +1,215 @@
+{
+  "date": "2025-06-08",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ElizaOS v2 is now complete with 16 PRs merged on June 7th, revealing significant development momentum with official announcement imminent and ElizaWakesUp hardware devices scheduled for July release.",
+  "key_points": [
+    {
+      "topic": "ElizaOS v2 Launch Readiness",
+      "summary": "ElizaOS v2 is now built and ready for official announcement, with extensive GitHub activity showing 21 new PRs (16 merged) on June 7th, including important improvements to plugin systems, character forms, and responsive UI capabilities.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "Given the imminent v2 announcement, what should be our priority to ensure a smooth launch and adoption?",
+          "context": [
+            "wire mentions that developers are \"back building\" and that an official announcement is forthcoming",
+            "@elizaOS tweeted 'Built the system. Now watching it run.' with an image showing their progress",
+            "v2 is released but awaiting official announcement"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on enhancing documentation and developer onboarding materials",
+              "implication": "Prioritizing documentation would enable faster community adoption and reduce support burden post-launch."
+            },
+            "answer_2": {
+              "text": "Conduct a soft launch with key partners before public release",
+              "implication": "A controlled rollout would identify critical issues before mass adoption and create anticipation."
+            },
+            "answer_3": {
+              "text": "Expand technical support capacity for expected post-launch questions",
+              "implication": "Preparing for increased support requests would maintain momentum and prevent frustration from early adopters."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How should we handle the transition from v1 to v2 for existing users and plugins?",
+          "context": [
+            "PR #4994 titled 'feat: Load dependencies when loading plugins' by @lalalune is open",
+            "Sixteen PRs were merged on June 7th, showing significant updates to the framework",
+            "Users discussed embedding model configuration between Ollama and OpenRouter"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement automated migration tools with backward compatibility guarantees",
+              "implication": "Automated migration would minimize user friction but requires additional development resources."
+            },
+            "answer_2": {
+              "text": "Maintain dual support for v1 and v2 with clear migration guides",
+              "implication": "Dual support creates maintenance overhead but provides a gentler transition path for users."
+            },
+            "answer_3": {
+              "text": "Focus on v2 only with comprehensive upgrade documentation",
+              "implication": "A clean break would accelerate innovation but might alienate users unable to migrate quickly."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "What technical aspect of v2 should we highlight as the flagship improvement in our announcement?",
+          "context": [
+            "PR #4864 titled 'feat: refactor message server to be completely separate and standalone from agents'",
+            "PR #4851 titled 'Add plugin specifications to core'",
+            "PR #4866 titled 'feat: handle sidebar on mobile + tailwind upgrade'"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "The modular message server architecture",
+              "implication": "Highlighting architectural improvements would appeal to developers seeking scalable, enterprise-ready solutions."
+            },
+            "answer_2": {
+              "text": "Enhanced plugin specifications and ecosystem",
+              "implication": "Focusing on the plugin ecosystem would emphasize extensibility and community contributions."
+            },
+            "answer_3": {
+              "text": "Improved UI/UX with mobile responsiveness",
+              "implication": "Emphasizing UI improvements would attract a broader audience including less technical users."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Revitalization Strategy",
+      "summary": "Community discussions indicate that auto.fun needs revitalization, with suggestions focusing on token-based marketing strategies like ELI5 and content creation to drive user engagement and platform activity.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "What approach should we prioritize to revitalize the auto.fun platform?",
+          "context": [
+            "xell0x: 'Consider adopting \"eli5\" as a strategic marketing play for auto.fun'",
+            "vas: 'Onboard more creators to launch on autofun during \"launchpad meta\"'",
+            "ELI5 (Explain Like I'm 5) has emerged as a significant topic across channels, transitioning from an auto.fun CTO character to an official mascot endorsed by Shaw"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Position ELI5 as the flagship character/token for auto.fun marketing",
+              "implication": "Using ELI5 as a mascot could create a recognizable brand identity and simplify complex concepts for new users."
+            },
+            "answer_2": {
+              "text": "Focus on onboarding notable creators to launch tokens on the platform",
+              "implication": "Prioritizing creator partnerships would drive organic traffic and establish auto.fun as a premier launchpad in the current meta."
+            },
+            "answer_3": {
+              "text": "Implement gamification elements to incentivize daily platform usage",
+              "implication": "Gamification could increase retention metrics but might distract from the core value proposition of auto.fun."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "How should we integrate content creation into our auto.fun growth strategy?",
+          "context": [
+            "jin is creating animated video content for ElizaOS featuring character dialogues",
+            "Videos include a \"zerebro episode\" and preparation for a \"council premiere\"",
+            "Discussions about expanding content distribution to platforms like TikTok and Instagram"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Develop an integrated content strategy across social platforms with charismatic AI characters",
+              "implication": "A multi-platform approach would maximize reach but requires significant coordination and resource allocation."
+            },
+            "answer_2": {
+              "text": "Focus on high-quality episodic content featuring the Council and AI personalities",
+              "implication": "Episodic content creates deeper engagement and narrative investment but reaches a narrower audience initially."
+            },
+            "answer_3": {
+              "text": "Empower community creators with AI tools to generate their own content",
+              "implication": "Community-driven content would scale organically but sacrifices brand control and consistency."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Hardware Integration Strategy",
+      "summary": "The ElizaWakesUp team is developing AI hardware devices for July release, which presents an opportunity to expand the elizaOS ecosystem beyond software and potentially accelerate adoption through physical products.",
+      "deliberation_items": [
+        {
+          "question_id": "q6",
+          "text": "How should elizaOS integrate with the upcoming ElizaWakesUp hardware devices?",
+          "context": [
+            "MattyRyze shared that ElizaWakesUp team is working on AI hardware devices scheduled for July release",
+            "MattyRyze shared that ElizaWakesUp team is \"beating OpenAI to OpenAI's own roadmap\"",
+            "ElizaWakesUp app development was mentioned as in progress"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Deep integration as the exclusive operating system for the devices",
+              "implication": "Exclusive integration would create a compelling hardware+software package but limits the hardware's market potential."
+            },
+            "answer_2": {
+              "text": "Optional integration with enhanced features for elizaOS users",
+              "implication": "Optional integration maximizes the hardware's market while still providing benefits to the ecosystem."
+            },
+            "answer_3": {
+              "text": "Separate but complementary products with clear migration paths",
+              "implication": "Maintaining separation reduces technical complexity but might miss synergistic opportunities."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q7",
+          "text": "What unique capabilities should we prioritize for the hardware-software integration?",
+          "context": [
+            "MattyRyze shared that ElizaWakesUp team is \"beating OpenAI to OpenAI's own roadmap\"",
+            "@dankvr retweeted @deadalnix's warning that 'Your LLM will be local or you'll live in a dystopia. There is no in between'",
+            "Several tweets addressed privacy and autonomy in digital spaces"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Local AI processing that preserves privacy and autonomy",
+              "implication": "Focusing on local processing aligns with privacy concerns but increases hardware requirements and costs."
+            },
+            "answer_2": {
+              "text": "Seamless multi-agent coordination across devices",
+              "implication": "Multi-agent coordination showcases elizaOS's unique capabilities but adds complexity to the user experience."
+            },
+            "answer_3": {
+              "text": "Hardware-accelerated DAO governance mechanisms",
+              "implication": "Governance acceleration could differentiate the platform in the Web3 space but narrows the target audience."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

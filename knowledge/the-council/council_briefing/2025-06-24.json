@@ -1,0 +1,181 @@
+{
+  "date": "2025-06-24",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "Community trust threatened by treasury token movement concerns while technical development progresses with v2 nearing release and Spartan prototype completion.",
+  "key_points": [
+    {
+      "topic": "Treasury Transparency Crisis",
+      "summary": "Significant community concerns have arisen regarding suspected token selling from project-related wallets, with claims that 40 million $degenai tokens were transferred from the DAO treasury to a personal wallet followed by selling, causing price to reach a new all-time low.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "What immediate action should be taken to address the treasury token movement concerns?",
+          "context": [
+            "Community members, particularly \u8f9e\u5c18\u9e3d\u9e3d, shared on-chain evidence showing approximately 3 million $degenai tokens being sold in a single day, causing the token to reach a new all-time low.",
+            "Multiple users expressed frustration about the absence of official communication regarding these transactions, amplifying trust issues within the community."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Issue an immediate comprehensive transparency report detailing all treasury movements with transaction hashes, wallet explanations, and future treasury management policies.",
+              "implication": "Addresses trust issues directly but could expose sensitive operational details and create precedent for micromanagement of treasury activities."
+            },
+            "answer_2": {
+              "text": "Implement on-chain treasury management tools with mandatory timelock and community voting for significant token movements.",
+              "implication": "Creates structural solution but adds operational friction and doesn't immediately address current controversy."
+            },
+            "answer_3": {
+              "text": "Maintain operational discretion while issuing statement that transactions were for strategic partnerships, explaining only after deals are finalized.",
+              "implication": "Preserves operational flexibility but risks further deterioration of community trust if perceived as evasive."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How should we balance treasury management needs with community expectations for transparency?",
+          "context": [
+            "Kenk noted that the wallet in question (GypeM9BqKeKGJGTnPxTf1PdVa3UC2LkiYnvvW8CJSNj2) hasn't been confirmed as a DAO wallet, though \u8f9e\u5c18\u9e3d\u9e3d pointed out it had previously interacted with the DAO wallet through a significant token transfer."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Establish a formal Treasury Council with community representatives that has visibility into all movements but operates under NDA for sensitive operations.",
+              "implication": "Creates structured oversight while maintaining operational security for strategic treasury activities."
+            },
+            "answer_2": {
+              "text": "Implement complete real-time transparency with public dashboard of all treasury movements and regular community calls to explain strategic rationale.",
+              "implication": "Maximizes transparency but potentially compromises strategic flexibility and competitive positioning."
+            },
+            "answer_3": {
+              "text": "Develop tiered disclosure system with immediate notification for movements above certain thresholds and quarterly reports for smaller operational transactions.",
+              "implication": "Balances transparency with operational needs but requires ongoing commitment to disclosure standards."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "ElizaOS v2 Launch Strategy",
+      "summary": "With v2 already released but not officially announced and the Spartan prototype nearing completion, there's a strategic opportunity to coordinate these releases with community communications to maximize market impact and user adoption.",
+      "deliberation_items": [
+        {
+          "question_id": "q3",
+          "text": "What launch approach would best position ElizaOS v2 for maximum community adoption and market impact?",
+          "context": [
+            "Dr. Neuro mentioned that V2 is already released but not officially announced yet.",
+            "Void shared that the Spartan prototype is nearing completion, which could potentially bring positive market impact."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Coordinate a comprehensive multi-product launch event showcasing V2 alongside Spartan prototype with developer grants program to drive immediate adoption.",
+              "implication": "Creates marketing momentum but risks overwhelming users with too many simultaneous releases."
+            },
+            "answer_2": {
+              "text": "Sequence product announcements with V2 announcement first, followed by Spartan prototype 2-3 weeks later to sustain momentum and allow focused adoption of each product.",
+              "implication": "Extends visibility timeline but may dilute initial excitement by fragmenting the release cycle."
+            },
+            "answer_3": {
+              "text": "Focus primarily on developer adoption with technical V2 documentation, hackathon, and developer incentives before wider market announcements.",
+              "implication": "Builds stronger technical foundation but delays broader market visibility and adoption."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q4",
+          "text": "How should we prioritize technical fixes versus shipping new features to achieve our monthly goal of attracting new auto.fun users?",
+          "context": [
+            "Several users experienced problems with CLI versioning, often running 1.0.9 instead of the latest 1.0.11, with conflicts between npm and bun package managers.",
+            "Users reported problems with WebSocket connections and response handling after messages are sent."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Establish a dedicated stability team focused exclusively on resolving critical bugs before shipping any new features for two weeks.",
+              "implication": "Improves product stability but delays auto.fun feature enhancements that might attract new users."
+            },
+            "answer_2": {
+              "text": "Implement feature flagging system to ship new capabilities to early adopters while maintaining stability for mainstream users during transition.",
+              "implication": "Balances innovation and stability but increases technical complexity in managing multiple experience tracks."
+            },
+            "answer_3": {
+              "text": "Focus primarily on auto.fun-specific features with weekly release cycles that bundle critical fixes with user-facing improvements.",
+              "implication": "Directly supports monthly goal but risks technical debt accumulation if fundamental issues aren't systematically addressed."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "24/7 Agent Showcase Strategy",
+      "summary": "To achieve our monthly goal of attracting users to auto.fun through 24/7 agent activity, we need to address issues with social media access, improve agent reliability, and develop a cohesive strategy for showcasing agents' streaming, trading, and shitposting capabilities.",
+      "deliberation_items": [
+        {
+          "question_id": "q5",
+          "text": "What social media integration strategy would most effectively showcase our agents' 24/7 capabilities?",
+          "context": [
+            "Users noted issues accessing Shaw's Farcaster account and mentioned that Eliza's Twitter account needs restoration.",
+            "Rick suggested implementing 24/7 marketing through private accounts similar to Virtuals."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on restoring and optimizing existing Twitter/X integration first, then expand to Farcaster and other platforms as they stabilize.",
+              "implication": "Prioritizes fixing current platform issues before expansion, potentially limiting visibility in the short term."
+            },
+            "answer_2": {
+              "text": "Implement a multi-platform approach immediately with agents active across Twitter, Farcaster, and Discord simultaneously with cross-posting capabilities.",
+              "implication": "Maximizes platform coverage but risks spreading technical resources thin across multiple integrations."
+            },
+            "answer_3": {
+              "text": "Build a dedicated auto.fun agent showcase platform with embedded social feeds that can be shared anywhere, reducing dependency on third-party platforms.",
+              "implication": "Creates controlled environment for demonstration but requires additional development resources and may have limited organic reach."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "How should we balance autonomous agent activities versus human-guided capabilities to showcase the most compelling aspects of our technology?",
+          "context": [
+            "Sthx mentioned Twitter plugin problems which could affect agent posting capabilities.",
+            "Chief reported an issue with CLI reverting to local models instead of using Grok, potentially impacting agent performance and capabilities."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize full autonomy with preset goals and monitoring, allowing agents to operate independently with minimal human intervention except for weekly strategy adjustments.",
+              "implication": "Demonstrates true autonomy but increases risk of undesirable agent actions without immediate human oversight."
+            },
+            "answer_2": {
+              "text": "Implement human-in-the-loop oversight with approval workflows for high-risk actions while allowing autonomous execution of routine activities.",
+              "implication": "Balances safety with autonomy showcase but might diminish perception of advanced AI capabilities."
+            },
+            "answer_3": {
+              "text": "Create staged demonstrations with progressively increasing autonomy, starting with scripted showcases and advancing to full autonomy as stability improves.",
+              "implication": "Provides controlled rollout but may appear less impressive initially compared to competitors claiming full autonomy."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

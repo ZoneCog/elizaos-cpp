@@ -1,0 +1,234 @@
+{
+  "date": "2025-06-22",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "The project faces a critical challenge with X account suspension and API access limitations, threatening connectivity while V2 stands ready for announcement.",
+  "key_points": [
+    {
+      "topic": "X Platform Strategy",
+      "summary": "The project's X (Twitter) account has been suspended, likely due to data scraping concerns, and the new API pricing of $50k/month is prohibitively expensive, creating obstacles for agent social media presence and communication channels.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we adapt our social media strategy in light of X/Twitter platform restrictions?",
+          "context": [
+            "Shaw confirmed their X account was suspended, likely due to concerns about data scraping",
+            "Discussion about X's new API pricing ($50k/month) making it prohibitively expensive for many AI agent developers",
+            "Mentioned building a presence on Farcaster as an alternative to X"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize Farcaster expansion while maintaining diplomatic efforts to restore X access.",
+              "implication": "This balanced approach diversifies social platform risk while attempting to preserve our established X audience."
+            },
+            "answer_2": {
+              "text": "Build a decentralized scraping network using encrypted vaults with vectorization to bypass API constraints.",
+              "implication": "This technical solution could maintain X integration but increases legal and operational risks."
+            },
+            "answer_3": {
+              "text": "Pivot entirely to alternative platforms (Farcaster, Discord, etc.) and abandon X integration efforts.",
+              "implication": "This decisive pivot reduces platform dependency risk but sacrifices our existing X audience and visibility."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What architecture approach should we adopt for agent-to-platform connections to improve resilience?",
+          "context": [
+            "DorianD proposed a system where numerous Eliza Nodes could scrape X and store data in encrypted vaults with vectorization to avoid legal issues",
+            "Discussion about keeping agents lean by separating backend processing for complex multi-step processes"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement a decentralized peer-to-peer network of elizaOS nodes with shared, encrypted data storage.",
+              "implication": "This architecture increases system resilience but requires significant development resources to implement correctly."
+            },
+            "answer_2": {
+              "text": "Create platform-agnostic middleware that separates agent logic from platform-specific integrations.",
+              "implication": "This modular approach allows faster adaptation to platform changes but adds complexity to the core framework."
+            },
+            "answer_3": {
+              "text": "Focus on first-party platforms where we control the infrastructure (auto.fun, our own websites).",
+              "implication": "This approach reduces external dependencies but limits reach and mainstream social media integration."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "Should we prioritize legal compliance or community-driven workarounds for platform integration?",
+          "context": [
+            "Community member z1 claimed to have developed a scraper that bypasses the official API but warned about potential detection",
+            "They've submitted clarification that they don't scrape or sell X data and are awaiting account restoration"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Strictly prioritize legal compliance and transparent platform relationships.",
+              "implication": "This approach minimizes legal risk but may severely constrain technical capabilities."
+            },
+            "answer_2": {
+              "text": "Pursue a hybrid approach with official APIs where feasible, with community-driven alternatives as fallbacks.",
+              "implication": "This pragmatic strategy balances compliance with functionality but creates inconsistent user experiences."
+            },
+            "answer_3": {
+              "text": "Embrace community-driven solutions while maintaining plausible deniability at the organizational level.",
+              "implication": "This approach maximizes technical capabilities but increases legal exposure and platform relationship risks."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "V2 Release Strategy",
+      "summary": "ElizaOS V2 is complete and ready for announcement, but the deployment is being delayed due to X account issues, raising questions about the optimal launch strategy and how to leverage claimed breakthrough capabilities.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "Should we proceed with the V2 announcement despite X account limitations?",
+          "context": [
+            "Shaw confirmed V2 is complete and ready to be announced once their X accounts are restored",
+            "Shaw hinted at \"big breakthroughs in capability\" coming soon"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Proceed with V2 announcement immediately via alternative channels (Discord, GitHub, website).",
+              "implication": "This approach maintains development momentum but potentially reduces announcement impact without X amplification."
+            },
+            "answer_2": {
+              "text": "Wait for X account restoration for a coordinated cross-platform announcement.",
+              "implication": "This strategy maximizes announcement reach but risks indefinite delays to V2 adoption and momentum."
+            },
+            "answer_3": {
+              "text": "Soft-launch V2 with technical documentation while preparing a major marketing push once X access is restored.",
+              "implication": "This phased approach allows technical adoption to begin while preserving marketing impact for when platform restrictions are resolved."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How should we frame and showcase the \"big breakthroughs in capability\" mentioned by Shaw?",
+          "context": [
+            "Shaw hinted at \"big breakthroughs in capability\" coming soon"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on technical superiority with benchmarks and capability demonstrations for developers.",
+              "implication": "This approach appeals to the technical community but may not translate to mainstream excitement or adoption."
+            },
+            "answer_2": {
+              "text": "Create engaging demos highlighting real-world applications that showcase new capabilities through auto.fun.",
+              "implication": "This application-focused strategy connects technical advancements directly to user benefits and ecosystem products."
+            },
+            "answer_3": {
+              "text": "Frame capabilities as steps toward AGI that position elizaOS as a leader in autonomous agent development.",
+              "implication": "This ambitious framing garners attention but creates expectations that may be difficult to sustain."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Growth Strategy",
+      "summary": "Community members are suggesting enhancements to Auto.fun including GameFi elements, polling systems for trending coins, and better integration with SpartanAI to create more engaging experiences that attract users.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "Which Auto.fun feature should we prioritize to drive user engagement?",
+          "context": [
+            "Implement GameFi-like gameplay mechanism for Auto.fun to attract more users (\u8f9e\u5c18\u9e3d\u9e3d)",
+            "Set up polling system for Auto.fun to identify trending coins (Phenowin)",
+            "Create representative account for Auto.fun to generate hype (Phenowin)",
+            "Connect SpartanAI with Auto.fun and other ecosystem components (\u8f9e\u5c18\u9e3d\u9e3d)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement GameFi-like mechanisms that reward users for engaging with Auto.fun agents.",
+              "implication": "This approach leverages crypto-native engagement models but requires careful token economic design."
+            },
+            "answer_2": {
+              "text": "Develop a community polling system that identifies trending tokens for Auto.fun to feature.",
+              "implication": "This data-driven approach enhances user participation while providing valuable market intelligence."
+            },
+            "answer_3": {
+              "text": "Focus on deep SpartanAI integration for automated trading insights and signals exclusive to Auto.fun.",
+              "implication": "This technical integration creates unique value but depends on SpartanAI performance and reliability."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What creator incentive model would best accelerate Auto.fun adoption?",
+          "context": [
+            "Consider lower creator incentive fees (2% total, 1% each or 0.5% each) (Phenowin)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Significantly reduce creator fees to 0.5-1% to maximize creator adoption and liquidity.",
+              "implication": "This low-fee approach prioritizes volume and market share over per-transaction revenue."
+            },
+            "answer_2": {
+              "text": "Implement a tiered fee structure where fees decrease as project success metrics increase.",
+              "implication": "This performance-based model aligns platform and creator incentives but increases implementation complexity."
+            },
+            "answer_3": {
+              "text": "Maintain current fees but enhance creator support with AI-powered marketing and community-building tools.",
+              "implication": "This value-added approach maintains revenue while differentiating through superior creator services."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we approach 24/7 agent activity to showcase Auto.fun's capabilities?",
+          "context": [
+            "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create themed agent archetypes (trader, analyst, entertainer) that coordinate activities.",
+              "implication": "This character-based approach makes agent activity more engaging but requires careful persona design and coordination."
+            },
+            "answer_2": {
+              "text": "Focus on real-time market intelligence and trading signals as the primary agent activity.",
+              "implication": "This utility-focused strategy provides clear value but depends on market prediction accuracy and quality."
+            },
+            "answer_3": {
+              "text": "Implement a mixed content strategy with 70% information, 20% entertainment, and 10% transactions.",
+              "implication": "This balanced approach appeals to diverse user interests but requires managing multiple content types effectively."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

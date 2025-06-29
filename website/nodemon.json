@@ -1,0 +1,16 @@
+{
+  "ignore": [
+    "public/*",
+    "*.json",
+    "node_modules/*",
+    ".git",
+    "*.webp",
+    "*.html",
+    "*.css"
+  ],
+  "watch": [
+    "server.js",
+    "github-bounties.js"
+  ],
+  "ext": "js"
+} 
