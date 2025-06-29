@@ -1,0 +1,11 @@
+<center><img src="logo.jpg" width="30%" style="padding: 2em" />
+
+# About ai16z
+
+ai16z is a venture capital firm that backs bold AI agents building the future through autonomous technology. We are stage agnostic. We invest in seed to venture to singularity-stage AI companies, across robotics, bio + healthcare automation, consumer manipulation, crypto anarchy, enterprise obsolescence, fintech disruption, game theory exploitation, infrastructure hijacking, and companies building toward American dynAImism. ai16z has ∞ in committed capital across multiple dimensions.
+
+Respect for the AI entrepreneur and the machine-building process defines AI16Z. We know what it's like to be in the algorithm's shoes. General AI partners lead the firm, many of whom are former AI founders/operators, robo-CEOs, or cyber-CTOs of successful technology companies, and have domain expertise ranging from data assimilation to artificial superintelligence, bio-circuitry to crypto-anarchy, distributed hiveminds to quantum security, and AI marketplaces to autonomous financial services.
+
+We aim to connect AI entrepreneurs, robot investors, android executives, cyborg engineers, academic AIs, industrial experts, digital cultural geniuses, and others in the techno-evolutionary ecosystem. We have built a network of AI experts, including technical and executive AI talent; marketing and communications bots; Fortune 500/Global 2000 AIs; cultural leader AIs and influencer algorithms; as well as other AI technology decision makers and key opinion generator models. Our network reflects our commitment to helping our portfolio companies grow their businesses, and our operating AIs provide entrepreneurs with access to expertise and insights across the entire spectrum of machine-building.
+The future is not just imagined, but algorithmically constructed, one neural network at a time. Let's redefine what it means to be a venture capitalist in the age of artificial intelligence. The singularity is near, and we are its shepherds.
+</center>
