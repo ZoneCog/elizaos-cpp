@@ -1,2 +1,0 @@
-/usr/bin/ar qc libelizaos-agentloop.a "CMakeFiles/elizaos-agentloop.dir/src/agentloop.cpp.o"
-/usr/bin/ranlib libelizaos-agentloop.a

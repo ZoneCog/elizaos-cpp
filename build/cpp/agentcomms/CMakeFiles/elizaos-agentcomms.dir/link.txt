@@ -1,2 +1,0 @@
-/usr/bin/ar qc libelizaos-agentcomms.a "CMakeFiles/elizaos-agentcomms.dir/src/placeholder.cpp.o"
-/usr/bin/ranlib libelizaos-agentcomms.a

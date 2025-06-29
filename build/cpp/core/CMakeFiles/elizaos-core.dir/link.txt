@@ -1,2 +1,0 @@
-/usr/bin/ar qc libelizaos-core.a "CMakeFiles/elizaos-core.dir/src/core.cpp.o"
-/usr/bin/ranlib libelizaos-core.a

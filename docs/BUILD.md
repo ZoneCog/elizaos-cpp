@@ -25,6 +25,13 @@ cmake --build . -j$(nproc)
 
 # Run tests
 ctest
+
+# Build with examples (optional)
+cmake -DBUILD_EXAMPLES=ON ..
+cmake --build .
+
+# Run demo
+./examples/elizaos_demo
 ```
 
 ## Build Options

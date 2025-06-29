@@ -63,6 +63,11 @@ add_subdirectory(cpp/agentmemory)    # Memory management (Stage 1 - Core Logic)
 # Testing
 add_subdirectory(cpp/tests)
 
+# Add example executable (optional)
+if(BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
+
 # Installation
 install(TARGETS elizaos-core elizaos-agentloop
     LIBRARY DESTINATION lib
