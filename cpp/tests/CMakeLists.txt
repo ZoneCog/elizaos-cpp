@@ -1,6 +1,7 @@
 add_executable(elizaos_tests
     src/test_core.cpp
     src/test_agentloop.cpp
+    src/test_cognitive_primitives.cpp
 )
 
 target_include_directories(elizaos_tests PRIVATE
