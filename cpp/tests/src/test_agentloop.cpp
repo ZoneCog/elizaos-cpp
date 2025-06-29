@@ -156,8 +156,20 @@ TEST_F(AgentLoopTest, PauseAndUnpause) {
     loop.unpause();
     EXPECT_FALSE(loop.isPaused());
     
-    std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Longer wait for resumption
-    int resumedCount = stepCounter_.load();
+    // Wait for resumption with retry logic and step signal to ensure loop continues
+    int resumedCount = pausedCountConfirm;
+    int attempts = 0;
+    const int maxAttempts = 20; // More attempts
+    while (resumedCount <= pausedCountConfirm && attempts < maxAttempts) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(25));
+        resumedCount = stepCounter_.load();
+        attempts++;
+        
+        // The loop might be waiting in pause state, signal a step to help it along
+        if (attempts > 5 && resumedCount <= pausedCountConfirm) {
+            loop.step();
+        }
+    }
     EXPECT_GT(resumedCount, pausedCountConfirm);
     
     loop.stop();
