@@ -1,6 +1,10 @@
 name: Fetch Repositories
 
 on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
   workflow_call:
 
 jobs:
