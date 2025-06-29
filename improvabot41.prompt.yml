@@ -97,4 +97,4 @@ messages:
       "opencog-architecture.org"))) #+END_SRC
   - role: user
     content: 'Generate issue-based action items to improve this repo: {{input}}'
-model: openai/gpt-4o
+model: openai/gpt-4.1
