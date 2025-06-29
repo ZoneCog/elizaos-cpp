@@ -124,7 +124,7 @@ void AgentLogger::writeToFile(
     // Get timestamp
     auto now = std::time(nullptr);
     struct tm tm;
-    std::localtime_r(&now, &tm);
+    localtime_r(&now, &tm);
     char timestamp[100];
     std::strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", &tm);
     
