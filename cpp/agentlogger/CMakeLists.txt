@@ -1,6 +1,6 @@
-# Stage 1 placeholder - will be implemented in Stage 2
+# Stage 2 implementation - agentlogger with full functionality
 add_library(elizaos-agentlogger STATIC
-    src/placeholder.cpp
+    src/agentlogger.cpp
 )
 
 target_include_directories(elizaos-agentlogger PUBLIC
