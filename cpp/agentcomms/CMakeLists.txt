@@ -1,6 +1,6 @@
-# Stage 1 placeholder - will be implemented in Stage 2
+# Stage 2 implementation - agentcomms with basic networking infrastructure
 add_library(elizaos-agentcomms STATIC
-    src/placeholder.cpp
+    src/agentcomms.cpp
 )
 
 target_include_directories(elizaos-agentcomms PUBLIC
