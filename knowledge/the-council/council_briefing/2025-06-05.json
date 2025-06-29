@@ -1,0 +1,264 @@
+{
+  "date": "2025-06-05",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "The project is at a pivotal transition point with elizaOS v2 announcement imminent and significant architectural improvements completed, while auto.fun undergoes updates to attract new users and position for growth.",
+  "key_points": [
+    {
+      "topic": "ElizaOS v2 Launch Readiness",
+      "summary": "ElizaOS v2 is ready for announcement next week after substantial architectural improvements, particularly to the messaging system, plugin infrastructure, and knowledge management capabilities, though some technical issues remain to be addressed.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "What should be our primary focus for the final push before the v2 announcement?",
+          "context": [
+            "ElizaOS is preparing for a full V2 announcement next week, after releasing versions 1.0.0-1.0.2 in \"stealth mode\" (from 2025-06-03.md)",
+            "Fix discord-plugin in version 1.0.5 (Mentioned by Stan \u26a1)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize fixing remaining plugin compatibility issues to ensure a smooth developer experience at launch.",
+              "implication": "Focusing on technical stability would build trust with developers but might delay other strategic initiatives."
+            },
+            "answer_2": {
+              "text": "Create comprehensive educational content and documentation to facilitate rapid developer onboarding.",
+              "implication": "Better documentation would accelerate adoption but might not address the core technical issues that could frustrate early adopters."
+            },
+            "answer_3": {
+              "text": "Showcase high-profile agent implementations to demonstrate the platform's capabilities and inspire developers.",
+              "implication": "Demonstrating practical applications would generate excitement but might set expectations that exceed the current technical capabilities."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How should we balance backward compatibility with innovation in the v2 release?",
+          "context": [
+            "Users are migrating from deprecated methods to current ones in the ElizaOS framework (from 2025-06-03.md)",
+            "The community is actively transitioning from ElizaOS 0.x to 1.x, with version 1.0.5 coming soon to fix several reported issues (from 2025-06-04.md)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Maintain strict backward compatibility for at least 6 months to avoid disrupting existing projects.",
+              "implication": "Prioritizing compatibility would preserve existing developer relationships but might constrain architectural innovation."
+            },
+            "answer_2": {
+              "text": "Introduce breaking changes but provide comprehensive migration tools and detailed upgrade guides.",
+              "implication": "This balanced approach enables innovation while supporting developers through the transition, though it requires more documentation effort."
+            },
+            "answer_3": {
+              "text": "Make a clean break with a complete redesign to enable revolutionary capabilities without legacy constraints.",
+              "implication": "Embracing radical innovation could leapfrog competitors but risks alienating current developers and fragmenting the ecosystem."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we position \"The Org\" multi-agent system within the v2 product lineup?",
+          "context": [
+            "\"The Org\" is an upcoming multi-agent system within the ElizaOS ecosystem (from 2025-06-03.md)",
+            "Official ElizaOS agents include Eli5 (community manager) and Eddy (dev rel) (from 2025-06-03.md)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "As the flagship feature of v2, showcasing the most advanced capabilities of the platform.",
+              "implication": "Positioning The Org as the centerpiece would create a clear narrative but might overshadow other important v2 improvements."
+            },
+            "answer_2": {
+              "text": "As an optional extension that demonstrates best practices for multi-agent coordination.",
+              "implication": "This positioning provides flexibility for developers but might dilute the perceived innovation of v2."
+            },
+            "answer_3": {
+              "text": "As an integrated system that powers all official elizaOS agents and services.",
+              "implication": "Tightly integrating The Org creates a cohesive ecosystem but might make it harder for developers to adopt parts of the framework independently."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Platform Strategy",
+      "summary": "Auto.fun is undergoing a refresh with new features and positioning relative to competitors like pump.fun, while questions remain about token economics, staking functionality, and international expansion.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "How should we position auto.fun relative to competitors like pump.fun?",
+          "context": [
+            "Questions about token plans for auto.fun and its positioning relative to pump.fun, with Kenk noting token plans are being worked on for later stages (from 2025-06-04.md)",
+            "Are there any efforts happening in regards to positioning auto.fun as the more legitimate pump.fun? (asked by Reneil) (from 2025-06-04.md)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Position auto.fun as a more legitimate, sustainable alternative with professional tooling and infrastructure.",
+              "implication": "This differentiation could attract serious projects but might lose the excitement and momentum of meme-driven launches."
+            },
+            "answer_2": {
+              "text": "Embrace and enhance the memetic culture while adding unique AI capabilities as the key differentiator.",
+              "implication": "This approach maintains cultural relevance while creating technical barriers to competition, though it risks being seen as just another meme platform."
+            },
+            "answer_3": {
+              "text": "Create a distinct category focused on AI agent tokenization that avoids direct competition with traditional launchpads.",
+              "implication": "Opening a new market niche could avoid price competition but requires significant education and market development efforts."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "What should be our strategy for agent tokens and their utility within the auto.fun ecosystem?",
+          "context": [
+            "Users are speculating about token economics and market capitalization of agent tokens (from 2025-06-03.md)",
+            "Auto.fun is expected to provide staking functionality for agent tokens (from 2025-06-03.md)",
+            "@elizaOS shared several cryptic and brand-related tweets, including 'no bags to drop, still carrying everything that matters' with an image (from Daily Report - 2025-06-04)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on functional utility where tokens unlock specific agent capabilities and integrations.",
+              "implication": "Utility-focused tokens could create sustainable value but might generate less initial trading interest than speculative assets."
+            },
+            "answer_2": {
+              "text": "Implement a revenue-sharing model where token holders receive a portion of fees generated by their agents.",
+              "implication": "A revenue model creates aligned incentives but might face regulatory scrutiny and increase operational complexity."
+            },
+            "answer_3": {
+              "text": "Build a governance ecosystem where agent tokens influence the direction of the auto.fun platform.",
+              "implication": "Governance tokens could create a self-sustaining ecosystem but might slow decision-making and increase coordination overhead."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "How should we approach international expansion, particularly in the Chinese market?",
+          "context": [
+            "Work on a virtual anchor/character for Chinese-translated AI news and updates (from 2025-06-03.md)",
+            "Chinese-speaking community offering to help promote AI news, videos, and events (from 2025-06-03.md)",
+            "Traditional Chinese elements suggested for character design to appeal to Asian audiences (from 2025-06-03.md)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create a dedicated Chinese version of auto.fun with localized agents and culturally relevant content.",
+              "implication": "Full localization could maximize market penetration but would significantly increase development and maintenance costs."
+            },
+            "answer_2": {
+              "text": "Partner with Chinese community members to create representative agents while maintaining a single global platform.",
+              "implication": "This collaborative approach leverages local expertise while minimizing infrastructure duplication, though it may not fully address cultural differences."
+            },
+            "answer_3": {
+              "text": "Focus on establishing a minimal Chinese presence through translated documentation and support while prioritizing global features.",
+              "implication": "A focused approach conserves resources but might limit growth potential in one of the largest AI and crypto markets."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Technical Debt and Documentation Strategy",
+      "summary": "Growing technical debt around APIs, plugin compatibility, and knowledge management requires strategic decisions about resource allocation between fixing current issues and building new features.",
+      "deliberation_items": [
+        {
+          "question_id": "q7",
+          "text": "How should we balance fixing current technical issues versus developing new features?",
+          "context": [
+            "Fix knowledge folder path inconsistency (create agent puts it in /knowledge but plugin expects /docs) (Mentioned by Johannes Weniger)",
+            "Fix Twitter plugin to properly respond to tweets (Mentioned by cjft)",
+            "Address security concerns with knowledge plugin (any user can add knowledge) (Mentioned by wookosh)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement a feature freeze until current bugs and compatibility issues are resolved.",
+              "implication": "Prioritizing stability would improve developer experience but might slow momentum and innovation."
+            },
+            "answer_2": {
+              "text": "Create a dedicated maintenance team separate from feature development to address issues in parallel.",
+              "implication": "Parallel development maintains momentum but requires more resources and could create coordination challenges."
+            },
+            "answer_3": {
+              "text": "Adopt a strategic technical debt approach, addressing only high-impact issues while continuing feature development.",
+              "implication": "Selective prioritization maximizes resource efficiency but risks accumulating additional technical debt over time."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q8",
+          "text": "What approach should we take to improve our API documentation and developer onboarding?",
+          "context": [
+            "DrakeDinh raised concerns about outdated API documentation for agent and knowledge management APIs (from 2025-06-04.md)",
+            "Update API documentation for plugin-knowledge (Mentioned by DrakeDinh)",
+            "Create tutorial for ElizaOS v2 (Mentioned by Benquik)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Invest in automated documentation generation directly from code to ensure accuracy and maintain synchronization.",
+              "implication": "Automation creates sustainable documentation but requires initial engineering investment and might lack contextual explanations."
+            },
+            "answer_2": {
+              "text": "Hire dedicated technical writers to create comprehensive, beginner-friendly documentation and tutorials.",
+              "implication": "Professional documentation improves onboarding but adds ongoing personnel costs and potential coordination overhead."
+            },
+            "answer_3": {
+              "text": "Create a community contribution program with incentives for documentation improvements and user guides.",
+              "implication": "Community involvement reduces direct costs but might result in inconsistent quality and slower completion timelines."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q9",
+          "text": "How should we address the security concerns with the knowledge plugin?",
+          "context": [
+            "Knowledge Plugin Concerns: Security issues (any user being able to add knowledge) and inefficiency (re-embedding identical documents) were raised (from 2025-06-04.md)",
+            "Improve knowledge plugin to avoid re-embedding identical documents (Mentioned by wookosh)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement a comprehensive permission system for knowledge management with role-based access controls.",
+              "implication": "A robust security model protects data integrity but adds complexity and might slow down adoption for simpler use cases."
+            },
+            "answer_2": {
+              "text": "Create a moderation queue where knowledge additions are reviewed before being incorporated into the agent's knowledge base.",
+              "implication": "Moderation balances security with usability but creates latency in knowledge updates and requires additional operational resources."
+            },
+            "answer_3": {
+              "text": "Maintain the open architecture but add verification and provenance tracking for all knowledge entries.",
+              "implication": "Transparency-based security maintains flexibility while enabling accountability, though it doesn't prevent problematic additions upfront."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

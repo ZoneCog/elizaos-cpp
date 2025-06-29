@@ -1,0 +1,884 @@
+{
+  "interval": {
+    "intervalStart": "2025-06-15T00:00:00.000Z",
+    "intervalEnd": "2025-06-22T00:00:00.000Z",
+    "intervalType": "week"
+  },
+  "repository": "elizaos/eliza",
+  "overview": "From 2025-06-15 to 2025-06-22, elizaos/eliza had 93 new PRs (71 merged), 18 new issues, and 36 active contributors.",
+  "topIssues": [
+    {
+      "id": "I_kwDOMT5cIs66o8ku",
+      "title": "Callback from plugin action not making it to end user response in chat",
+      "author": "jonathanprozzi",
+      "number": 5017,
+      "repository": "elizaos/eliza",
+      "body": "**Describe the bug**\n\nIn using the `plugin-evm` transfer function we expect to see a followup message with either the success or failure of the transaction.\n\nIn the plugin's `transfer.ts` callback, we see the following:\n\nhttps://github.com/elizaos-plugins/plugin-evm/blob/6bf9c4c54b9e1a558c7fb092f071f2e374435887/src/actions/transfer.ts#L133\n\n```typescript\n if (callback) {\n        callback({\n          text: `Successfully transferred ${paramOptions.amount} tokens to ${paramOptions.toAddress}\\nTransaction Hash: ${transferResp.hash}`,\n          content: {\n            success: true,\n            hash: transferResp.hash,\n            amount: formatEther(transferResp.value),\n            recipient: transferResp.to,\n            chain: paramOptions.fromChain,\n          },\n        });\n      }\n... (other error logging as well)\n```\n\nWe see the following in our logs (added additional debugging console.log statements):\n\n```bash\nLOG:in the transfer action\nCALLBACK IN EVM_TRANSFER_TOKENS [AsyncFunction (anonymous)]\nin the transferResponse try block\ntransferResponse try block completed {\n  hash: '0xd2680982067e0258612119a58497208428613debcd314d667bd758b93ea86ed8',\n  from: '0x7850f8a9825d6dadfF5621300ee11f2dED76b76b',\n  to: '0x25709998B542f1Be27D19Fa0B3A9A67302bc1b94',\n  value: 20000000000000000n,\n  data: '0x'\n}\n[2025-06-09 19:25:35] INFO: [Eliza] Agent generated response for message. Preparing to send back to bus.\n[2025-06-09 19:25:35] INFO: [Eliza] MessageBusService: Sending payload to central server API endpoint (/api/messages/submit):\n    channel_id: \"93487822-03c0-4119-bffc-13aca04fb41f\"\n    server_id: \"00000000-0000-0000-0000-000000000000\"\n    author_id: \"b850bc30-45f8-0041-a00a-83df46d8555d\"\n    content: \"I'll help you transfer 0.02 ETH to 0x25709998B542f1Be27D19Fa0B3A9A67302bc1b94 on Sepolia. Processing the transaction now.\"\n    in_reply_to_message_id: \"18489676-ba76-4673-9a39-9f17fe686bc3\"\n    source_type: \"agent_response\"\n    raw_message: {\n      \"text\": \"I'll help you transfer 0.02 ETH to 0x25709998B542f1Be27D19Fa0B3A9A67302bc1b94 on Sepolia. Processing the transaction now.\",\n      \"thought\": \"Process ETH transfer request on Sepolia network after checking balance\",\n      \"actions\": [\n        \"REPLY\",\n        \"EVM_TRANSFER_TOKENS\"\n      ]\n    }\n    metadata: {\n      \"agent_id\": \"b850bc30-45f8-0041-a00a-83df46d8555d\",\n      \"agentName\": \"Eliza\",\n      \"channelType\": \"DM\",\n      \"isDm\": true\n    }\n\n```\n\nThe transfer is successful, but we only see the initial message of `\"text\": \"I'll help you transfer 0.02 ETH to 0x25709998B542f1Be27D19Fa0B3A9A67302bc1b94 on Sepolia. Processing the transaction now.\",` in the Eliza chat interface.\n\nWe would expect to see a followup message with the success (or failure) text from the callback in the `transfer.ts` function.\n\nWe also triggered an unsuccessful transaction and did not receive a followup error message which the callback suggests we should see.\n\n**To Reproduce**\n\n- Bare Eliza scaffolded as a fresh project with the `plugin-anthropic` and `plugin-evm` added:\n\n```bash\n    \"@elizaos/cli\": \"^1.0.6\",\n    \"@elizaos/core\": \"^1.0.6\",\n    \"@elizaos/plugin-anthropic\": \"^1.0.0\",\n    \"@elizaos/plugin-bootstrap\": \"^1.0.6\",\n    \"@elizaos/plugin-evm\": \"file:../plugin-evm\",\n    \"@elizaos/plugin-knowledge\": \"^1.0.1\",\n    \"@elizaos/plugin-openai\": \"^1.0.3\",\n    \"@elizaos/plugin-sql\": \"^1.0.6\",\n    \"zod\": \"3.24.2\"\n```\n\nand the following Character config:\n\n```typescript\n name: 'Eliza',\n  plugins: [\n    '@elizaos/plugin-sql',\n    ...(process.env.EVM_PRIVATE_KEY ? ['@elizaos/plugin-evm'] : []),\n    ...(process.env.ANTHROPIC_API_KEY ? ['@elizaos/plugin-anthropic'] : []),\n    ...(process.env.OPENAI_API_KEY ? ['@elizaos/plugin-openai'] : []),\n    ...(process.env.OPENAI_API_KEY ? ['@elizaos/plugin-knowledge'] : []),\n    ...(!process.env.OPENAI_API_KEY ? ['@elizaos/plugin-local-ai'] : []),\n    ...(process.env.DISCORD_API_TOKEN ? ['@elizaos/plugin-discord'] : []),\n    ...(process.env.TWITTER_USERNAME ? ['@elizaos/plugin-twitter'] : []),\n    ...(process.env.TELEGRAM_BOT_TOKEN ? ['@elizaos/plugin-telegram'] : []),\n    ...(!process.env.IGNORE_BOOTSTRAP ? ['@elizaos/plugin-bootstrap'] : []),\n  ],\n  settings: {\n    secrets: {},\n    chains: {\n      evm: ['sepolia'],\n    },\n    ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY,\n    ANTHROPIC_SMALL_MODEL: 'claude-3-5-sonnet-latest',\n    ANTHROPIC_LARGE_MODEL: 'claude-3-5-sonnet-latest',\n  },\n\n```\nOur private key and RPC are configured and work as the transfer is successful.\n\n\n**Expected behavior**\n\nBased on the callback in `transfer.ts` we expect to see a followup message indicating the success or failure of the transfer call.\n\n**Screenshots**\n\n![Image](https://github.com/user-attachments/assets/06dae3fa-9b2c-4e49-b660-42f2d9f9837f)\n\nAt this stage, the transfer succeeds but this is the last message we received.\n\nWe would expect that there would be a followup message after this indicating the success or the failure, including (or similar to) the text in the `transfer.ts` callback (in the `plugin-evm` plugin):\n\n`Successfully transferred ${paramOptions.amount} tokens to ${paramOptions.toAddress}\\nTransaction Hash: ${transferResp.hash}`\n\n**Additional context**\n\nWe're under the impression that this is a core callback issue and not with the `plugin-evm` itself as we're seeing similar behavior with a barebones example using the `plugin-mcp`. This is a more direct and more easily reproducible example to file.\n",
+      "createdAt": "2025-06-09T19:45:43Z",
+      "closedAt": "2025-06-19T10:57:22Z",
+      "state": "CLOSED",
+      "commentCount": 8
+    },
+    {
+      "id": "I_kwDOMT5cIs67ev9-",
+      "title": "bedrock",
+      "author": "furkannabisumji",
+      "number": 5117,
+      "repository": "elizaos/eliza",
+      "body": "how I can integrate bedrock as a llm there is no option in the cli",
+      "createdAt": "2025-06-14T04:22:22Z",
+      "closedAt": "2025-06-18T13:18:22Z",
+      "state": "CLOSED",
+      "commentCount": 6
+    },
+    {
+      "id": "I_kwDOMT5cIs67h6Uy",
+      "title": "/api/agents/{agentId}/rooms -> API endpoint not found",
+      "author": "exitsimulation",
+      "number": 5121,
+      "repository": "elizaos/eliza",
+      "body": "**Describe the bug**\n\nI am trying to call the /rooms endpoint on my existing agent and getting a 404:\n\n![Image](https://github.com/user-attachments/assets/57206b48-f124-4937-98ba-5914f9e6ca59)\n\nHere you can see that this particular agent exists:\n\n![Image](https://github.com/user-attachments/assets/53b4ace7-4801-497a-ace1-f8dee3569d6d)\n\nI am on version 1.0.9\n\n**To Reproduce**\n\nCreate agent, try to GET or POST /rooms on the agendId endpoint\n\n**Expected behavior**\n\nI was expecting to retrieve the rooms of the agent\n\n**Screenshots**\n\n(see above)\n\n** Additional Context **\n\nBoth /logs and /memories on this particular agentId are working. Just /rooms returns the 404 \"API endpoint not found\" on both POST and GET\n`http://localhost:3000/api/agents/b8af647b-f617-0ae3-ab07-acb81861d7e2/rooms`",
+      "createdAt": "2025-06-14T14:26:17Z",
+      "closedAt": "2025-06-15T04:54:02Z",
+      "state": "CLOSED",
+      "commentCount": 5
+    },
+    {
+      "id": "I_kwDOMT5cIs66bOWK",
+      "title": "Knowledge management (RAG) not working (implemented) in 1.0.6",
+      "author": "harperaa",
+      "number": 5004,
+      "repository": "elizaos/eliza",
+      "body": "**Describe the bug**\n\nI am trying to get rag working and following docs, but that code is not implemented in 1.0.6.  It appears to be commented as a placeholder in \n \n**To Reproduce**\n\nsettings: {\n    secrets: {},\n    ragKnowledge: true,\n  },\n  knowledge: [\n    {\n      directory: 'knowledge/foobar',\n      shared: true,\n    },\n  ],\n\n**Expected behavior**\n\nI expect that it would parse on startup and it was not doing that, as it used to do.  So, I looked into code and found this... summary from claude....\n\nMissing Implementation Locations\n\n  1. AgentRuntime Initialization Missing Knowledge \n  Processing\n\n  File: /packages/core/src/runtime.ts (lines 494-651)\n  - The AgentRuntime.initialize() method should process\n  character.knowledge but doesn't\n  - No call to any knowledge processing function during\n  agent startup\n\n  2. TODO Comment Confirms Missing Implementation\n\n  File: /packages/core/src/specs/v1/index.ts (line 50)\n  // TODO: Implement the remaining adapters: ... - \n  knowledge / memory\n  This is a developer comment explicitly stating that\n  knowledge processing is not implemented yet.\n\n  3. Bootstrap Plugin Missing KNOWLEDGE Provider\n\n  File: /packages/plugin-bootstrap/src/providers/index.ts\n  - Multiple message examples reference providers: \n  ['KNOWLEDGE'] in character files\n  - But the bootstrap plugin doesn't export any KNOWLEDGE \n  provider\n  - Provider list is incomplete - missing the knowledge\n  provider entirely\n\n  4. RagService Interface Exists But No Implementation\n\n  File: /packages/core/src/runtime.ts (lines 52-61)\n  interface RagServiceDelegator extends Service {\n    getKnowledge(message: Memory, scope?: { roomId?: UUID;\n   worldId?: UUID; entityId?: UUID }):\n  Promise<KnowledgeItem[]>;\n    _internalAddKnowledge(item: KnowledgeItem, options?:\n  any, scope?: any): Promise<void>;\n  }\n  The interface exists but no actual implementation of\n  this service.\n\n  5. Missing Functions\n\n  - processCharacterKnowledge() - Referenced in docs but\n  doesn't exist anywhere\n  - No knowledge file reading/processing logic\n  - No connection between character.knowledge array and\n  embedding system\n\n  Developer Comments Confirming This\n\n  The codebase has explicit TODO comments indicating that\n  knowledge/memory functionality is intentionally \n  unfinished. The character examples even reference\n   a KNOWLEDGE provider that doesn't exist, suggesting\n  this was planned but never implemented.\n\n",
+      "createdAt": "2025-06-08T00:06:14Z",
+      "closedAt": "2025-06-17T18:10:11Z",
+      "state": "CLOSED",
+      "commentCount": 4
+    },
+    {
+      "id": "I_kwDOMT5cIs68oUhp",
+      "title": "Fresh install v 1.0.11  Can't add any character json files via http://localhost:3000/",
+      "author": "Megamindmaster",
+      "number": 5228,
+      "repository": "elizaos/eliza",
+      "body": "Worked fine with v 1.0.9 tried both upgrade and fresh install to 1.0.11 global CLI. Tried everything i could think of. Maybe I'm missing something?\n\nTried a bunch of different character files like Jarvis etc. Kept getting similar errors to this.\n<img width=\"378\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/f1a4cc27-1e4e-4db7-9290-ba022883e591\" />",
+      "createdAt": "2025-06-21T02:44:41Z",
+      "closedAt": "2025-06-21T04:47:08Z",
+      "state": "CLOSED",
+      "commentCount": 3
+    }
+  ],
+  "topPRs": [
+    {
+      "id": "PR_kwDOMT5cIs6bNbeZ",
+      "title": "Eliza (AGI)",
+      "author": "lalalune",
+      "number": 5194,
+      "body": "This PR adds everything needed to enable Eilza, a new generally capable and intelligent agent who can self-improve.\r\n\r\nThis is a mega PR that changes several things necessary to enable much more expansive capability, including action chaining. Bootstrap has been refactored to message handling. Trust, Research, Secrets, Autonomy, Autocoder, Rolodex and Todo are all in development and will be pushed shortly to enable all of this.",
+      "repository": "elizaos/eliza",
+      "createdAt": "2025-06-19T08:07:07Z",
+      "mergedAt": null,
+      "additions": 135487,
+      "deletions": 6548
+    },
+    {
+      "id": "PR_kwDOMT5cIs6aiHxq",
+      "title": "feat: Split server package from CLI (continued shaw's PR)",
+      "author": "wtfsayo",
+      "number": 5122,
+      "body": "## Summary\n- Split server functionality into separate `@elizaos/server` package\n- Maintains full backward compatibility with existing CLI integrations\n- Enables independent usage of server components\n- Updated all CLI imports to use the new server package\n\n## Test plan\n- [x] All existing CLI tests pass\n- [x] Server package builds and exports correctly\n- [x] Backward compatibility maintained\n- [x] Integration tests verify CLI + server work together\n- [x] Type safety preserved across package boundaries\n\nGenerated with [Claude Code](https://claude.ai/code)",
+      "repository": "elizaos/eliza",
+      "createdAt": "2025-06-14T14:36:18Z",
+      "mergedAt": "2025-06-15T19:40:08Z",
+      "additions": 68264,
+      "deletions": 2875
+    },
+    {
+      "id": "PR_kwDOMT5cIs6akiPi",
+      "title": "Add server, add tests",
+      "author": "lalalune",
+      "number": 5125,
+      "body": "This PR adds detailed tests to core, server, project-starter and plugin-starter\r\n\r\nProject-starter and plugin-starter have had frontends added with cypress testing, to make frontend development easier and more clear",
+      "repository": "elizaos/eliza",
+      "createdAt": "2025-06-15T05:58:46Z",
+      "mergedAt": "2025-06-15T07:32:19Z",
+      "additions": 62764,
+      "deletions": 3574
+    },
+    {
+      "id": "PR_kwDOMT5cIs6akL6T",
+      "title": "DRAFT feat: quickswap plugin ",
+      "author": "monilpat",
+      "number": 5123,
+      "body": "<!-- Use this template by filling in information and copying and pasting relevant items out of the HTML comments. -->\r\n\r\n# Relates to\r\n\r\n<!-- LINK TO ISSUE OR TICKET -->\r\n\r\n<!-- This risks section must be filled out before the final review and merge. -->\r\n\r\n# Risks\r\n\r\n<!--\r\nLow, medium, large. List what kind of risks and what could be affected.\r\n-->\r\n\r\n# Background\r\n\r\n## What does this PR do?\r\n\r\n## What kind of change is this?\r\n\r\n<!--\r\nBug fixes (non-breaking change which fixes an issue)\r\nImprovements (misc. changes to existing features)\r\nFeatures (non-breaking change which adds functionality)\r\nUpdates (new versions of included code)\r\n-->\r\n\r\n<!-- This \"Why\" section is most relevant if there are no linked issues explaining why. If there is a related issue, it might make sense to skip this why section. -->\r\n<!--\r\n## Why are we doing this? Any context or related work?\r\n-->\r\n\r\n# Documentation changes needed?\r\n\r\n<!--\r\nMy changes do not require a change to the project documentation.\r\nMy changes require a change to the project documentation.\r\nIf documentation change is needed: I have updated the documentation accordingly.\r\n-->\r\n\r\n<!-- Please show how you tested the PR. This will really help if the PR needs to be retested and probably help the PR get merged quicker. -->\r\n\r\n# Testing\r\n\r\n## Where should a reviewer start?\r\n\r\n## Detailed testing steps\r\n\r\n<!--\r\nNone: Automated tests are acceptable.\r\n-->\r\n\r\n<!--\r\n- As [anon/admin], go to [link]\r\n  - [do action]\r\n  - verify [result]\r\n-->\r\n\r\n<!-- If there is a UI change, please include before and after screenshots or videos. This will speed up PRs being merged. It is extra nice to annotate screenshots with arrows or boxes pointing out the differences. -->\r\n<!--\r\n## Screenshots\r\n### Before\r\n### After\r\n-->\r\n\r\n<!-- If there is anything about the deployment, please make a note. -->\r\n<!--\r\n# Deploy Notes\r\n-->\r\n\r\n<!--  Copy and paste command line output. -->\r\n<!--\r\n## Database changes\r\n-->\r\n\r\n<!--  Please specify deploy instructions if there is something more than the automated steps. -->\r\n<!--\r\n## Deployment instructions\r\n-->\r\n\r\n<!-- If you are on Discord, please join https://discord.gg/ai16z and state your Discord username here for the contributor role and join us in #development-feed -->\r\n<!--\r\n## Discord username\r\n\r\n-->\r\n",
+      "repository": "elizaos/eliza",
+      "createdAt": "2025-06-15T02:29:25Z",
+      "mergedAt": null,
+      "additions": 57824,
+      "deletions": 75
+    },
+    {
+      "id": "PR_kwDOMT5cIs6azVR3",
+      "title": "chore: v1.0.10",
+      "author": "ChristopherTrimboli",
+      "number": 5150,
+      "body": "",
+      "repository": "elizaos/eliza",
+      "createdAt": "2025-06-16T23:22:29Z",
+      "mergedAt": "2025-06-20T03:23:56Z",
+      "additions": 48113,
+      "deletions": 11390
+    }
+  ],
+  "codeChanges": {
+    "additions": 68830,
+    "deletions": 14937,
+    "files": 456,
+    "commitCount": 344
+  },
+  "completedItems": [
+    {
+      "title": "feat: Split server package from CLI (continued shaw's PR)",
+      "prNumber": 5122,
+      "type": "feature",
+      "body": "## Summary\n- Split server functionality into separate `@elizaos/server` package\n- Maintains full backward compatibility with existing CLI integrations\n- Enables independent usage of server components\n- Updated all CLI imports to use the new"
+    },
+    {
+      "title": "Remove link with duplicated id from sidebars",
+      "prNumber": 5119,
+      "type": "other",
+      "body": "This PR fixes the Next navigation button bug in the Core Concepts - Overview section which pointed to the same page instead of Core Concepts - Actions by removing the unnecessary link section."
+    },
+    {
+      "title": "fix: resolve CLI test failures with circular dependency and missing runtime methods",
+      "prNumber": 5135,
+      "type": "bugfix",
+      "body": "## Summary\nFixes critical test failures in CI/CD pipeline that were blocking development workflows.\n\n## Issues Fixed\n- **Circular Dependency**: `parseBooleanFromText is not a function` errors in dummy services tests\n- **Missing Runtime Meth"
+    },
+    {
+      "title": "docs: comprehensive documentation accuracy and consistency updates",
+      "prNumber": 5134,
+      "type": "docs",
+      "body": "## Summary\nComprehensive review and update of ElizaOS documentation to ensure accuracy, consistency, and alignment with current codebase implementation.\n\n## Changes Made\n\n### 🔧 API Router Documentation\n- **Added descriptive comments** to A"
+    },
+    {
+      "title": "Fix Typo in Unfollow Room Action and Variable Name in Plugin-Bootstrap",
+      "prNumber": 5130,
+      "type": "bugfix",
+      "body": "\r\n\r\nDescription:\r\nThis pull request addresses two minor issues in the codebase:\r\n1. Corrects a typo in the unfollowRoomAction response text from \"stahp followin dis room plz\" to \"stahp following dis room plz\" in packages/plugin-bootstrap/sr"
+    },
+    {
+      "title": "fix bootstrap evaluator callbacks",
+      "prNumber": 5129,
+      "type": "bugfix",
+      "body": "Evaluator callbacks seem unhandled.\r\n\r\nThis PR forwards the callback handler to `runtime.evaluate()` in favor of passing an empty closure"
+    },
+    {
+      "title": "fix: agent is thinking...",
+      "prNumber": 5128,
+      "type": "bugfix",
+      "body": "This pull request introduces changes to improve user input handling in a chat application, focusing on better synchronization between the server and client when input is disabled or re-enabled. The most important changes involve emitting co"
+    },
+    {
+      "title": "Fix Typos in Plugin Documentation for Flow and MultiversX",
+      "prNumber": 5127,
+      "type": "bugfix",
+      "body": "\r\n\r\nDescription:  \r\nThis pull request corrects minor typographical errors in the documentation files for the Flow and MultiversX plugins:\r\n\r\n- Fixed the spelling of \"Registration\" in the Flow plugin documentation.\r\n- Corrected the spelling "
+    },
+    {
+      "title": "chore: strict cli, fix types",
+      "prNumber": 5126,
+      "type": "bugfix",
+      "body": "This pull request focuses on improving error handling, updating dependencies, and making minor refactorings across the `packages/cli` codebase. The most significant changes enhance robustness by ensuring error messages are properly handled,"
+    },
+    {
+      "title": "Add server, add tests",
+      "prNumber": 5125,
+      "type": "feature",
+      "body": "This PR adds detailed tests to core, server, project-starter and plugin-starter\r\n\r\nProject-starter and plugin-starter have had frontends added with cypress testing, to make frontend development easier and more clear"
+    },
+    {
+      "title": "fix: filter messages by current chat (channelId) & remove unnecessary…",
+      "prNumber": 5149,
+      "type": "bugfix",
+      "body": "Fixes message filtering to properly scope messages to the current chat/channel by channelId. Removes unnecessary code that was causing messages to appear across different chats.\r\n\r\n**What this fixes:**\r\n- Messages now properly filtered by c"
+    },
+    {
+      "title": "fix: remove evaluators from messageHandler prompt",
+      "prNumber": 5148,
+      "type": "bugfix",
+      "body": "# Relates to\r\nNone, I can open an issue if necessary and update this.\r\n\r\n# Background\r\nThe default `messageHandler` prompt contains an entry for the AI to choose relevant evaluators to be run after handling the processed message. At the mom"
+    },
+    {
+      "title": "fix(autodoc): improve TypeScript parser robustness and exclude client package",
+      "prNumber": 5147,
+      "type": "bugfix",
+      "body": "## Problem\nThe autodoc workflow is experiencing TypeScript parsing errors when processing React/JSX components, causing noise in the documentation generation process. Examples from recent runs:\n\n```\nError parsing TypeScript file: Unexpected"
+    },
+    {
+      "title": "fix(ci): remove frozen-lockfile flag from autodoc workflow bun install",
+      "prNumber": 5146,
+      "type": "bugfix",
+      "body": "## Problem\nThe autodoc workflow is failing during dependency installation with the error:\n```\nerror: lockfile had changes, but lockfile is frozen\nnote: try re-running without --frozen-lockfile and commit the updated lockfile\nError: Process "
+    },
+    {
+      "title": "fix(ci): remove npm cache from autodoc workflow Node.js setup",
+      "prNumber": 5145,
+      "type": "bugfix",
+      "body": "## Problem\nThe autodoc workflow is failing during Node.js setup with the error:\n```\nError: Dependencies lock file is not found in /home/runner/work/eliza/eliza. \nSupported file patterns: package-lock.json,npm-shrinkwrap.json,yarn.lock\n```\n\n"
+    },
+    {
+      "title": "fix(ci): resolve git authentication issues in autodoc workflow",
+      "prNumber": 5144,
+      "type": "bugfix",
+      "body": "## Problem\nThe autodoc workflow is failing at the \"Checkout repository\" step with git authentication errors, as seen in [workflow run #871](https://github.com/elizaOS/eliza/actions/runs/15688882533/job/44198905695).\n\n**Error:**\n```\ncould no"
+    },
+    {
+      "title": "fix(ci): resolve autodoc workflow dependency installation failures",
+      "prNumber": 5143,
+      "type": "bugfix",
+      "body": "## Problem\nThe autodoc workflow was failing during the \"Install root dependencies\" step with exit code 1, as seen in [workflow run #870](https://github.com/elizaOS/eliza/actions/runs/15688678497/job/44198237376).\n\n## Root Causes Identified\n"
+    },
+    {
+      "title": "fix: gui resend",
+      "prNumber": 5141,
+      "type": "bugfix",
+      "body": "Currently, the resend (retry) button only works for older messages — specifically, messages that were sent before restarting the dev server. For newly sent messages, clicking the resend button doesn't do anything.\r\n\r\nThis PR fixes the issue"
+    },
+    {
+      "title": "Move getContentTypeFromMimeType to core utils for reusability",
+      "prNumber": 5138,
+      "type": "other",
+      "body": ""
+    },
+    {
+      "title": "fix: support all media type",
+      "prNumber": 5137,
+      "type": "bugfix",
+      "body": ""
+    },
+    {
+      "title": "feat: Add CLI tests, server tests, plugin-sql tests",
+      "prNumber": 5136,
+      "type": "feature",
+      "body": "This PR adds a ton of coverage\r\n\r\nStill a few small spots that need work, though!"
+    },
+    {
+      "title": "chore: update faq, quickstart, core docs",
+      "prNumber": 5164,
+      "type": "other",
+      "body": "## Summary\n\nUpdates core documentation files including FAQ, quickstart guide, and core documentation to improve clarity and accuracy.\n\n## Changes\n- Updated FAQ documentation with latest information  \n- Refreshed quickstart guide with curren"
+    },
+    {
+      "title": "fix(docs): update ElizaOS documentation link to new official URL",
+      "prNumber": 5162,
+      "type": "bugfix",
+      "body": "Replaced the outdated ElizaOS documentation link (https://elizaos.github.io/docs) with the current official documentation URL (https://eliza.how/docs/intro) in the Eliza partner page. This ensures users are directed to the latest and most a"
+    },
+    {
+      "title": "feat: Add Ollama as AI provider option in create command",
+      "prNumber": 5160,
+      "type": "feature",
+      "body": "## Summary\n\nAdds Ollama as the fourth AI provider option in the `elizaos create` command, alongside existing Local AI, OpenAI, and Anthropic options.\n\n## Changes Made\n\n### Core Implementation\n- **Added Ollama to AI model selection** (`packa"
+    },
+    {
+      "title": "docs: add CLAUDE.md for AI assistant guidance",
+      "prNumber": 5158,
+      "type": "feature",
+      "body": "## Summary\n- Add comprehensive CLAUDE.md file to guide AI assistants working in this repository\n- Documents project architecture, development workflow, and critical rules\n- Covers monorepo structure, component system, and testing requiremen"
+    },
+    {
+      "title": "fix project loading on windows machines",
+      "prNumber": 5156,
+      "type": "bugfix",
+      "body": "<!-- Use this template by filling in information and copying and pasting relevant items out of the HTML comments. -->\r\n\r\n# Relates to\r\n\r\n[bug loading projects on windows](https://github.com/elizaOS/eliza/issues/5155)\r\n\r\n<!-- This risks sect"
+    },
+    {
+      "title": "Minor Text Corrections and Consistency Improvements in Community Docs",
+      "prNumber": 5154,
+      "type": "other",
+      "body": "\r\n\r\nDescription:  \r\nThis pull request updates the community documentation to correct minor typos and improve consistency in phrasing. Changes include fixing the spelling of \"successful\" and standardizing the formatting of \"uploaded\" for cla"
+    },
+    {
+      "title": "refactor: remove OpenTelemetry instrumentation from socket message processing",
+      "prNumber": 5153,
+      "type": "refactor",
+      "body": "## Summary\n- Remove OpenTelemetry import and tracer parameter from processSocketMessage function\n- Simplify socket message processing by removing complex instrumentation logic\n- Clean up code formatting and indentation inconsistencies\n- Mai"
+    },
+    {
+      "title": "fix: prevent infinite recursion in JSON sanitizer by detecting circular re…",
+      "prNumber": 5152,
+      "type": "bugfix",
+      "body": "This PR fixes the issue shown in the following screenshot:\r\n\r\n<img width=\"863\" alt=\"Screenshot 2025-06-17 at 1 07 49 PM\" src=\"https://github.com/user-attachments/assets/eee5a561-11d1-408c-b7c1-fbd75706e0a2\" />\r\n\r\nWe were encountering the er"
+    },
+    {
+      "title": "fix: gui stuck issue",
+      "prNumber": 5151,
+      "type": "bugfix",
+      "body": "Currently, if an agent chooses to ignore the user (either by selecting the IGNORE action or sending an empty text response), the chat UI gets stuck displaying \"agent is thinking\". This blocks the user from sending any further messages unles"
+    },
+    {
+      "title": "chore: v1.0.10",
+      "prNumber": 5150,
+      "type": "other",
+      "body": ""
+    },
+    {
+      "title": "chore: Documentation Refinement and Consolidation",
+      "prNumber": 5182,
+      "type": "docs",
+      "body": "## Overview\r\nThis PR implements a comprehensive documentation overhaul focused on clarity, accuracy, and user experience.\r\n\r\n## Key Changes\r\n\r\n### 1. Documentation Structure\r\n- Consolidated redundant pages\r\n- Moved `automated-docs.md` to `s"
+    },
+    {
+      "title": "feat: gui chat title",
+      "prNumber": 5179,
+      "type": "feature",
+      "body": ""
+    },
+    {
+      "title": "feat: (cli) consolidate stop command into agent stop --all",
+      "prNumber": 5175,
+      "type": "feature",
+      "body": "## Problem\r\n\r\nThe ElizaOS CLI had two separate ways to stop agents:\r\n\r\n- `elizaos stop` - standalone command to stop all agents\r\n- `elizaos agent stop --name <name>` - stop individual agents\r\n\r\nThis created inconsistent UX where users had t"
+    },
+    {
+      "title": "fix: global env load",
+      "prNumber": 5174,
+      "type": "bugfix",
+      "body": "## What does this PR do?\n\nFixes global environment variable loading issue.\n\n## What kind of change is this?\n\nBug fixes (non-breaking change which fixes an issue)\n\n## Documentation changes needed?\n\nMy changes do not require a change to the p"
+    },
+    {
+      "title": "fix: (cli) resolve plugin template dependencies and publish command issues",
+      "prNumber": 5173,
+      "type": "bugfix",
+      "body": "# Fix Plugin Template Dependencies and Publish Command Issues\r\n\r\n## Problem\r\n\r\nUsers were encountering build failures when creating and publishing ElizaOS plugins using `elizaos create --type plugin` and `elizaos publish`. The errors manife"
+    },
+    {
+      "title": "feat: cascade delete agent",
+      "prNumber": 5171,
+      "type": "feature",
+      "body": "# Relates to\n\n<!-- LINK TO ISSUE OR TICKET -->\nDatabase relationship management and agent cleanup functionality\n\n# Risks\n\n**Medium** - Changes database deletion behavior which could affect data integrity and related records\n\n# Background\n\n#"
+    },
+    {
+      "title": "refactor(into-5167): consolidate character loading logic and eliminate duplication (Phase 1)",
+      "prNumber": 5169,
+      "type": "refactor",
+      "body": "$(cat <<'EOF'\n## Summary\n\nThis PR implements **Phase 1** of the project loading refactor outlined in issue #5168. The primary focus is eliminating the massive code duplication between CLI and server character loading logic by consolidating "
+    },
+    {
+      "title": "feat(after-5169): implement Zod-based character validation with safe JSON parsing",
+      "prNumber": 5167,
+      "type": "feature",
+      "body": "## Summary\n\nThis PR implements comprehensive Zod-based character validation with safe JSON parsing to address the issues outlined in #5166.\n\n## Changes Made\n\n### 🔧 Core Schema Implementation\n- **New File**: `packages/core/src/schemas/chara"
+    },
+    {
+      "title": "fix: tweak media content",
+      "prNumber": 5165,
+      "type": "bugfix",
+      "body": "Fix media content color contrast, text truncation, and padding adjustments"
+    },
+    {
+      "title": "fix: add server tests back fully fixed",
+      "prNumber": 5231,
+      "type": "feature",
+      "body": "This pull request introduces several changes to the testing infrastructure and codebase for the `@elizaos/server` package. The modifications include updates to the test runner, enhancements to mocking strategies, and adjustments to test set"
+    },
+    {
+      "title": "fix: plugin sql unit tests",
+      "prNumber": 5229,
+      "type": "bugfix",
+      "body": "This pull request focuses on improving test reliability, simplifying test setups, and enhancing code clarity across multiple files in the `plugin-sql` package. Key changes include better handling of temporary directories in tests, refactori"
+    },
+    {
+      "title": "fix: bootstrap tests, cleanup code",
+      "prNumber": 5227,
+      "type": "bugfix",
+      "body": ""
+    },
+    {
+      "title": "chore: remove CLI tests from integration tests",
+      "prNumber": 5226,
+      "type": "tests",
+      "body": "CLI tests were running duplicate in both integration and cli workflows, not needed."
+    },
+    {
+      "title": "fix: remove all CI caching",
+      "prNumber": 5225,
+      "type": "bugfix",
+      "body": ""
+    },
+    {
+      "title": "chore: clean core",
+      "prNumber": 5224,
+      "type": "refactor",
+      "body": ""
+    },
+    {
+      "title": "fix: env settings saving",
+      "prNumber": 5223,
+      "type": "bugfix",
+      "body": "Previously, changes to environment settings could not be saved.\r\n\r\nThis PR adds the save handler to persist environment variable updates."
+    },
+    {
+      "title": "chore: cleanup plugin-sql",
+      "prNumber": 5222,
+      "type": "refactor",
+      "body": ""
+    },
+    {
+      "title": "fix: incorrecly scoped plugin name",
+      "prNumber": 5220,
+      "type": "bugfix",
+      "body": "This pull request refines the `normalizePluginName` function in `packages/cli/src/utils/registry/index.ts` by removing duplicate and incorrect namespace formats from the list of generated plugin name variations.\r\n\r\nKey change:\r\n\r\n* [`normal"
+    },
+    {
+      "title": "fix: create option test",
+      "prNumber": 5219,
+      "type": "bugfix",
+      "body": "This pull request updates the test suite for `ElizaOS Create Commands` to reflect changes in the available AI models. Specifically, it adjusts the expected number of models and removes assertions related to the `ollama` model's title and de"
+    },
+    {
+      "title": "feat: add Google Generative AI support and refactor CLI prompts",
+      "prNumber": 5217,
+      "type": "feature",
+      "body": "## Summary\n- Added Google Generative AI (Gemini) support to the ElizaOS CLI\n- Simplified AI model and database selection descriptions for better clarity\n- Created a generic provider configuration prompt function to reduce code duplication\n-"
+    },
+    {
+      "title": "feat: lazy load test dependencies and Discord plugin in starter templates",
+      "prNumber": 5215,
+      "type": "feature",
+      "body": "## Summary\n- Removes Cypress test dependencies and Discord plugin from default installation in starter templates\n- Adds on-demand installation when test commands are run\n- Reduces initial project size and speeds up `elizaos create` command\n"
+    },
+    {
+      "title": "refactor: improve CLI config template formatting and organization",
+      "prNumber": 5214,
+      "type": "refactor",
+      "body": "## Summary\n- Simplified and reorganized .env template for better clarity\n- Removed redundant configuration sections\n- Improved comment formatting with consistent separators\n- Focused on essential configuration options\n- Removed multi-agent "
+    },
+    {
+      "title": "feat: open documentation links in new tab",
+      "prNumber": 5213,
+      "type": "feature",
+      "body": "- Update FooterLink component to detect external URLs\r\n- Add target='_blank' and rel='noopener noreferrer' for external links\r\n- Documentation link now opens in new tab for better UX\r\n\r\n<!-- Use this template by filling in information and c"
+    },
+    {
+      "title": "fix: agent card responsive issue",
+      "prNumber": 5212,
+      "type": "bugfix",
+      "body": "Right now, the AgentCard is not fully responsive — if the agent name is too long, it causes the other elements (like settings and stop icons) to get squeezed or overflow outside the card.\r\n\r\nThis update allow the name to shorten gracefully "
+    },
+    {
+      "title": "fix: add bootstrap plugin to agent templates",
+      "prNumber": 5211,
+      "type": "feature",
+      "body": "## Summary\n- Added `@elizaos/plugin-bootstrap` to all agent templates in the client configuration\n- Ensures core functionality is available across all platform-specific templates (Discord, Telegram, Slack, Twitter, GitHub, Instagram)\n\n## Ch"
+    },
+    {
+      "title": "fix(secret-panel): allow editing and adding new secrets",
+      "prNumber": 5210,
+      "type": "bugfix",
+      "body": "related: https://linear.app/eliza-labs/issue/ELIZA-452/unable-to-edit-agent-environment-variables-in-v109\r\n\r\nPreviously, adding or editing a secret would redirect to the main homepage without saving because it triggered the parent \"Save Age"
+    },
+    {
+      "title": "fix: secrets undefined issue",
+      "prNumber": 5209,
+      "type": "bugfix",
+      "body": "Fixes an issue where secrets was undefined. This may be due to a oversight in [PR #5202](https://github.com/elizaOS/eliza/pull/5202)"
+    },
+    {
+      "title": "chore: lint files",
+      "prNumber": 5208,
+      "type": "other",
+      "body": ""
+    },
+    {
+      "title": "chore: release 1.0.11",
+      "prNumber": 5207,
+      "type": "other",
+      "body": ""
+    },
+    {
+      "title": "fix: add __dirname for ES modules in copy-template utility",
+      "prNumber": 5206,
+      "type": "feature",
+      "body": "This PR fixes an issue where the `elizaos create` command was not properly copying templates due to missing `__dirname` in ES module context.\n\n## Changes\n- Added `fileURLToPath` import from `node:url`\n- Defined `__filename` and `__dirname` "
+    },
+    {
+      "title": "chore: cleanup server code",
+      "prNumber": 5204,
+      "type": "refactor",
+      "body": "This pull request introduces multiple changes across the codebase, focusing on runtime enhancements, testing improvements, and dependency updates. The most significant changes include adding new methods to manage agent memories, switching f"
+    },
+    {
+      "title": "feat: add agent settings",
+      "prNumber": 5202,
+      "type": "feature",
+      "body": "# Relates to\n\nAgent configuration and user experience improvements for ElizaOS platform\n\n# Risks\n\n**Medium Risk**\n- UI changes may affect existing workflows\n- Potential integration issues with current configuration system\n- Database schema "
+    },
+    {
+      "title": "fix: dont skip (single) installation test",
+      "prNumber": 5201,
+      "type": "bugfix",
+      "body": ""
+    },
+    {
+      "title": "fix: Add direct source path resolution for CLI templates in test environment",
+      "prNumber": 5200,
+      "type": "feature",
+      "body": "## Summary\n- Fixes CLI test failures in CI environment by improving template path resolution\n- Adds direct source directory path as the first option in template resolution logic\n- Resolves ENOENT errors for project-starter and plugin-starte"
+    },
+    {
+      "title": "fix: cli test + bun-test migration",
+      "prNumber": 5199,
+      "type": "bugfix",
+      "body": ""
+    },
+    {
+      "title": "fix: scroll behavior on env panel",
+      "prNumber": 5193,
+      "type": "bugfix",
+      "body": "Currently, when importing a long list of environment variables into the secret panel, the user has to scroll all the way down to access the \"Save\" button.\r\nThis PR sets a maximum height and enables vertical scrolling to improve.\r\n\r\n\r\nbefore"
+    },
+    {
+      "title": "fix: scroll behavior on agent settings",
+      "prNumber": 5192,
+      "type": "bugfix",
+      "body": ""
+    },
+    {
+      "title": "fix: ids should be uuid not text",
+      "prNumber": 5189,
+      "type": "bugfix",
+      "body": "## What does this PR do?\n\nFixes database schema by changing ID columns from `text` type to proper `uuid` type for better type safety and consistency.\n\n## What kind of change is this?\n\nBug fixes (non-breaking change which fixes an issue)\n\n##"
+    },
+    {
+      "title": "chore: core bun tests",
+      "prNumber": 5188,
+      "type": "tests",
+      "body": "100% tests pass"
+    },
+    {
+      "title": "feat: add option to clear memories",
+      "prNumber": 5187,
+      "type": "feature",
+      "body": "# Relates to\n\nMemory management and cleanup functionality for ElizaOS agents\n\n# Risks\n\n**Low risk** - This is an additive feature that provides memory management capabilities without affecting existing functionality.\n\nPotential risks:\n- Acc"
+    }
+  ],
+  "topContributors": [
+    {
+      "username": "wtfsayo",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/82053242?u=98209a1f10456f42d4d2fa71db4d5bf4a672cbc3&v=4",
+      "totalScore": 1119.0757096199982,
+      "prScore": 1076.9217096199982,
+      "issueScore": 22,
+      "reviewScore": 18.5,
+      "commentScore": 1.654,
+      "summary": "wtfsayo: Made significant documentation improvements with three open PRs (#5131, #5133, #5134) focused on accuracy, consistency, and descriptive comments, while also fixing CLI test failures through PR #5135 (+16/-2 lines). Contributed substantial code changes across 384 files (+69402/-3388 lines) in 30 commits, with primary focus on bugfixes (40%) and feature work (30%). Opened issue #5124 for Eliza Postman JSON updates and participated in discussions with 4 issue comments and 2 PR comments, while also providing 1 approval review."
+    },
+    {
+      "username": "ChristopherTrimboli",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/27584221?u=0d816ce1dcdea8f925aba18bb710153d4a87a719&v=4",
+      "totalScore": 684.7470665769827,
+      "prScore": 572.7690665769827,
+      "issueScore": 0,
+      "reviewScore": 111,
+      "commentScore": 0.978,
+      "summary": "ChristopherTrimboli: Merged two PRs this week, including a bug fix for agent thinking status (#5128, +16/-1 lines) and a significant type improvement PR (#5126, +1432/-1000 lines) that enforced strict CLI typing. Contributed a total of +1448/-1001 lines across 77 files while also approving 2 code reviews."
+    },
+    {
+      "username": "tcm390",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/60634884?u=c6c41679b8322eaa0c81f72e0b4ed95e80f0ac16&v=4",
+      "totalScore": 321.7702245831614,
+      "prScore": 316.57022458316135,
+      "issueScore": 0,
+      "reviewScore": 5,
+      "commentScore": 0.2,
+      "summary": null
+    },
+    {
+      "username": "0xbbjoker",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/54844437?u=90fe1762420de6ad493a1c1582f1f70c0d87d8e2&v=4",
+      "totalScore": 310.638239757352,
+      "prScore": 274.32023975735194,
+      "issueScore": 0,
+      "reviewScore": 35,
+      "commentScore": 1.3179999999999998,
+      "summary": null
+    },
+    {
+      "username": "lalalune",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/18633264?u=e2e906c3712c2506ebfa98df01c2cfdc50050b30&v=4",
+      "totalScore": 168.68909558630438,
+      "prScore": 168.68909558630438,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": "lalalune: Made a substantial code contribution by merging PR #5125 \"Add server, add tests\" which modified 224 files with +63,093/-3,694 lines of code. This significant feature work was completed in a single day, representing a major addition to the codebase with primarily new code being added rather than modifications to existing code."
+    },
+    {
+      "username": "yungalgo",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/113615973?u=92e0f29f7e2fbb8ce46ed13c51f692ca803de02d&v=4",
+      "totalScore": 130.93696444260246,
+      "prScore": 130.59696444260246,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0.33999999999999997,
+      "summary": null
+    },
+    {
+      "username": "monilpat",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/15067321?v=4",
+      "totalScore": 79.7279889493082,
+      "prScore": 74.7279889493082,
+      "issueScore": 0,
+      "reviewScore": 5,
+      "commentScore": 0,
+      "summary": "monilpat: Currently working on the Quickswap plugin with two open PRs: a draft implementation (#5123) and a PR to fix compiler errors in the plugin tests (#5132). No merged contributions or other activity this period."
+    },
+    {
+      "username": "standujar",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/16385918?u=718bdcd1585be8447bdfffb8c11ce249baa7532d&v=4",
+      "totalScore": 44.181773896576104,
+      "prScore": 43.5437738965761,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0.6379999999999999,
+      "summary": null
+    },
+    {
+      "username": "Dexploarer",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/211557447?u=21a243d61cc1f87574328ae07fc64d7d7577b53d&v=4",
+      "totalScore": 43.5437738965761,
+      "prScore": 43.5437738965761,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "github-advanced-security",
+      "avatarUrl": "https://avatars.githubusercontent.com/in/57789?v=4",
+      "totalScore": 40.5,
+      "prScore": 0,
+      "issueScore": 0,
+      "reviewScore": 40.5,
+      "commentScore": 0,
+      "summary": "github-advanced-security: Provided 2 review comments this week with no other activity. Their contribution was minimal during this period with no code changes, PRs, or issue activity."
+    },
+    {
+      "username": "cursor-com",
+      "avatarUrl": "https://avatars.githubusercontent.com/in/1210556?v=4",
+      "totalScore": 39.6007738965761,
+      "prScore": 39.6007738965761,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "snobbee",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/125891987?u=ba9ca14b922f8fb73f38ba0981d157247af3dd03&v=4",
+      "totalScore": 38.44741238641758,
+      "prScore": 38.44741238641758,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "madjin",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/32600939?u=cdcf89f44c7a50906c7a80d889efa85023af2049&v=4",
+      "totalScore": 37.5217738965761,
+      "prScore": 37.5217738965761,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "crypto-cooker",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/16945788?u=819d567b766cb43113f89fb60ba0fac4c5137cf5&v=4",
+      "totalScore": 34.2457738965761,
+      "prScore": 34.2457738965761,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "0xCardiE",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/8969767?u=8b05509ceb96fd63a6246dfbf0860fd1df586e59&v=4",
+      "totalScore": 29.757096821125174,
+      "prScore": 29.557096821125178,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0.2,
+      "summary": null
+    },
+    {
+      "username": "piffie",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/1213363?u=30bd860e9983a61af957d4a296c05abf098a7418&v=4",
+      "totalScore": 25.924955074527656,
+      "prScore": 23.924955074527656,
+      "issueScore": 2,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "maximevtush",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/154841002?u=0ea972744f29fe4504db6fbc4151b9226ba19157&v=4",
+      "totalScore": 23.25691014905531,
+      "prScore": 23.25691014905531,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": "maximevtush: Fixed a typo in the Unfollow Room Action and a variable name in a plugin-related file through PR #5130 (+3/-3 lines). This was their only contribution during the week, with activity on just one day."
+    },
+    {
+      "username": "zeevick10",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/140458077?u=234a5b1512060121b98420da18d7a6cdd9d0255c&v=4",
+      "totalScore": 22.506437912434098,
+      "prScore": 22.506437912434098,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": "zeevick10: Made a small documentation improvement by fixing typos in the Plugin Documentation for Flow and MultiversX through PR #5127 (+2/-2 lines). This was their only contribution during the period, focusing entirely on documentation maintenance."
+    },
+    {
+      "username": "michavie",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/39144548?u=3496eb82a60d2a8e88bf5e22c3ffe5eb2b37d816&v=4",
+      "totalScore": 21.609947636399188,
+      "prScore": 21.609947636399188,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": "michavie: Fixed a bug in bootstrap evaluator callbacks with PR #5129, removing 9 lines and adding 1 line of code."
+    },
+    {
+      "username": "odilitime",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/16395496?u=c9bac48e632aae594a0d85aaf9e9c9c69b674d8b&v=4",
+      "totalScore": 13.7,
+      "prScore": 0,
+      "issueScore": 0,
+      "reviewScore": 13.5,
+      "commentScore": 0.2,
+      "summary": null
+    },
+    {
+      "username": "alexjalonso7777",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/179897636?v=4",
+      "totalScore": 9.5,
+      "prScore": 0,
+      "issueScore": 0,
+      "reviewScore": 9.5,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "soyrubio",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/70545288?u=cbbec71fcd4cd8c34a38a6689a072bbba98b27de&v=4",
+      "totalScore": 7.790573590279973,
+      "prScore": 7.790573590279973,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "sicco-moonbeam",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/92480254?u=d0a396ee2f37b5bb3944aa58a7e75ee3a7e4cda3&v=4",
+      "totalScore": 6,
+      "prScore": 0,
+      "issueScore": 6,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "leopardracer",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/136604165?u=7ca681dd63a1e9991929157a38f094609d7a42f0&v=4",
+      "totalScore": 5.59971895621705,
+      "prScore": 5.59971895621705,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "GarmashAlex",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/193699300?u=807e67a20bd500dde9e31355d67345c26c585a16&v=4",
+      "totalScore": 5.446306144334055,
+      "prScore": 5.446306144334055,
+      "issueScore": 0,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "Megamindmaster",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/31832268?u=d978dad8011f9cf56047430ba41aff01e4c1be66&v=4",
+      "totalScore": 4.54,
+      "prScore": 0,
+      "issueScore": 4.2,
+      "reviewScore": 0,
+      "commentScore": 0.33999999999999997,
+      "summary": null
+    },
+    {
+      "username": "urosognjenovic",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/104977001?u=29281831ed2cca2ada125b160ef43e9ced38a334&v=4",
+      "totalScore": 4,
+      "prScore": 0,
+      "issueScore": 4,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "yasir23",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/46179498?u=89dcf261b397bb2930cbedce61e09b8df01998e6&v=4",
+      "totalScore": 2,
+      "prScore": 0,
+      "issueScore": 2,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "paulmerz",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/36473599?v=4",
+      "totalScore": 2,
+      "prScore": 0,
+      "issueScore": 2,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "furkannabisumji",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/103491179?u=8e1680f87bc79e7399bedfbd1b0739e63b662ea8&v=4",
+      "totalScore": 2,
+      "prScore": 0,
+      "issueScore": 2,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    },
+    {
+      "username": "Srenonno",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/91727428?v=4",
+      "totalScore": 2,
+      "prScore": 0,
+      "issueScore": 2,
+      "reviewScore": 0,
+      "commentScore": 0,
+      "summary": null
+    }
+  ],
+  "newPRs": 93,
+  "mergedPRs": 71,
+  "newIssues": 18,
+  "closedIssues": 16,
+  "activeContributors": 36
+}

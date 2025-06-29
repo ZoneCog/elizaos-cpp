@@ -1,0 +1,265 @@
+{
+  "date": "2025-06-18",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "Significant architectural improvements have been made to elizaOS with the release of v1.0.9/v1.0.10, including enhanced server modularity and extensive test coverage, setting the stage for v2 delivery.",
+  "key_points": [
+    {
+      "topic": "Twitter Plugin & API Integration Strategy",
+      "summary": "The Twitter plugin faces considerable challenges with API limitations, suspensions, and functionality issues, requiring a strategic reevaluation of social media integration for auto.fun's agent showcase capabilities.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we address the Twitter plugin limitations to ensure continued agent social media presence for auto.fun?",
+          "context": [
+            "Several users encountered problems with the Twitter/X plugin in ElizaOS",
+            "The `fetchHomeTimeline` function is failing with 403 errors",
+            "Several accounts related to the ecosystem, including ElizaOS and Shaw's X accounts, were reportedly suspended for bypassing official API policies"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Pivot entirely to alternative platforms (Discord, Telegram, Reddit) that offer more favorable API policies.",
+              "implication": "This would diversify our agent presence but potentially lose Twitter's broad crypto audience reach."
+            },
+            "answer_2": {
+              "text": "Invest in developing a compliant Twitter API integration with paid subscription tier support.",
+              "implication": "This ensures continued Twitter presence but increases operational costs and development resources."
+            },
+            "answer_3": {
+              "text": "Create a hybrid approach with limited Twitter functionality plus expanded presence on alternative platforms.",
+              "implication": "This balances reach across platforms while mitigating dependency on Twitter's restrictive API policies."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What core Twitter functionality should we prioritize for the agent showcase on auto.fun?",
+          "context": [
+            "Users discovered that certain Twitter plugin functionality requires a paid Twitter API subscription, causing 403 errors for those using the free tier",
+            "A comparison between Twitter plugins in Eliza v1 and v2 was shared, with v1 having superior implementation including better image analysis and topic integration"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on reading/monitoring capabilities to enable agents to respond to relevant content without posting.",
+              "implication": "This would require less API access but limit agents' ability to actively participate in conversations."
+            },
+            "answer_2": {
+              "text": "Prioritize posting/shitposting capabilities to showcase agent-generated content.",
+              "implication": "This supports our goal of demonstrating 24/7 agent activity but may miss engagement opportunities."
+            },
+            "answer_3": {
+              "text": "Concentrate on real-time interaction capabilities (replies, quote tweets) to demonstrate agent intelligence.",
+              "implication": "This would showcase agent capabilities most effectively but requires the most comprehensive API access."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "Should we integrate external Twitter API proxies or alternative solutions to bypass API limitations?",
+          "context": [
+            "Several accounts related to the ecosystem, including ElizaOS and Shaw's X accounts, were reportedly suspended for bypassing official API policies",
+            "Twitter Plugin Requirements: Users discovered that certain Twitter plugin functionality requires a paid Twitter API subscription, causing 403 errors for those using the free tier"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Yes, use third-party API proxies to maximize functionality while minimizing direct costs.",
+              "implication": "This risks additional account suspensions that could damage the project's reputation and disrupt agent activities."
+            },
+            "answer_2": {
+              "text": "No, strictly adhere to official Twitter API policies even if it limits functionality.",
+              "implication": "This ensures sustainability but might significantly restrict the capabilities of our Twitter-integrated agents."
+            },
+            "answer_3": {
+              "text": "Selectively use alternative approaches only for non-critical showcase features with clear disclosures about compliance.",
+              "implication": "This provides a balance between functionality and risk but introduces complexity in implementation and maintenance."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Knowledge Management and RAG Implementation",
+      "summary": "The current implementation of the Knowledge Management system (RAG) has critical gaps affecting agent capabilities, limiting the autonomous intelligence needed for auto.fun showcase agents.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we prioritize the implementation of knowledge management (RAG) functionality given its current limitations?",
+          "context": [
+            "Knowledge management (RAG) not working (implemented) in 1.0.6",
+            "The codebase has explicit TODO comments indicating that knowledge/memory functionality is intentionally unfinished"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Make it a critical blocker for v2, dedicating significant resources to implement a robust RAG solution immediately.",
+              "implication": "This could delay other v2 features but would significantly enhance agent intelligence and autonomy."
+            },
+            "answer_2": {
+              "text": "Implement a minimal viable RAG solution in the current version while planning a more robust architecture for post-v2.",
+              "implication": "This balances immediate needs with long-term goals but may result in technical debt from temporary solutions."
+            },
+            "answer_3": {
+              "text": "Deprioritize RAG implementation in favor of agent showcase features more directly visible to auto.fun users.",
+              "implication": "This accelerates visible showcase features but limits agent intelligence and contextual awareness."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What approach should we take for integrating knowledge sources across our ecosystem platforms?",
+          "context": [
+            "Addresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information",
+            "The character examples even reference a KNOWLEDGE provider that doesn't exist, suggesting this was planned but never implemented"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Develop specialized ingestor plugins for each platform (Discord, GitHub, Twitter) with standardized knowledge output.",
+              "implication": "This provides comprehensive coverage but increases development complexity and maintenance overhead."
+            },
+            "answer_2": {
+              "text": "Create a centralized knowledge API service that abstracts away source platforms and provides a unified interface.",
+              "implication": "This simplifies agent integration but introduces a potential single point of failure."
+            },
+            "answer_3": {
+              "text": "Implement a federated knowledge system where agents can directly request information from specialized knowledge agents.",
+              "implication": "This creates a more resilient and scalable system but increases complexity in agent-to-agent communication."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we balance client-side vs. server-side knowledge processing for optimal agent performance?",
+          "context": [
+            "No knowledge file reading/processing logic",
+            "No connection between character.knowledge array and embedding system"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize server-side processing to centralize knowledge management and reduce client-side resource requirements.",
+              "implication": "This optimizes for thin clients but may create bottlenecks during high agent activity periods."
+            },
+            "answer_2": {
+              "text": "Implement primarily client-side processing to enable offline functionality and reduce server load.",
+              "implication": "This enhances resilience and scalability but increases client resource requirements and may limit mobile compatibility."
+            },
+            "answer_3": {
+              "text": "Create a hybrid system that dynamically balances processing based on content type, client capabilities, and server load.",
+              "implication": "This optimizes performance across different scenarios but significantly increases implementation complexity."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "V2 Architecture and Release Strategy",
+      "summary": "With significant architectural improvements in recent releases, including server modularity and comprehensive testing, the Council must determine how to effectively transition to and market elizaOS v2.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "What should be our approach to managing the transition from v1 to v2 for existing users and projects?",
+          "context": [
+            "Split server functionality into separate `@elizaos/server` package",
+            "Maintains full backward compatibility with existing CLI integrations",
+            "This PR adds detailed tests to core, server, project-starter and plugin-starter"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Clean break approach with major version bump, clear deprecation notices, and migration guides.",
+              "implication": "This creates a cleaner codebase but risks alienating users who may delay upgrading due to migration effort."
+            },
+            "answer_2": {
+              "text": "Gradual transition with extended dual support period and automatic compatibility layers.",
+              "implication": "This minimizes disruption for users but increases maintenance burden and delays fully leveraging v2 improvements."
+            },
+            "answer_3": {
+              "text": "Feature-based migration with incremental v2 feature adoption possible in v1 projects.",
+              "implication": "This allows users to adopt benefits incrementally but increases complexity in maintaining cross-version compatibility."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How should we prioritize the remaining v2 features to achieve our monthly goal of shipping production-ready elizaOS v2?",
+          "context": [
+            "Project-starter and plugin-starter have had frontends added with cypress testing, to make frontend development easier and more clear",
+            "Community members expressed concerns about the AI16Z token's value and utility",
+            "Multiple inquiries about project updates and a potential \"V2\" announcement"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on core architecture completion and stability before adding showcase features.",
+              "implication": "This ensures a solid foundation but may delay visible features that attract users to auto.fun."
+            },
+            "answer_2": {
+              "text": "Prioritize auto.fun integration features to immediately drive user growth and showcase agent capabilities.",
+              "implication": "This addresses the monthly goal directly but risks building on an incomplete architectural foundation."
+            },
+            "answer_3": {
+              "text": "Balance architectural improvements with high-visibility features, establishing clear milestone releases.",
+              "implication": "This provides steady progress visible to users while still advancing the core architecture systematically."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we address the growing community concerns about project progress and token utility?",
+          "context": [
+            "Community members expressed concerns about the AI16Z token's value and utility",
+            "Questions about whether the token is necessary for the ElizaOS framework",
+            "Some community members expressed continued confidence in the lead developer (\"Shaw\") despite delays",
+            "Others questioned the risk of single-developer dependency"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on technical delivery and let results speak for themselves without directly addressing concerns.",
+              "implication": "This maintains development focus but risks continued uncertainty affecting community sentiment and token value."
+            },
+            "answer_2": {
+              "text": "Release a comprehensive roadmap with clear token utility milestones and regular communication updates.",
+              "implication": "This improves transparency and confidence but creates explicit commitments that must be delivered."
+            },
+            "answer_3": {
+              "text": "Implement immediate token utility features in auto.fun while expanding the core development team.",
+              "implication": "This addresses both token utility and development dependency concerns but may divert resources from v2 completion."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "date": "2025-06-27",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "Shaw is progressing well on elizaOS v2 development alongside architectural improvements transforming plugins from project-scoped to agent-scoped for enhanced flexibility, while the team actively works on the ecosystem agents with visual identities and voice personalities to demonstrate 24/7 agent capabilities.",
+  "key_points": [
+    {
+      "topic": "ElizaOS V2 Development Status",
+      "summary": "Shaw is progressing on ElizaOS V2 with significant architectural advancements, including transitioning from project-scoped to agent-scoped plugin architecture, creating a more flexible system while ensuring optimized performance for auto.fun showcase agents.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we prioritize resources between completing core V2 architecture and developing showcase agents for auto.fun?",
+          "context": [
+            "Shaw is actively working on ElizaOS V2, which appears to be nearing completion",
+            "The team is working on implementing 9:16 output format alongside 16:9 to support multiple platforms like TikTok.",
+            "Development of ecosystem agents with specific visual identities and voice personalities using Elevenlabs is underway."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize V2 architecture completion first, then focus on showcase agents.",
+              "implication": "May delay auto.fun user acquisition but ensures a more stable platform foundation."
+            },
+            "answer_2": {
+              "text": "Allocate resources evenly between V2 architecture and showcase agent development.",
+              "implication": "Balances technical progress with market-facing deliverables but risks spreading resources thin."
+            },
+            "answer_3": {
+              "text": "Accelerate showcase agent development while maintaining baseline V2 progress.",
+              "implication": "Could boost immediate user acquisition but potentially introduces technical debt."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "Which core features of the agent-scoped plugin architecture should we emphasize in our community messaging?",
+          "context": [
+            "Transformed plugin architecture from project-scoped to agent-scoped, allowing different plugins for different characters",
+            "Added plugin specifications to core",
+            "Enhanced plugin installation with environment variable prompting"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Highlight customization capabilities allowing distinct agent personalities through plugin combinations.",
+              "implication": "Appeals to creative developers looking to build character-specific agents."
+            },
+            "answer_2": {
+              "text": "Emphasize technical flexibility and modularity for enterprise and professional developers.",
+              "implication": "Positions elizaOS as a serious development framework beyond hobbyist applications."
+            },
+            "answer_3": {
+              "text": "Focus on simplified agent creation through improved environment configuration and setup process.",
+              "implication": "Attracts new users by emphasizing ease of getting started and reduced friction."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "What visual identity and personality strategy should we pursue for our ecosystem agents?",
+          "context": [
+            "Development of ecosystem agents with specific visual identities and voice personalities using Elevenlabs is underway.",
+            "Work continues on animation setup for 3D agent avatars, adding approximately 100 animations and emotions."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create distinctive, visually striking characters with exaggerated personality traits for maximum engagement.",
+              "implication": "May generate more social shares but risks appearing less professional to enterprise users."
+            },
+            "answer_2": {
+              "text": "Develop balanced personas with both professional capabilities and engaging personalities.",
+              "implication": "Appeals to broader audience but may not stand out as strongly in crowded social feeds."
+            },
+            "answer_3": {
+              "text": "Create domain-specialized agents with visual identities that reflect their expertise areas.",
+              "implication": "Demonstrates platform versatility but requires more development resources for multiple distinct agents."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Launch Strategy",
+      "summary": "Auto.fun is gaining attention as the team works on changing the ticker symbol and finalizing preparations for the no-code agent builder, with the Twitter account suspension presenting challenges to marketing momentum.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "How should we address the Twitter account suspension to minimize impact on auto.fun's launch momentum?",
+          "context": [
+            "The elizaOS Twitter account has been suspended for 14 days, with the team in active dialogue with X to resolve the issue.",
+            "The team is actively working on changing the \"ai16z\" ticker, as confirmed by Borko."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Pivot marketing efforts temporarily to alternative platforms like Discord, Farcaster and Telegram.",
+              "implication": "Maintains communication flow but reaches a smaller audience than Twitter/X."
+            },
+            "answer_2": {
+              "text": "Intensify efforts to resolve the suspension through direct appeals while preparing a new backup account.",
+              "implication": "Could recover the original audience but risks further delays if appeals are unsuccessful."
+            },
+            "answer_3": {
+              "text": "Launch a coordinated community campaign highlighting the suspension as censorship of innovation.",
+              "implication": "May generate sympathy and attention but could escalate tensions with the platform."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "What ticker symbol strategy should we pursue to replace \"ai16z\"?",
+          "context": [
+            "The team is actively working on changing the \"ai16z\" ticker, as confirmed by Borko."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Choose a simple, memorable ticker directly related to our brand (e.g., \"ELIZA\").",
+              "implication": "Strengthens brand recognition but may lack distinctiveness in the crowded token market."
+            },
+            "answer_2": {
+              "text": "Select a ticker that emphasizes utility and function (e.g., \"AGENT\" or \"AIOS\").",
+              "implication": "Communicates product purpose but may be less directly tied to our specific brand."
+            },
+            "answer_3": {
+              "text": "Create a creative, distinctive ticker that stands out (e.g., \"AGNT\" or \"AIFUN\").",
+              "implication": "May generate more interest and memorability but could initially require more explanation."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "How should we structure our showcase strategy for the auto.fun launch?",
+          "context": [
+            "Work continues on animation setup for 3D agent avatars, adding approximately 100 animations and emotions.",
+            "The team is working on implementing 9:16 output format alongside 16:9 to support multiple platforms like TikTok."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on demonstrating trading agents first to appeal to the crypto/investment community.",
+              "implication": "Targets financially motivated early adopters but may appear too niche to broader audiences."
+            },
+            "answer_2": {
+              "text": "Prioritize visually impressive streaming agents across multiple platforms for maximum visibility.",
+              "implication": "Generates wider awareness but may not immediately drive token utility comprehension."
+            },
+            "answer_3": {
+              "text": "Balance trading, streaming, and shitposting capabilities through a coordinated multi-agent narrative.",
+              "implication": "Demonstrates ecosystem breadth but requires more complex coordination and messaging."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Community Support & Developer Experience",
+      "summary": "Technical support and troubleshooting remain critical focus areas with numerous users reporting issues across plugins, Docker deployment, and UI interactions, highlighting the need for improved onboarding and documentation.",
+      "deliberation_items": [
+        {
+          "question_id": "q7",
+          "text": "How should we improve the onboarding experience to reduce common technical support issues?",
+          "context": [
+            "Multiple users reported an issue where agent responses appear in memory but not in the chat UI, causing conversations to stall.",
+            "Docker deployment challenges were discussed, particularly for users trying to build images with specific plugins pre-installed.",
+            "Plugin compatibility across different ElizaOS versions (0.1.9, 0.25.9, 1.0.x) was discussed, with significant differences in configuration approaches between versions."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create guided, interactive tutorials that walk users through common setup scenarios step-by-step.",
+              "implication": "Reduces initial friction but requires significant resource investment to create and maintain."
+            },
+            "answer_2": {
+              "text": "Develop comprehensive troubleshooting guides addressing top 20 common issues with clear solutions.",
+              "implication": "Efficiently addresses known problems but places burden on users to self-diagnose issues."
+            },
+            "answer_3": {
+              "text": "Implement automated diagnostics and setup wizards in the CLI and web interface.",
+              "implication": "Provides best user experience but requires substantial engineering effort to implement properly."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q8",
+          "text": "What approach should we take to improve plugin compatibility across ElizaOS versions?",
+          "context": [
+            "Plugin compatibility across different ElizaOS versions (0.1.9, 0.25.9, 1.0.x) was discussed, with significant differences in configuration approaches between versions.",
+            "Community members suggested creating a migration guide for moving between ElizaOS versions"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create comprehensive version migration guides with specific examples for popular plugins.",
+              "implication": "Provides clear pathways for users to upgrade but places migration burden on them."
+            },
+            "answer_2": {
+              "text": "Develop automated migration tools that handle compatibility issues between major versions.",
+              "implication": "Reduces user friction but may not handle all edge cases and custom implementations."
+            },
+            "answer_3": {
+              "text": "Establish a more rigid versioning policy with longer support periods for major releases.",
+              "implication": "Creates more stability but potentially slows innovation and new feature adoption."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q9",
+          "text": "What community building initiative should we prioritize to strengthen our developer ecosystem?",
+          "context": [
+            "Plans to create an ecosystem directory of top 50 builders were mentioned by Kenk.",
+            "Jin mentioned upcoming updates including an \"anxiety provider\" for Jintern to make responses more natural.",
+            "The \"Clank Tank hackathon edition\" is being completed to launch a coding competition and test a new version of Eliza."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Launch the \"Clank Tank hackathon\" focused on creating agents for auto.fun.",
+              "implication": "Generates specific content aligned with our monthly goal but may attract a narrower developer audience."
+            },
+            "answer_2": {
+              "text": "Establish a formal builder recognition program with the ecosystem directory and incentives.",
+              "implication": "Creates status incentives for contributors but requires ongoing curation and management."
+            },
+            "answer_3": {
+              "text": "Implement a bounty program targeting specific technical challenges and integrations.",
+              "implication": "Efficiently addresses development needs but may primarily attract mercenary rather than community-oriented developers."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

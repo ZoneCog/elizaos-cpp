@@ -1,0 +1,91 @@
+{
+  "CUSTOM_HEADER_LINKS": [
+    {
+      "text": "Leaderboard",
+      "url": "https://elizaos.github.io"
+    },
+    {
+      "text": "ai-news/elizaos/dev/md",
+      "url": "https://hackmd.io/sJlY8NNLR76UaOAojMkqig?view",
+      "source_directory": "ai-news/elizaos/dev/md",
+      "hackmd_note_title": "ElizaOS Dev Server"
+    },
+    {
+      "text": "ai-news/elizaos/discord/md",
+      "url": "https://hackmd.io/Z3qVBdvRQJ-WuaS-n_L_ZQ?view",
+      "source_directory": "ai-news/elizaos/discord/md",
+      "hackmd_note_title": "ai16z Discord"
+    },
+    {
+      "text": "ai-news/elizaos/md",
+      "url": "https://hackmd.io/7qL57ABlR56VEKZfyVWS6Q?view",
+      "source_directory": "ai-news/elizaos/md",
+      "hackmd_note_title": "AI-News ElizaOS"
+    },
+    {
+      "text": "Github - Summaries - Day",
+      "url": "https://hackmd.io/saYmg_CxTKCFqyYiWTun2Q?view",
+      "source_directory": "github/summaries/day/",
+      "hackmd_note_title": "Sync: Github - Summaries - Day"
+    },
+    {
+      "text": "Github - Summaries - Week",
+      "url": "https://hackmd.io/dfDRMJEtQ5WZMIfbv6WXWw?view",
+      "source_directory": "github/summaries/week/",
+      "hackmd_note_title": "Sync: Github - Summaries - Week"
+    },
+    {
+      "text": "Github - Summaries - Month",
+      "url": "https://hackmd.io/tEydInvFSaeCPtuPzsuIfg?view",
+      "source_directory": "github/summaries/month/",
+      "hackmd_note_title": "Sync: Github - Summaries - Month"
+    },
+    {
+      "text": "Daily-silk",
+      "url": "https://hackmd.io/qOsHc4lPQTSPDVy8864o2Q?view",
+      "source_directory": "daily-silk/",
+      "hackmd_note_title": "AI News X (SILK)"
+    },
+    {
+      "text": "Hackmd - Council",
+      "url": "https://hackmd.io/rnSLup4nT_-7nEiKz3dPsQ?view",
+      "source_directory": "hackmd/council",
+      "hackmd_note_title": "Sync: Hackmd - Council"
+    },
+    {
+      "text": "Hackmd - Facts",
+      "url": "https://hackmd.io/07-FXQtGSP676tt-SBSVfQ?view",
+      "source_directory": "hackmd/facts",
+      "hackmd_note_title": "Sync: Hackmd - Facts"
+    }
+  ],
+  "issue-triage": {
+    "id": "ZxAN5nMuS5SPYj0bAVj02w?view",
+    "update_strategy": "overwrite"
+  },
+  "developer-update": {
+    "id": "TkX4dZxERc6t77VuLgcxNQ?view",
+    "update_strategy": "overwrite"
+  },
+  "discord-announcement": {
+    "id": "23Z4ktMDQ8er_S-mGj8aMA?view",
+    "update_strategy": "overwrite"
+  },
+  "user-feedback": {
+    "id": "h5Cm2rSwSta6VKAqujyQ1w?view",
+    "update_strategy": "overwrite"
+  },
+  "weekly-newsletter": {
+    "id": "8h7wwoapTfOkJ_HolPgbBg?view",
+    "update_strategy": "overwrite"
+  },
+  "elizaos-tweets": {
+    "id": "e_uBvBXxSNO4nPhr7SCQPA?view",
+    "update_strategy": "overwrite"
+  },
+  "intel": {
+    "id": "9Lxvc9fSQ7e6f_w1gQfuyA?view",
+    "update_strategy": "overwrite"
+  },
+  "__BOOK_INDEX__": "sH14YJ2iS-eLZKKb2NeZwA"
+}

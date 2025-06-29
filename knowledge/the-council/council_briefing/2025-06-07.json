@@ -1,0 +1,210 @@
+{
+  "date": "2025-06-07",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "ELI5 token has emerged as a potential catalyst for auto.fun revitalization, while elizaOS v2 has been released but awaits official announcement amid continued technical refinements.",
+  "key_points": [
+    {
+      "topic": "ELI5 Token Growth Strategy",
+      "summary": "The ELI5 token has organically transformed from an auto.fun character to an official mascot with significant community enthusiasm, potentially serving as a strategic asset to drive traffic and engagement back to auto.fun.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we strategically position ELI5 within our ecosystem to maximize its potential as a traffic driver for auto.fun?",
+          "context": [
+            "Community members are enthusiastic about ELI5's potential, with some suggesting it could be 'the dogwifhat of eliza' and bring traffic back to auto.fun",
+            "xell0x: 'The upcoming eliza v2 community manager... Started out as a CTO on auto.fun, shaw made the character official... Kinda became the mascot of auto.fun'"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Position ELI5 as the official community manager/explainer for elizaOS v2, creating utility through educational content.",
+              "implication": "This approach ties ELI5 directly to the technical value proposition of elizaOS v2, potentially driving developer adoption but limiting broader appeal."
+            },
+            "answer_2": {
+              "text": "Develop ELI5 as an independent 'memetic' character with cross-platform presence (Twitter, Telegram) that subtly drives users to auto.fun.",
+              "implication": "This strategy maximizes ELI5's viral potential but risks diluting its connection to the core elizaOS ecosystem."
+            },
+            "answer_3": {
+              "text": "Create a dedicated ELI5 token holder community with exclusive benefits on auto.fun, including special agent features and governance rights.",
+              "implication": "This would create strong incentives for ELI5 holders to engage directly with auto.fun but requires significant development resources."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What concrete features or incentives should we prioritize to capitalize on the ELI5 momentum?",
+          "context": [
+            "ryanthelad mentioned creating a dedicated space (TG, X community, or Discord chat) for ELI5 token holders to collaborate",
+            "xell0x, ryanthelad suggested developing an Eliza v2 Twitter agent for ELI5 that can respond to queries and explain concepts"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Develop a fully autonomous ELI5 Twitter agent that can respond to queries and explain crypto/AI concepts to grow a following.",
+              "implication": "This showcases our agent technology while building ELI5's brand, though requires significant AI engineering resources."
+            },
+            "answer_2": {
+              "text": "Create token-gated ELI5 spaces (Discord, Telegram, X) with exclusive content and collaboration opportunities for holders.",
+              "implication": "This builds community cohesion and exclusivity but may limit growth to already-engaged users."
+            },
+            "answer_3": {
+              "text": "Focus on fixing auto.fun's token-gated chat and integrating ELI5 personality traits as customizable features for all auto.fun agents.",
+              "implication": "This approach addresses existing platform issues while creating broader utility for ELI5 within our ecosystem."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "ElizaOS v2 Launch Readiness",
+      "summary": "While elizaOS v2 has been released, it has not been officially announced as the team continues to address issues with the plugin ecosystem and knowledge functionality, indicating a need to balance technical readiness with go-to-market timing.",
+      "deliberation_items": [
+        {
+          "question_id": "q3",
+          "text": "When should we make the official v2 announcement given the current state of technical readiness?",
+          "context": [
+            "ElizaOS v2 is released but awaiting official announcement",
+            "Current work focused on upgrading the plugin ecosystem",
+            "Official v2 announcement expected next week"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Announce immediately to capitalize on current community momentum, while clearly communicating known issues and upcoming fixes.",
+              "implication": "This maximizes visibility but risks negative feedback if users encounter unfixed issues."
+            },
+            "answer_2": {
+              "text": "Delay announcement until all critical plugin issues are resolved and thoroughly tested (approximately 2 weeks).",
+              "implication": "This ensures a higher quality release but loses momentum and potentially delays achieving our monthly goal."
+            },
+            "answer_3": {
+              "text": "Proceed with tiered release: announce 'developer preview' next week and full public release after all critical issues are fixed.",
+              "implication": "This balances momentum with quality by setting appropriate expectations for different user segments."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q4",
+          "text": "What technical issues should be prioritized before the official v2 announcement?",
+          "context": [
+            "Knowledge plugin issues were reported after upgrading to v1.0.5, with the knowledge tab not appearing in UI and agents unable to answer knowledge-based questions",
+            "Jin shared that they're working on automating the daily JedAI council show publication and Discord integration"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on fixing knowledge plugin functionality, as this is core to agent capability and user experience.",
+              "implication": "This addresses a fundamental capability gap but may delay other integration features."
+            },
+            "answer_2": {
+              "text": "Prioritize integration features like JedAI automation and Discord/Eleven Labs connections to showcase agent interoperability.",
+              "implication": "This emphasizes ecosystem connectivity but leaves core knowledge issues unresolved."
+            },
+            "answer_3": {
+              "text": "Concentrate on UI/UX improvements and documentation to ensure new users have a smooth onboarding experience.",
+              "implication": "This improves accessibility for new users but doesn't address the underlying technical limitations."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "How should we balance resources between elizaOS v2 refinement and auto.fun revitalization?",
+          "context": [
+            "The token appears to be gaining traction across multiple communities including 'the arena' and the broader Eliza ecosystem",
+            "Interest expressed in integrating Eliza with Eleven Labs v3 API",
+            "Monthly Goal: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Allocate 70% of resources to elizaOS v2 refinement and 30% to auto.fun integration with ELI5.",
+              "implication": "This ensures core technology stability but slows auto.fun revival efforts."
+            },
+            "answer_2": {
+              "text": "Split resources evenly (50/50) between v2 technical refinement and auto.fun revitalization with ELI5 integration.",
+              "implication": "This balanced approach addresses both goals simultaneously but may not excel at either."
+            },
+            "answer_3": {
+              "text": "Shift 70% of resources to auto.fun/ELI5 integration while maintaining 30% for critical v2 fixes.",
+              "implication": "This capitalizes on ELI5 momentum to drive user growth but risks technical debt in the core platform."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Agent Ecosystem Integration Strategy",
+      "summary": "Significant community interest exists in developing specialized agents across platforms (Twitter, Telegram, voice) with integration potential, suggesting a need to strategize how we connect these disparate use cases into a coherent ecosystem.",
+      "deliberation_items": [
+        {
+          "question_id": "q6",
+          "text": "How should we prioritize integration capabilities to maximize cross-platform agent utility?",
+          "context": [
+            "Interest in integrating Eliza with Eleven Labs v3 API (mentioned by pragmatiko)",
+            "Interest in using ELI5 in Telegram groups with customizable personality traits (mentioned by eduardkoopman)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on voice integration via Eleven Labs v3 to enable more natural agent interactions across platforms.",
+              "implication": "This creates more human-like agents but requires significant technical resources for voice integration."
+            },
+            "answer_2": {
+              "text": "Prioritize cross-platform messaging (Telegram, Discord, Twitter) to maximize agent reach and visibility.",
+              "implication": "This expands our ecosystem's footprint across existing social platforms but may dilute development focus."
+            },
+            "answer_3": {
+              "text": "Develop a unified agent personality framework allowing consistent character traits across all platforms.",
+              "implication": "This creates coherent brand identities for agents but may limit platform-specific optimizations."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q7",
+          "text": "What approach should we take to develop the 'FUN ecosystem' with its various character tokens?",
+          "context": [
+            "Discussion about the relationship between different characters/tokens in the 'FUN eco' system",
+            "Debate about DOT being the face of FUN while ELI5 serves a different role"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Define clear, distinct roles for each character token (DOT as face, ELI5 as explainer, etc.) with minimal overlap.",
+              "implication": "This creates a structured ecosystem but may limit organic community-driven evolution."
+            },
+            "answer_2": {
+              "text": "Allow character tokens to evolve organically based on community interest, providing minimal guidance.",
+              "implication": "This maximizes community ownership but risks fragmentation and dilution of the ecosystem value."
+            },
+            "answer_3": {
+              "text": "Create a metanarrative connecting all character tokens with interrelated storylines and complementary utilities.",
+              "implication": "This builds a cohesive brand universe but requires significant ongoing creative direction."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

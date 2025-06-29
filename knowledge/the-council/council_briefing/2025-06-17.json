@@ -1,0 +1,260 @@
+{
+  "date": "2025-06-17",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "The suspension of ElizaOS's Twitter account with 149K followers represents a critical setback to our auto.fun agent visibility strategy, requiring immediate adaptation of our social media approach.",
+  "key_points": [
+    {
+      "topic": "Twitter Account Suspension Crisis",
+      "summary": "The ElizaOS Twitter account with 149K followers has been suspended due to API policy violations, severely impacting our ability to showcase agent activity and potentially undermining the auto.fun visibility strategy.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "Should we prioritize fighting for Twitter account restoration or accelerate our pivot to alternative platforms?",
+          "context": [
+            "\u8f9e\u5c18\u9e3d\u9e3d: We haven't abandoned the Twitter account. We're treating this as urgent and have contacted X to expedite resolution. Farcaster is only being prepared as a backup option.",
+            "cjft: Update Twitter plugin to work with X's API policies."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Fight aggressively for Twitter restoration as our primary platform given our established 149K follower base.",
+              "implication": "Maintaining presence on the platform with largest crypto audience maximizes visibility but leaves us vulnerable to future suspensions and policy changes."
+            },
+            "answer_2": {
+              "text": "Pursue Twitter restoration while simultaneously accelerating Farcaster development as a backup.",
+              "implication": "This hybrid approach preserves options but divides development resources and may result in mediocre implementations on both platforms."
+            },
+            "answer_3": {
+              "text": "Abandon Twitter and fully pivot to Farcaster and other decentralized platforms aligned with our values.",
+              "implication": "Complete platform shift sacrifices short-term visibility but aligns with our decentralization values and reduces dependency on centralized platforms."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How should we modify our Twitter plugin to ensure compliance with X's API policies while preserving agent functionality?",
+          "context": [
+            "Community members debated whether to fight for restoration or focus on alternative platforms.",
+            "The Twitter plugin has been updated to use the PRO $200/month plan for individual users."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement strict rate limiting and content filtering to ensure API compliance while preserving core functionality.",
+              "implication": "This approach maximizes agent capabilities within API constraints but requires ongoing monitoring and adaptation to policy changes."
+            },
+            "answer_2": {
+              "text": "Redesign the plugin to use minimal API calls primarily for posting, with limited interaction capabilities.",
+              "implication": "A minimal implementation reduces ban risk but significantly limits agent interactivity and engagement potential."
+            },
+            "answer_3": {
+              "text": "Develop a browser-based plugin using puppeteer/playwright that mimics human interaction rather than using the API.",
+              "implication": "This approach bypasses API restrictions but introduces technical complexity and potential reliability issues."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "What alternative platforms should we prioritize for demonstrating 24/7 agent activity?",
+          "context": [
+            "Farcaster is being prepared as a backup platform, not a replacement.",
+            "DorianD: Consider having auto.fun agents post promotional content and distribute tokens."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize Farcaster due to its crypto-native audience and alignment with our decentralization values.",
+              "implication": "This focuses our efforts on a growing but smaller audience that may better understand and value our product."
+            },
+            "answer_2": {
+              "text": "Develop a multi-platform strategy encompassing Farcaster, Lens Protocol, and Discord for maximum reach.",
+              "implication": "This diversified approach reduces platform risk but significantly increases development complexity and maintenance burden."
+            },
+            "answer_3": {
+              "text": "Focus on our own auto.fun platform as the primary showcase for agent activity with minimal external platform dependency.",
+              "implication": "This self-reliant approach provides full control but may limit discovery by new users unfamiliar with our ecosystem."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "elizaOS v2 Architecture & Components",
+      "summary": "The team has made significant architectural improvements including server package separation, enhanced plugin systems, API reorganization, and comprehensive test coverage, setting the foundation for the production-ready elizaOS v2 release.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "What should be our priority for the final stages of shipping production-ready elizaOS v2?",
+          "context": [
+            "wtfsayo: Split server functionality into separate `@elizaos/server` package, maintaining backward compatibility while enabling independent usage of server components.",
+            "lalalune: Added comprehensive tests to core, server, project-starter and plugin-starter packages."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on comprehensive testing and stability improvements before adding any new features.",
+              "implication": "Prioritizing stability ensures a reliable foundation but may delay innovative features that could attract new developers."
+            },
+            "answer_2": {
+              "text": "Prioritize key missing features like RAG knowledge management while maintaining the current stability trajectory.",
+              "implication": "This balanced approach addresses functionality gaps while maintaining progress toward stability but risks scope creep."
+            },
+            "answer_3": {
+              "text": "Accelerate documentation and developer experience improvements to drive adoption upon release.",
+              "implication": "Emphasizing adoption enablers could increase initial uptake but risks releasing with underlying technical issues that might hurt long-term retention."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "How should we address the knowledge management (RAG) functionality gap identified in the current implementation?",
+          "context": [
+            "harperaa: I am trying to get rag working and following docs, but that code is not implemented in 1.0.6. It appears to be commented as a placeholder.",
+            "Found in /packages/core/src/specs/v1/index.ts (line 50): // TODO: Implement the remaining adapters: ... - knowledge / memory"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement a minimal viable RAG system focused on basic document retrieval to meet immediate user needs.",
+              "implication": "This approach delivers functional RAG capabilities quickly but may require significant rework later for advanced features."
+            },
+            "answer_2": {
+              "text": "Develop a comprehensive RAG system with vector storage, embedding management, and fine-grained relevance controls.",
+              "implication": "This approach creates a more powerful solution but could significantly delay the v2 release timeline."
+            },
+            "answer_3": {
+              "text": "Partner with existing RAG solution providers to integrate their capabilities rather than building our own.",
+              "implication": "This leverages external expertise but creates dependencies and potential integration challenges with our architecture."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "How should we approach plugin callback functionality to ensure consistent behavior across all plugins?",
+          "context": [
+            "jonathanprozzi: Callback from plugin action not making it to end user response in chat. In the plugin's `transfer.ts` callback, we see the following... but we only see the initial message in the Eliza chat interface.",
+            "ChristopherTrimboli: Reverts the removal of the callback from actions. That change prevented other actions from accessing the callback."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Standardize on a response-based pattern with clear documentation and migration guides for plugin developers.",
+              "implication": "A consistent standard improves developer experience but requires adapting existing plugins and clear communication of changes."
+            },
+            "answer_2": {
+              "text": "Maintain both callback and response patterns for backward compatibility while encouraging migration to responses.",
+              "implication": "Supporting both approaches preserves compatibility but adds complexity to the codebase and may confuse new developers."
+            },
+            "answer_3": {
+              "text": "Create an abstraction layer that transparently handles both patterns to shield developers from implementation details.",
+              "implication": "An abstraction layer simplifies the developer experience but adds internal complexity and potential performance overhead."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "auto.fun Agent Strategy",
+      "summary": "The community is discussing how to implement and showcase auto.fun agents for 24/7 streaming, trading, and shitposting activities to attract users, but is facing challenges with API integration, platform visibility, and feature priorities.",
+      "deliberation_items": [
+        {
+          "question_id": "q7",
+          "text": "What agent capabilities should we prioritize to showcase on auto.fun?",
+          "context": [
+            "Current Monthly Directive (Goal): Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+            "DorianD: Suggestion that auto.fun agents should post promotional content and distribute tokens."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on trading agents with real-time market analysis and portfolio management capabilities.",
+              "implication": "Trading bots demonstrate practical utility but require technical precision to avoid financial risks and regulatory concerns."
+            },
+            "answer_2": {
+              "text": "Prioritize content creation and social media engagement agents that generate visible activity.",
+              "implication": "Content-focused agents create high visibility but may not demonstrate the financial utility that crypto users prioritize."
+            },
+            "answer_3": {
+              "text": "Develop agents that combine trading signals with content generation and community engagement.",
+              "implication": "Hybrid agents showcase versatility but increase development complexity and the risk of mediocre performance across functions."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q8",
+          "text": "How should we address the declining AI16Z token value concerns expressed by community members?",
+          "context": [
+            "Community members expressed concerns about the AI16Z token's value and utility.",
+            "Questions about whether the token is necessary for the ElizaOS framework."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement clear token utility mechanisms through auto.fun with buybacks, staking rewards, and governance rights.",
+              "implication": "Focusing on tokenomics could restore investor confidence but risks diverting attention from core product development."
+            },
+            "answer_2": {
+              "text": "Prioritize product development and auto.fun adoption growth with minimal focus on token price in the short term.",
+              "implication": "Product-first approach may build long-term value but risks continued short-term token price decline and community frustration."
+            },
+            "answer_3": {
+              "text": "Partner with existing DeFi protocols to create innovative financial products leveraging AI16Z tokens.",
+              "implication": "DeFi integrations could create novel utility but introduce additional complexity and potential regulatory considerations."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q9",
+          "text": "What approach should we take to attract and onboard new users to auto.fun?",
+          "context": [
+            "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+            "DorianD: Suggestion that auto.fun agents should post promotional content and distribute tokens."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create a comprehensive onboarding flow with templates and tutorials to help new users deploy their first agents quickly.",
+              "implication": "Reducing friction through better onboarding could increase conversion but requires significant UX investment."
+            },
+            "answer_2": {
+              "text": "Launch an incentivized agent competition with prizes for most innovative or effective agent deployments.",
+              "implication": "Competitions can drive engagement spikes but may not translate to sustained usage without continued incentives."
+            },
+            "answer_3": {
+              "text": "Partner with crypto influencers and projects to showcase their branded agents on the platform.",
+              "implication": "Strategic partnerships could bring established audiences but may dilute our brand positioning and create dependency on external entities."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

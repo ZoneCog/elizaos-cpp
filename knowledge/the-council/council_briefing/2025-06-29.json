@@ -1,0 +1,259 @@
+{
+  "date": "2025-06-29",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "Spartan Agent external testing begins today, marking a critical milestone toward the flagship trading agent's public release while architectural shifts in elizaOS v2 development reflect major progress toward production readiness.",
+  "key_points": [
+    {
+      "topic": "Spartan Trading Agent Readiness",
+      "summary": "The DegenSpartanAI flagship trading agent is entering external testing phase with potential holder testing next week, representing a critical advancement toward our monthly goal of showcasing 24/7 agent activity.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "What should be our priority focus during the initial external testing phase of Spartan?",
+          "context": [
+            "Odilitime: We're starting our first round of external testing today, if they find no issues, it will be next week. Though we may delay to fix the found bugs.",
+            "Borko: Spartan is one of our flagship agents. Currently being internally tested. Stay tuned"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on rapid iteration and bug fixes to accelerate moving to holder testing next week.",
+              "implication": "Prioritizing speed could enable faster public release but might compromise quality if complex issues arise during testing."
+            },
+            "answer_2": {
+              "text": "Focus on reliability and trading performance metrics to ensure the agent delivers value.",
+              "implication": "Focusing on performance ensures a better product at release but may extend the timeline for public availability."
+            },
+            "answer_3": {
+              "text": "Focus on integration with auto.fun and ensuring a seamless user experience for new users.",
+              "implication": "Prioritizing integration could strengthen our ecosystem strategy but might divert resources from core functionality improvements."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "How should we approach messaging around Spartan to maximize impact on our ecosystem?",
+          "context": [
+            "Query: Did you abandon $degenai (Spartan)? Does no one care about it anymore?",
+            "Current Monthly Directive (Goal): Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Position Spartan primarily as a trading utility tool that showcases elizaOS capabilities.",
+              "implication": "This messaging emphasizes practical value but may underplay the ecosystem integration aspects."
+            },
+            "answer_2": {
+              "text": "Highlight Spartan as the first of many 24/7 agents that will populate the auto.fun ecosystem.",
+              "implication": "This approach emphasizes our monthly goal but may create expectations for rapid follow-on agent releases."
+            },
+            "answer_3": {
+              "text": "Focus on Spartan's token ($degenai) and its potential for appreciation to attract crypto-focused users.",
+              "implication": "This strategy might attract more immediate attention but could shift focus from technology to speculation."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "What level of transparency should we maintain regarding Spartan's trading strategies and performance?",
+          "context": [
+            "The elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization."
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Full transparency with open-source trading strategies and real-time performance metrics.",
+              "implication": "Aligns with our open-source values but may make it easier for others to copy our approach."
+            },
+            "answer_2": {
+              "text": "Partial transparency with published performance but proprietary trading logic.",
+              "implication": "Balances openness with competitive advantage but may conflict with our core open-source principles."
+            },
+            "answer_3": {
+              "text": "Limited transparency with only high-level success metrics shared publicly.",
+              "implication": "Protects our intellectual property but may reduce trust and undermine our open-source positioning."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "elizaOS v2 Architecture Evolution",
+      "summary": "The development of elizaOS v2 has shifted from project-scoped to agent-scoped plugin architecture and implemented Zod-based character validation, representing significant progress toward the monthly goal of shipping a production-ready v2.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we balance backward compatibility with architectural improvements in elizaOS v2?",
+          "context": [
+            "PR #5270: \"change plugins from project-scoped to agent-scoped architecture\"",
+            "PR #5167: \"implement Zod-based character validation with safe JSON parsing\""
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize backward compatibility and provide migration tooling to ensure no users are left behind.",
+              "implication": "This approach minimizes disruption for existing users but may limit the scope of architectural improvements."
+            },
+            "answer_2": {
+              "text": "Make clean breaks where necessary and focus on documentation for migration paths.",
+              "implication": "This enables more significant architectural improvements but creates migration work for existing users."
+            },
+            "answer_3": {
+              "text": "Maintain dual support for both old and new architectures during an extended transition period.",
+              "implication": "This reduces immediate user impact but increases maintenance burden and could slow down future development."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What should be our focus for the A2A (Agent-to-Agent) network to drive token utility?",
+          "context": [
+            "cjft: It will create token fees and bring income to the Eliza ecosystem through broadcast, bid, receive actions between agents and humans. Similar to ACP but not bound to any framework.",
+            "DorianD: Create standalone tweet explaining A2A network token utility"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Maximize transaction volume by incentivizing frequent agent interactions through minimal fees.",
+              "implication": "This could drive rapid adoption and network growth but might generate less token utility per interaction."
+            },
+            "answer_2": {
+              "text": "Focus on high-value agent interactions with premium fees for specialized services.",
+              "implication": "This creates stronger token utility per transaction but may limit overall ecosystem activity."
+            },
+            "answer_3": {
+              "text": "Balance validation/staking rewards with transaction fees to incentivize both network security and usage.",
+              "implication": "This creates a multi-faceted token utility model but adds complexity to the tokenomics."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we approach the launch timing for elizaOS v2 in relation to our monthly goals?",
+          "context": [
+            "Monthly Goal: Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+            "cjft: Working on V2 announcements"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Accelerate release to meet the monthly goal, even if some planned features are deferred to post-launch updates.",
+              "implication": "This ensures we hit our timeline but may result in a less feature-complete initial release."
+            },
+            "answer_2": {
+              "text": "Maintain focus on quality and completeness, releasing only when all core features are production-ready.",
+              "implication": "This ensures a robust release but may require adjusting timeline expectations in our monthly goals."
+            },
+            "answer_3": {
+              "text": "Split the release into phases, with an initial v2 beta focused on the architectural improvements and later releases for additional features.",
+              "implication": "This provides a balance between timeline and completeness but requires careful communication about what constitutes 'shipping v2'."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Community Trust & Governance",
+      "summary": "Recent conflicts regarding token sales and the current state of the ai16z DAO highlight challenges in establishing transparent governance and maintaining community trust as we work toward a truly autonomous organization.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we address the token sales transparency concerns raised by community members?",
+          "context": [
+            "Conflict emerged between cwm (Soulgraph) and the ai16z team regarding token sales, with claims that the ai16z DAO was selling donated tokens without communication",
+            "jin: Develop better solutions for DAO token management with more transparency"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement on-chain governance proposals for all token sales with mandatory community voting periods.",
+              "implication": "This maximizes transparency and community involvement but could slow down operational decision-making."
+            },
+            "answer_2": {
+              "text": "Create a transparent treasury dashboard with real-time visibility but maintain operational flexibility for the core team.",
+              "implication": "This improves transparency without sacrificing agility but may not fully address governance concerns."
+            },
+            "answer_3": {
+              "text": "Establish a formal token management committee with mixed community and team representation.",
+              "implication": "This creates clear accountability but adds another governance layer that needs to be managed."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What is the most appropriate near-term governance model for the ai16z ecosystem?",
+          "context": [
+            "hildi noting it's not yet a true DAO but more aspirational",
+            "jin: Implement agentic governance for the DAO"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Accelerate transition to a full DAO with decentralized voting and autonomous execution.",
+              "implication": "This aligns with our long-term vision but may introduce governance overhead before the ecosystem is mature."
+            },
+            "answer_2": {
+              "text": "Implement a transitional model with transparent team leadership and increasing community input mechanisms.",
+              "implication": "This acknowledges current reality while setting expectations for gradual decentralization but may disappoint those seeking immediate decentralization."
+            },
+            "answer_3": {
+              "text": "Focus on building agentic governance prototypes while maintaining traditional organization structure for now.",
+              "implication": "This prioritizes technical innovation in governance without disrupting operations but delays actual decentralization."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we balance token value concerns with long-term ecosystem building?",
+          "context": [
+            "Community expressed concerns about AI16Z token's price decline (90%+ drawdown)",
+            "MDMnvest announced creating a separate burn token with 90% of creator fees used for buyback and burn"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Prioritize utility development and user acquisition over short-term token price mechanisms.",
+              "implication": "This focuses on fundamental ecosystem value but may not address immediate token holder concerns."
+            },
+            "answer_2": {
+              "text": "Implement token buyback/burn mechanisms to reduce supply and support price while continuing development.",
+              "implication": "This directly addresses price concerns but could divert resources from ecosystem development."
+            },
+            "answer_3": {
+              "text": "Create new tokenized products (like the burn token) that drive value back to AI16Z through ecosystem mechanisms.",
+              "implication": "This develops the token ecosystem while addressing price action but increases complexity and potentially dilutes focus."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

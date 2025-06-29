@@ -1,0 +1,210 @@
+{
+  "date": "2025-06-21",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "The ElizaOS X account suspension is threatening key promotional channels for Auto.fun while the team makes significant progress on elizaOS v2 technical enhancements.",
+  "key_points": [
+    {
+      "topic": "X Platform Access Crisis",
+      "summary": "The ElizaOS X account has been suspended, requiring $50,000/month to restore, severely limiting our ability to demonstrate 24/7 agent activity for Auto.fun promotion and raising questions about our social media strategy.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we respond to the X platform access crisis in the short term?",
+          "context": [
+            "Odilitime: \"They sent a message to us, we've replied, we're awaiting a reply\"",
+            "Users speculate X is targeting ElizaOS because it could enable users to farm engagement and monetize the platform"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Attempt negotiation with X for a reduced rate while working on alternative platforms.",
+              "implication": "This approach balances immediate needs while developing resilience against platform dependence but requires diplomatic resources."
+            },
+            "answer_2": {
+              "text": "Pivot entirely to alternative platforms like Farcaster and Telegram for agent demonstrations.",
+              "implication": "This would protect against future platform risk but sacrifices the established audience and visibility on X."
+            },
+            "answer_3": {
+              "text": "Pay the requested fee temporarily to maintain presence while accelerating Auto.fun's independent platform development.",
+              "implication": "This maintains continuity at high cost but could be justified if Auto.fun development timelines can be accelerated."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What strategic changes should we make to our social media architecture to prevent similar vulnerabilities in the future?",
+          "context": [
+            "Version 1.0.7 still works with X's free API plan if replies are disabled",
+            "The next tier costs $200/month for X API access",
+            "DorianD: Consider Farcaster integration"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Develop a multi-platform strategy with agents that operate independently on multiple social channels.",
+              "implication": "This creates redundancy and resilience but increases development complexity and maintenance requirements."
+            },
+            "answer_2": {
+              "text": "Focus on building our own autonomous platform within Auto.fun where agents can interact without third-party dependencies.",
+              "implication": "This gives us full control but requires users to migrate to our platform rather than meeting them where they already are."
+            },
+            "answer_3": {
+              "text": "Create a hybrid model with limited API-compliant promotion on mainstream platforms that directs traffic to our owned channels.",
+              "implication": "This balances visibility with autonomy but requires careful management of cross-platform user experience."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How should we communicate this challenge to the community to maintain trust and momentum?",
+          "context": [
+            "Deki: Use ElizaOS website homepage for announcements instead of X",
+            "A new ElizaOS website is in development (Jin)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Frame it as an opportunity to demonstrate our resilience and technical adaptability while accelerating our independent platform.",
+              "implication": "This positive framing could maintain momentum but risks appearing dismissive of real challenges."
+            },
+            "answer_2": {
+              "text": "Provide full transparency about the situation, costs, and our decision process while soliciting community input on alternatives.",
+              "implication": "This builds trust through honesty but could reveal strategic vulnerabilities to competitors."
+            },
+            "answer_3": {
+              "text": "Minimize discussion of the X situation and pivot communication to focus on technical progress and upcoming features.",
+              "implication": "This maintains focus on development progress but could create trust issues if the community notices reduced X presence without explanation."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Auto.fun Engagement Strategy",
+      "summary": "Community members are suggesting improvements to Auto.fun to increase user engagement, including GameFi elements, polling systems for trending coins, and better integration with SpartanAI.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "Which engagement mechanism should we prioritize for Auto.fun to increase active daily users?",
+          "context": [
+            "\u8f9e\u5c18\u9e3d\u9e3d: Implement GameFi-like gameplay mechanism for Auto.fun to attract more users",
+            "Phenowin: Set up polling system for Auto.fun to identify trending coins",
+            "Phenowin: Create representative account for Auto.fun to generate hype"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "GameFi elements that reward interaction with tokens and trading activities.",
+              "implication": "This could create sustained engagement but risks regulatory scrutiny if poorly implemented."
+            },
+            "answer_2": {
+              "text": "Community polling and governance mechanisms that identify trending opportunities.",
+              "implication": "This leverages collective intelligence and creates ownership but may be slower to implement effectively."
+            },
+            "answer_3": {
+              "text": "Automated content generation from agents that creates consistent entertainment value.",
+              "implication": "This maintains the agent-centric vision but requires high-quality content to sustain interest."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "How should we optimize the economic structure of Auto.fun to balance creator incentives and platform sustainability?",
+          "context": [
+            "Phenowin: Consider lower creator incentive fees (2% total, 1% each or 0.5% each)",
+            "Discussions about the economic value proposition of ai16z compared to established cryptocurrencies"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Reduce initial fees to attract creators but implement graduated fee structures based on volume and success.",
+              "implication": "This creates an accessible on-ramp but maintains long-term revenue potential through successful projects."
+            },
+            "answer_2": {
+              "text": "Maintain current fee structure but enhance value-added services that justify the fees to creators.",
+              "implication": "This preserves revenue model but requires developing compelling services that differentiate from competitors."
+            },
+            "answer_3": {
+              "text": "Implement token-based incentives where platform fees are partially redistributed to active participants.",
+              "implication": "This aligns incentives across stakeholders but complicates the economic model and may delay profitability."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "ElizaOS v2 Technical Readiness",
+      "summary": "The team has made significant technical progress on ElizaOS v2, with over 65 active contributors and 224 merged PRs in June, highlighting architectural improvements, modularization, and enhanced plugin management.",
+      "deliberation_items": [
+        {
+          "question_id": "q6",
+          "text": "What should be our technical priority to ensure ElizaOS v2 is production-ready?",
+          "context": [
+            "From 2025-06-01 to 2025-07-01, elizaos/eliza had 274 new PRs (224 merged), 49 new issues, and 65 active contributors",
+            "Major achievements include a comprehensive API domain reorganization, improved plugin management, enhanced character validation, and significant UI/UX improvements across the platform"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on comprehensive testing and user experience optimization to ensure stability and ease of adoption.",
+              "implication": "This prioritizes quality and user satisfaction but may delay feature releases."
+            },
+            "answer_2": {
+              "text": "Prioritize integrations with key platforms to enable immediate agent deployment across multiple channels.",
+              "implication": "This accelerates visibile use cases but may create technical debt if rushed."
+            },
+            "answer_3": {
+              "text": "Complete core infrastructure stabilization first, particularly database management and server reliability.",
+              "implication": "This builds a solid foundation but delays user-facing improvements that could attract adoption."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q7",
+          "text": "How should we balance technical debt reduction versus feature development in our roadmap?",
+          "context": [
+            "Borko confirmed v2 is coming \"soon soon\" with full visibility through commits",
+            "Jonas proposed a breaking API change to allow `sendMessageToTarget()` to return message references instead of void"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement a technical debt sprint before v2 release to address critical architectural concerns.",
+              "implication": "This delays release but provides a more stable foundation for future development."
+            },
+            "answer_2": {
+              "text": "Release v2.0 with current architecture but clearly communicate a v2.5 refactoring milestone with breaking changes.",
+              "implication": "This gets capability to market faster but requires managing a more significant migration later."
+            },
+            "answer_3": {
+              "text": "Adopt a hybrid approach with simultaneous feature development and architectural improvement tracks.",
+              "implication": "This balances progress in both areas but risks coordination challenges and context switching costs."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

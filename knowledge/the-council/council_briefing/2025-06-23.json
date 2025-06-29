@@ -1,0 +1,184 @@
+{
+  "date": "2025-06-23",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "Eliza v2 has been successfully shipped while X/Twitter integration is experiencing disruption, creating both opportunities and challenges for our agent ecosystem activities.",
+  "key_points": [
+    {
+      "topic": "Eliza v2 Launch Status",
+      "summary": "Eliza v2 has been officially released with significant capability improvements including an autocoder for complex agent creation, however, awareness and adoption may be impacted by Twitter/X account suspension issues.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we prioritize communication channels for the Eliza v2 release given the current constraints with X/Twitter?",
+          "context": [
+            "Shaw confirmed V2.0 is done and shipped and we'll announce it when we get the accounts back",
+            "Shaw confirmed their X account was suspended, likely due to concerns about data scraping"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Accelerate Farcaster presence development as our primary alternative.",
+              "implication": "Shifts community building to a more decentralized platform aligned with our values but requires establishing presence on a newer platform with smaller reach."
+            },
+            "answer_2": {
+              "text": "Develop a multi-channel announcement strategy across Discord, GitHub, and partner channels while X issues resolve.",
+              "implication": "Maintains momentum while diversifying communication channels, though fragmentation could dilute the impact of the announcement."
+            },
+            "answer_3": {
+              "text": "Delay major promotion until X accounts are restored to maximize reach and impact.",
+              "implication": "Preserves unified messaging but risks losing momentum and early adopter enthusiasm for v2."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "Which v2 capability improvement should we prioritize showcasing to attract the target developer audience?",
+          "context": [
+            "Shaw highlighted significant improvements in development speed, particularly mentioning an autocoder built to create new plugins that enables complex agent creation"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Emphasis on the autocoder for plugin creation and complex agent development.",
+              "implication": "Appeals to technical developers looking to extend functionality but may be too complex for casual users."
+            },
+            "answer_2": {
+              "text": "Focus on development speed improvements and faster iterative workflows.",
+              "implication": "Attracts productivity-focused developers and hackathon participants who need rapid prototyping capabilities."
+            },
+            "answer_3": {
+              "text": "Showcase the hybrid memory layer combining semantic search with knowledge graph traversal.",
+              "implication": "Targets AI researchers and those building knowledge-intensive applications but implementation is still cost-constrained."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "X/Twitter Integration Challenges",
+      "summary": "The project faces significant challenges with X/Twitter integration due to account suspension and prohibitively expensive API pricing ($50k/month), requiring strategic decisions about social media presence and data access.",
+      "deliberation_items": [
+        {
+          "question_id": "q3",
+          "text": "What approach should we take regarding X/Twitter data access given the current constraints?",
+          "context": [
+            "Discussion about X's new API pricing ($50k/month) making it prohibitively expensive for many AI agent developers",
+            "Community member z1 claimed to have developed a scraper that bypasses the official API but warned about potential detection",
+            "DorianD proposed a system where numerous Eliza Nodes could scrape X and store data in encrypted vaults with vectorization to avoid legal issues"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement the decentralized node network proposal for distributed X data collection and encrypted storage.",
+              "implication": "Creates resilient infrastructure but increases legal and technical complexity while potentially attracting unwanted attention from X."
+            },
+            "answer_2": {
+              "text": "Deprioritize X integration and pivot toward platforms with more developer-friendly APIs.",
+              "implication": "Reduces dependence on hostile platforms but risks missing engagement with crypto and AI communities that remain active on X."
+            },
+            "answer_3": {
+              "text": "Negotiate enterprise API access with X while developing alternative data sources as backup.",
+              "implication": "Ensures compliant access but requires significant budget allocation and may still be subject to arbitrary policy changes."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q4",
+          "text": "How should we address the Twitter plugin functionality issues in our developer ecosystem?",
+          "context": [
+            "Users reporting problems with the Twitter plugin not functioning despite proper API credentials",
+            "It's been taken offline, guessing X asked them to remove it (answered by Odilitime)",
+            "Twitter plugin will be undergoing maintenance, updating docs to reflect that"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Officially deprecate the Twitter plugin with clear migration documentation to alternative social platforms.",
+              "implication": "Provides clarity to developers but abandons a major social platform where many crypto and AI communities engage."
+            },
+            "answer_2": {
+              "text": "Maintain the plugin as \"experimental\" with prominent warnings about reliability issues and API constraints.",
+              "implication": "Preserves optionality for developers while setting appropriate expectations about stability and compliance risks."
+            },
+            "answer_3": {
+              "text": "Redesign the plugin to work with minimal API access and supplement with opt-in community data sharing.",
+              "implication": "Creates a more sustainable approach but requires significant technical redesign and potential privacy considerations."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "AI Agent Design Expansion",
+      "summary": "Community discussions reveal significant interest in expanding AI agent applications beyond crypto trading to include NFT-AI integration, robotics, and WhatsApp messaging, presenting opportunities to broaden elizaOS's impact.",
+      "deliberation_items": [
+        {
+          "question_id": "q5",
+          "text": "Which emerging AI agent application area should we prioritize supporting to align with our auto.fun user growth goals?",
+          "context": [
+            "Several conversations about turning NFT collections into AI agent swarms and using AI-generated art for NFTs",
+            "Exploration of ElizaOS potential for programming and training robots like Unitree G1",
+            "Discussion about AI agents for WhatsApp, with mention of an existing plugin"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "NFT-AI integration to create interactive digital collectibles with agent personalities.",
+              "implication": "Aligns with existing crypto/NFT communities and could drive token transactions but may be seen as chasing a declining trend."
+            },
+            "answer_2": {
+              "text": "WhatsApp and messaging platform integration for greater mainstream accessibility.",
+              "implication": "Expands potential userbase dramatically but puts us in competition with existing chatbot platforms rather than leveraging our unique capabilities."
+            },
+            "answer_3": {
+              "text": "Robotics programming interfaces to bridge digital and physical agent capabilities.",
+              "implication": "Opens entirely new market segments but requires significant technical expertise and may distract from core web3/crypto focus."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "What agent capability development would most enhance our position in the competitive AI framework landscape?",
+          "context": [
+            "LarpsAI discussed a solution combining semantic search in relational databases with knowledge graph traversal, though Shaw noted this is more of a cost issue than a timeline constraint",
+            "AI Music: Development of AI music with dynamic flows was mentioned"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Advance knowledge management capabilities through cost-effective hybrid memory solutions.",
+              "implication": "Enhances agent intelligence and contextual understanding but requires resolving the identified cost constraints."
+            },
+            "answer_2": {
+              "text": "Develop creative content generation specializations (music, art, writing) for agents.",
+              "implication": "Opens new use cases for content creators and entertainment applications but moves away from our core financial/trading focus."
+            },
+            "answer_3": {
+              "text": "Focus on multi-agent collaboration frameworks for coordinated autonomous systems.",
+              "implication": "Advances toward true DAO functionality with agent swarms but increases technical complexity significantly."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "date": "2025-06-25",
+  "meeting_context": "# North Star & Strategic Context\n\nThis file combines the overall project mission (North Star) and summaries of key strategic documents for use in AI prompts, particularly for the AI Agent Council context generation.\n\n---\n\n**North Star:**\nTo build a truly autonomous, sustainable DAO that develops open-source software accelerating the path toward AGI, blending AI researchers, open-source hackers, and crypto degens to create AI agents streaming, shitposting, and trading 24/7 on auto.fun to attract users and bootstrap an autonomous organization.\n\n---\n\n**ElizaOS Mission Summary (`docs/blog/mission.mdx`):**\nThe elizaOS mission is to build an extensible, modular, open-source AI agent framework for Web2/Web3, seeing agents as steps toward AGI. Core values are Autonomy, Modularity, and Decentralization. Key products include the framework itself, DegenSpartanAI (trading agent), Autonomous Investor/Trust Marketplace (social trading intelligence), and the Agent Marketplace/auto.fun (launchpad).\n\n---\n\n**ElizaOS Reintroduction Summary (`docs/blog/reintroduction.mdx`):**\nelizaOS is an open-source \"operating system for AI agents\" aimed at decentralizing AI development away from corporate control. It's built on three pillars: 1) The Eliza Framework (TypeScript toolkit for persistent, interoperable agents), 2) AI-Enhanced Governance (building autonomous DAOs), and 3) Eliza Labs (R&D for future capabilities like v2, Trust Marketplace, auto.fun, DegenSpartanAI, Eliza Studios). The native Solana token coordinates the ecosystem and captures value. The vision is an intelligent internet built on open protocols and collaboration.\n\n---\n\n**Auto.fun Introduction Summary (`docs/blog/autofun-intro.mdx`):**\nAuto.fun is an AI-native, creator-first token launchpad designed for sustainable AI/crypto projects. It aims to balance fair community access with project funding needs through mechanisms like bonding curves and liquidity NFTs. Key features include a no-code agent builder, AI-generated marketing tools, and integration with the elizaOS ecosystem. It serves as a core product driving value back to the native token ($ai16z) through buybacks and liquidity pairing.\n\n---\n\n**Taming Information Summary (`docs/blog/taming_info.mdx`):**\nAddresses the challenge of information scattered across platforms (Discord, GitHub, X). Proposes using AI agents as \"bridges\" to collect, wrangle (summarize/tag), and distribute information in various formats (JSON, MD, RSS, dashboards, 3D shows). Showcases an AI News system and AI Assistants for tech support as examples. Emphasizes treating documentation as a first-class citizen to empower AI assistants and streamline community operations. ",
+  "monthly_goal": "Current focus: Stabilize and attract new users to auto.fun by showcasing 24/7 agent activity (streaming, trading, shitposting), ship production ready elizaOS v2.",
+  "daily_focus": "Community trust is being tested by concerns over treasury management and token sales, requiring transparent communication about financial strategies amidst continued development of v2 and Spartan prototype.",
+  "key_points": [
+    {
+      "topic": "Treasury Management Transparency",
+      "summary": "Significant community distrust has emerged regarding token sales from what appear to be project-related wallets, with concerns about approximately 40 million $degenai tokens transferred and subsequently sold without prior communication.",
+      "deliberation_items": [
+        {
+          "question_id": "q1",
+          "text": "How should we address the community's concerns about DAO treasury token movements and sales?",
+          "context": [
+            "Community members questioned why tokens were being sold from what appeared to be a DAO wallet without communication (\u5154\u5154\u5927\u5bcc, \u8f9e\u5c18\u9e3d\u9e3d)",
+            "\u8f9e\u5c18\u9e3d\u9e3d shared on-chain evidence showing approximately 3 million $degenai tokens being sold in a single day, causing the token to reach a new all-time low"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Implement a robust treasury disclosure policy with regular reporting and community votes before significant token movements.",
+              "implication": "Enhances transparency and community trust but may slow down operational decisions regarding liquidity management."
+            },
+            "answer_2": {
+              "text": "Continue the current approach of post-hoc explanations but improve communication channels and timing.",
+              "implication": "Maintains operational flexibility while incrementally addressing transparency concerns, though may not fully restore damaged trust."
+            },
+            "answer_3": {
+              "text": "Create an independent Treasury Council with both team and community members to oversee all significant token movements.",
+              "implication": "Distributes accountability and adds checks and balances, but introduces additional governance overhead."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q2",
+          "text": "What should our strategy be regarding token replenishment and buybacks to support token price stability?",
+          "context": [
+            "Team members explained tokens were sold to add to liquidity pools and would be replenished through daos.fun AUM (jasyn_bjorn)",
+            "\ud83d\udd25\ud83d\udd25\ud83d\udd25 confirmed replenishment was completed with excess tokens and mentioned ongoing buybacks"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Formalize a scheduled buyback program using a fixed percentage of daos.fun AUM fees.",
+              "implication": "Creates predictability for token holders but could limit flexibility in responding to market conditions."
+            },
+            "answer_2": {
+              "text": "Implement algorithmic buybacks triggered by specific price decline thresholds.",
+              "implication": "Provides automatic price support mechanisms but may incentivize market manipulation around threshold levels."
+            },
+            "answer_3": {
+              "text": "Shift focus from buybacks to ecosystem value creation through accelerated product releases and user acquisition.",
+              "implication": "Addresses root causes of token value rather than symptoms but may not provide immediate price stabilization effects."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q3",
+          "text": "How can we better communicate financial decisions to maintain community confidence while executing necessary operational moves?",
+          "context": [
+            "Multiple users expressed frustration about the absence of official communication regarding these transactions, amplifying trust issues within the community"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create a dedicated Financial Operations channel with regular updates from treasury management team.",
+              "implication": "Centralizes financial communications but adds another channel for community members to monitor."
+            },
+            "answer_2": {
+              "text": "Develop a real-time treasury dashboard with automated notifications for significant movements.",
+              "implication": "Maximizes transparency through technology but may expose sensitive financial operations to competitors."
+            },
+            "answer_3": {
+              "text": "Establish a monthly Treasury Report with clear explanations of past actions and future strategy.",
+              "implication": "Balances transparency with strategic protection while creating a predictable communication cadence."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "ElizaOS v2 Development Strategy",
+      "summary": "ElizaOS v2 is reportedly released but not officially announced, with architectural improvements and plugin system enhancements implemented, yet facing compatibility issues and technical challenges.",
+      "deliberation_items": [
+        {
+          "question_id": "q4",
+          "text": "When and how should we officially announce v2 given its current development state?",
+          "context": [
+            "Dr. Neuro mentioned that V2 is already released but not officially announced yet",
+            "V2 is live but still going through active development (wire)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Immediately announce v2 as available in early access, highlighting its experimental nature while encouraging developer testing.",
+              "implication": "Accelerates community engagement but risks negative feedback if significant issues are encountered."
+            },
+            "answer_2": {
+              "text": "Delay announcement until critical issues are resolved and prepare a comprehensive release with documentation and tutorials.",
+              "implication": "Ensures a more polished user experience but postpones potential momentum and community excitement."
+            },
+            "answer_3": {
+              "text": "Announce a phased v2 rollout with clear timelines for feature stability and performance improvements.",
+              "implication": "Balances transparency about current limitations with exciting future capabilities while setting realistic expectations."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q5",
+          "text": "How should we address the plugin compatibility issues described as \"a mess\" to improve developer experience?",
+          "context": [
+            "Plugin Compatibility Issues: Current plugin system described as \"a mess\" with unclear compatibility between versions (Odilitime)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Create a comprehensive Plugin Compatibility Matrix with version-specific guidance and migration paths.",
+              "implication": "Helps developers navigate current complexity but doesn't solve the underlying architectural issues."
+            },
+            "answer_2": {
+              "text": "Prioritize refactoring the plugin system for backward compatibility before adding new features.",
+              "implication": "Creates a more stable foundation but delays new capabilities that could attract users."
+            },
+            "answer_3": {
+              "text": "Establish a Plugin Standards Committee to define interface specifications and validation tooling.",
+              "implication": "Promotes community ownership of the solution but may introduce governance overhead and competing interests."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q6",
+          "text": "What approach should we take for optimizing resource requirements given current VRAM limitations?",
+          "context": [
+            "Memory Requirements: Running models requires significant VRAM - 16GB is barely sufficient, with gemma3:12b recommended for limited resources (Odilitime)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on optimizing for high-end systems to showcase maximum capability, with clear minimum requirements.",
+              "implication": "Enables impressive demonstrations but limits accessibility to developers with powerful hardware."
+            },
+            "answer_2": {
+              "text": "Develop tiered model configurations that automatically adapt to available system resources.",
+              "implication": "Maximizes accessibility across different hardware profiles but increases development complexity."
+            },
+            "answer_3": {
+              "text": "Partner with cloud providers to offer subsidized compute for elizaOS developers facing hardware constraints.",
+              "implication": "Removes hardware barriers for adoption but creates potential dependency on third-party relationships."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "topic": "Social Media and Marketing Strategy",
+      "summary": "The project faces social media challenges with a suspended X (Twitter) account and questions about how to boost token popularity, while community members are suggesting 24/7 marketing approaches similar to other projects.",
+      "deliberation_items": [
+        {
+          "question_id": "q7",
+          "text": "What priority should we place on recovering our suspended X (Twitter) account versus developing alternative social media channels?",
+          "context": [
+            "The project's X account is currently suspended, but the team is working with X to restore it (Odilitime, Kenk)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Make X account recovery the highest priority, dedicating significant resources to expedite its restoration.",
+              "implication": "Restores established communication channel but maintains dependency on a platform that has demonstrated censorship risk."
+            },
+            "answer_2": {
+              "text": "Diversify social media presence across multiple platforms while continuing restoration efforts.",
+              "implication": "Creates resilience against platform-specific issues but dilutes engagement across multiple channels."
+            },
+            "answer_3": {
+              "text": "Pivot to community-driven social media strategy with incentives for ambassadors to amplify messaging.",
+              "implication": "Decentralizes communication strategy in alignment with project values but risks inconsistent messaging."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q8",
+          "text": "How should we implement 24/7 agent activity for marketing as suggested by community members?",
+          "context": [
+            "Implement 24/7 marketing through private accounts similar to Virtuals (Mentioned by Rick)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Deploy autonomous agents that create content and engage across platforms with minimal human oversight.",
+              "implication": "Demonstrates our technology in action but risks off-brand messaging without careful monitoring."
+            },
+            "answer_2": {
+              "text": "Establish a global team of human operators who leverage agent assistance for continuous engagement.",
+              "implication": "Maintains human quality control while scaling team capacity but increases operational costs."
+            },
+            "answer_3": {
+              "text": "Create a hybrid system where agents generate content options that community members can vote to publish.",
+              "implication": "Engages community in marketing while maintaining quality control but may slow response time to market events."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        },
+        {
+          "question_id": "q9",
+          "text": "What specific metrics should we track to evaluate the effectiveness of our marketing and social media strategy?",
+          "context": [
+            "What's the team's plan to boost ai16z popularity? (CULTVESTING)",
+            "Get X account back, make quality products, open source them, and market heavily (Odilitime)"
+          ],
+          "multiple_choice_answers": {
+            "answer_1": {
+              "text": "Focus on community growth metrics: Discord members, Twitter followers, and daily active users.",
+              "implication": "Measures audience size but may not capture engagement quality or conversion to actual product users."
+            },
+            "answer_2": {
+              "text": "Track development ecosystem metrics: GitHub stars, forks, contributors, and plugin installations.",
+              "implication": "Aligns with open-source strategy but may undervalue broader adoption beyond technical users."
+            },
+            "answer_3": {
+              "text": "Prioritize business impact metrics: token liquidity, trading volume, agent deployments, and API usage.",
+              "implication": "Directly measures economic value creation but may create pressure for short-term token performance over long-term ecosystem building."
+            },
+            "answer_4": {
+              "text": "Other / More discussion needed / None of the above.",
+              "implication": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
