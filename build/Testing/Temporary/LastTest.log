@@ -1,0 +1,306 @@
+Start testing: Jun 29 21:34 UTC
+----------------------------------------------------------
+1/11 Testing: CoreTest.MemoryCreation
+1/11 Test: CoreTest.MemoryCreation
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=CoreTest.MemoryCreation" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"CoreTest.MemoryCreation" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CoreTest.MemoryCreation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CoreTest
+[ RUN      ] CoreTest.MemoryCreation
+[       OK ] CoreTest.MemoryCreation (0 ms)
+[----------] 1 test from CoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CoreTest.MemoryCreation" end time: Jun 29 21:34 UTC
+"CoreTest.MemoryCreation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/11 Testing: CoreTest.StateCreation
+2/11 Test: CoreTest.StateCreation
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=CoreTest.StateCreation" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"CoreTest.StateCreation" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CoreTest.StateCreation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CoreTest
+[ RUN      ] CoreTest.StateCreation
+[       OK ] CoreTest.StateCreation (0 ms)
+[----------] 1 test from CoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CoreTest.StateCreation" end time: Jun 29 21:34 UTC
+"CoreTest.StateCreation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/11 Testing: CoreTest.StateActorManagement
+3/11 Test: CoreTest.StateActorManagement
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=CoreTest.StateActorManagement" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"CoreTest.StateActorManagement" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CoreTest.StateActorManagement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CoreTest
+[ RUN      ] CoreTest.StateActorManagement
+[       OK ] CoreTest.StateActorManagement (0 ms)
+[----------] 1 test from CoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CoreTest.StateActorManagement" end time: Jun 29 21:34 UTC
+"CoreTest.StateActorManagement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/11 Testing: CoreTest.StateGoalManagement
+4/11 Test: CoreTest.StateGoalManagement
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=CoreTest.StateGoalManagement" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"CoreTest.StateGoalManagement" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CoreTest.StateGoalManagement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CoreTest
+[ RUN      ] CoreTest.StateGoalManagement
+[       OK ] CoreTest.StateGoalManagement (0 ms)
+[----------] 1 test from CoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CoreTest.StateGoalManagement" end time: Jun 29 21:34 UTC
+"CoreTest.StateGoalManagement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/11 Testing: CoreTest.StateRecentMessagesManagement
+5/11 Test: CoreTest.StateRecentMessagesManagement
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=CoreTest.StateRecentMessagesManagement" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"CoreTest.StateRecentMessagesManagement" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CoreTest.StateRecentMessagesManagement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CoreTest
+[ RUN      ] CoreTest.StateRecentMessagesManagement
+[       OK ] CoreTest.StateRecentMessagesManagement (0 ms)
+[----------] 1 test from CoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CoreTest.StateRecentMessagesManagement" end time: Jun 29 21:34 UTC
+"CoreTest.StateRecentMessagesManagement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/11 Testing: CoreTest.StateRecentMessagesLimit
+6/11 Test: CoreTest.StateRecentMessagesLimit
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=CoreTest.StateRecentMessagesLimit" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"CoreTest.StateRecentMessagesLimit" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CoreTest.StateRecentMessagesLimit
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CoreTest
+[ RUN      ] CoreTest.StateRecentMessagesLimit
+[       OK ] CoreTest.StateRecentMessagesLimit (0 ms)
+[----------] 1 test from CoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CoreTest.StateRecentMessagesLimit" end time: Jun 29 21:34 UTC
+"CoreTest.StateRecentMessagesLimit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/11 Testing: AgentLoopTest.BasicLoopExecution
+7/11 Test: AgentLoopTest.BasicLoopExecution
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=AgentLoopTest.BasicLoopExecution" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"AgentLoopTest.BasicLoopExecution" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = AgentLoopTest.BasicLoopExecution
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AgentLoopTest
+[ RUN      ] AgentLoopTest.BasicLoopExecution
+[       OK ] AgentLoopTest.BasicLoopExecution (100 ms)
+[----------] 1 test from AgentLoopTest (100 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (100 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"AgentLoopTest.BasicLoopExecution" end time: Jun 29 21:34 UTC
+"AgentLoopTest.BasicLoopExecution" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/11 Testing: AgentLoopTest.PausedStartup
+8/11 Test: AgentLoopTest.PausedStartup
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=AgentLoopTest.PausedStartup" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"AgentLoopTest.PausedStartup" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = AgentLoopTest.PausedStartup
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AgentLoopTest
+[ RUN      ] AgentLoopTest.PausedStartup
+[       OK ] AgentLoopTest.PausedStartup (50 ms)
+[----------] 1 test from AgentLoopTest (50 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (50 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"AgentLoopTest.PausedStartup" end time: Jun 29 21:34 UTC
+"AgentLoopTest.PausedStartup" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/11 Testing: AgentLoopTest.StepByStepExecution
+9/11 Test: AgentLoopTest.StepByStepExecution
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=AgentLoopTest.StepByStepExecution" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"AgentLoopTest.StepByStepExecution" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = AgentLoopTest.StepByStepExecution
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AgentLoopTest
+[ RUN      ] AgentLoopTest.StepByStepExecution
+[       OK ] AgentLoopTest.StepByStepExecution (20 ms)
+[----------] 1 test from AgentLoopTest (20 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (20 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"AgentLoopTest.StepByStepExecution" end time: Jun 29 21:34 UTC
+"AgentLoopTest.StepByStepExecution" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/11 Testing: AgentLoopTest.PauseAndUnpause
+10/11 Test: AgentLoopTest.PauseAndUnpause
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=AgentLoopTest.PauseAndUnpause" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"AgentLoopTest.PauseAndUnpause" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = AgentLoopTest.PauseAndUnpause
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AgentLoopTest
+[ RUN      ] AgentLoopTest.PauseAndUnpause
+/home/runner/work/elizaos-cpp/elizaos-cpp/cpp/tests/src/test_agentloop.cpp:161: Failure
+Expected: (resumedCount) > (pausedCountConfirm), actual: 4 vs 4
+[  FAILED  ] AgentLoopTest.PauseAndUnpause (250 ms)
+[----------] 1 test from AgentLoopTest (250 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (250 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] AgentLoopTest.PauseAndUnpause
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.25 sec
+----------------------------------------------------------
+Test Failed.
+"AgentLoopTest.PauseAndUnpause" end time: Jun 29 21:34 UTC
+"AgentLoopTest.PauseAndUnpause" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/11 Testing: AgentLoopTest.StepInterval
+11/11 Test: AgentLoopTest.StepInterval
+Command: "/home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests/elizaos_tests" "--gtest_filter=AgentLoopTest.StepInterval" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/elizaos-cpp/elizaos-cpp/build/cpp/tests
+"AgentLoopTest.StepInterval" start time: Jun 29 21:34 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/elizaos-cpp/elizaos-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = AgentLoopTest.StepInterval
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AgentLoopTest
+[ RUN      ] AgentLoopTest.StepInterval
+[       OK ] AgentLoopTest.StepInterval (200 ms)
+[----------] 1 test from AgentLoopTest (200 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (200 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Passed.
+"AgentLoopTest.StepInterval" end time: Jun 29 21:34 UTC
+"AgentLoopTest.StepInterval" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 29 21:34 UTC

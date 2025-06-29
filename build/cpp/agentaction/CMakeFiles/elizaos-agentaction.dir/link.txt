@@ -1,0 +1,2 @@
+/usr/bin/ar qc libelizaos-agentaction.a "CMakeFiles/elizaos-agentaction.dir/src/placeholder.cpp.o"
+/usr/bin/ranlib libelizaos-agentaction.a

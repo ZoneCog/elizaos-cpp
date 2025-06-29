@@ -1,0 +1,2 @@
+/usr/bin/ar qc libelizaos-agentagenda.a "CMakeFiles/elizaos-agentagenda.dir/src/placeholder.cpp.o"
+/usr/bin/ranlib libelizaos-agentagenda.a

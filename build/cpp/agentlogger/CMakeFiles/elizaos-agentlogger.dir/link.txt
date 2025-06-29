@@ -1,0 +1,2 @@
+/usr/bin/ar qc libelizaos-agentlogger.a "CMakeFiles/elizaos-agentlogger.dir/src/placeholder.cpp.o"
+/usr/bin/ranlib libelizaos-agentlogger.a

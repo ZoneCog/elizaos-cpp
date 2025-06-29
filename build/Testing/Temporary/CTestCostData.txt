@@ -1,0 +1,13 @@
+CoreTest.MemoryCreation 2 0.000895944
+CoreTest.StateCreation 2 0.000751613
+CoreTest.StateActorManagement 2 0.000773093
+CoreTest.StateGoalManagement 2 0.000746974
+CoreTest.StateRecentMessagesManagement 2 0.000745291
+CoreTest.StateRecentMessagesLimit 2 0.000746128
+AgentLoopTest.BasicLoopExecution 2 0.0509716
+AgentLoopTest.PausedStartup 2 0.0261738
+AgentLoopTest.StepByStepExecution 2 0.0111005
+AgentLoopTest.PauseAndUnpause 0 0
+AgentLoopTest.StepInterval 2 0.10137
+---
+AgentLoopTest.PauseAndUnpause
