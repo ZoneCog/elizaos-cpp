@@ -108,7 +108,7 @@ def search_memory(
     novel=False,
 ):
     """
-    Cearch a collection with given query texts.
+    Search a collection with given query texts.
 
     Arguments:
     category (str): Category of the collection.
