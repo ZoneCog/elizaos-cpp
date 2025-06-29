@@ -1,0 +1,1 @@
+from easycompletion.tests import *
