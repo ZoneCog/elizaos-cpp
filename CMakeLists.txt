@@ -69,7 +69,7 @@ if(BUILD_EXAMPLES)
 endif()
 
 # Installation
-install(TARGETS elizaos-core elizaos-agentloop
+install(TARGETS elizaos-core elizaos-agentloop elizaos-agentlogger elizaos-agentcomms
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin

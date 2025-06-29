@@ -72,13 +72,15 @@ ctest --rerun-failed --output-on-failure
 
 ## Current Implementation Status
 
-### ✅ Stage 1 - Core Logic (COMPLETE)
+### ✅ Stage 1 & 2 - Core Logic and Infrastructure (COMPLETE)
 - Core data structures (Memory, State, Agent)
 - AgentLoop with threading and pause/resume functionality
-- Comprehensive unit tests
+- AgentLogger with colored console output and file logging
+- AgentComms with message passing and channel management
+- Comprehensive unit tests (32 tests total)
 - CMake build system
 
-### 🚧 Stage 2-6 - Future Implementation
+### 🚧 Stage 3-6 - Future Implementation
 - Placeholder modules created for all planned components
 - Ready for incremental development
 
