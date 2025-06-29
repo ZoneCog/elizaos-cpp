@@ -13,7 +13,9 @@ from agentmemory.helpers import (
 
 from agentmemory.client import get_client
 
-def create_memory(category, text, metadata={}, embedding=None, id=None):
+def create_memory(category, text, metadata=None, embedding=None, id=None):
+    if metadata is None:
+        metadata = {}
     """
     Create a new memory in a collection.
 
