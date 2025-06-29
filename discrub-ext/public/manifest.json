@@ -1,0 +1,39 @@
+{
+  "short_name": "Discrub",
+  "name": "Discrub",
+  "version": "1.12.3",
+  "description": "A data manipulation and export tool for Discord.",
+  "manifest_version": 3,
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "public/resources/js/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open Discrub"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://discord.com/*"],
+      "js": ["src/chrome/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["*://discord.com/*"],
+      "resources": [
+        "resources/html/mitm.html",
+        "resources/media/*",
+        "index.html",
+        "button_injection.html",
+        "*/*.zip"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "public/resources/media/discrub.png",
+    "32": "public/resources/media/discrub.png",
+    "48": "public/resources/media/discrub.png",
+    "128": "public/resources/media/discrub.png"
+  }
+}
