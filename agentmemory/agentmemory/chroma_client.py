@@ -40,7 +40,7 @@ class ChromaCollectionMemory(CollectionMemory):
         return self.collection.query(query_embeddings, query_texts, n_results, where, where_document, include)
 
     def update(self, ids, documents=None, metadatas=None, embeddings=None):
-        return self.collection.update(ids, embeddings, metadatas, documents)
+        return self.collection.update(ids, documents, metadatas, embeddings)
 
     def upsert(self, ids, documents=None, metadatas=None, embeddings=None):
         # if no id is provided, generate one based on count of documents in collection
