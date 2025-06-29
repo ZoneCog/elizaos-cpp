@@ -29,7 +29,7 @@ TEST_F(CoreTest, MemoryCreation) {
     
     EXPECT_EQ(memory->getId(), "msg-1");
     EXPECT_EQ(memory->getContent(), "Hello, world!");
-    EXPECT_EQ(memory->getUserId(), "user-1");
+    EXPECT_EQ(memory->getEntityId(), "user-1");
     EXPECT_EQ(memory->getAgentId(), config_.agentId);
 }
 
