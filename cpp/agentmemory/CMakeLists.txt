@@ -1,6 +1,6 @@
-# Stage 1 placeholder - will be implemented in Stage 2
+# AgentMemory - Memory management system for agent interactions
 add_library(elizaos-agentmemory STATIC
-    src/placeholder.cpp
+    src/agentmemory.cpp
 )
 
 target_include_directories(elizaos-agentmemory PUBLIC
@@ -9,4 +9,5 @@ target_include_directories(elizaos-agentmemory PUBLIC
 
 target_link_libraries(elizaos-agentmemory 
     elizaos-core
+    Threads::Threads
 )
