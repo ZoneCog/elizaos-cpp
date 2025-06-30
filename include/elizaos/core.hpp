@@ -161,6 +161,7 @@ public:
     const UUID& getEntityId() const { return entityId_; }
     const UUID& getAgentId() const { return agentId_; }
     const UUID& getRoomId() const { return roomId_; }
+    void setRoomId(const UUID& roomId) { roomId_ = roomId; }
     Timestamp getCreatedAt() const { return createdAt_; }
     
     // Enhanced features
