@@ -5,6 +5,7 @@ add_executable(elizaos_tests
     src/test_agentlogger.cpp
     src/test_agentcomms.cpp
     src/test_agentmemory.cpp
+    src/test_attention_allocation.cpp
 )
 
 target_include_directories(elizaos_tests PRIVATE
