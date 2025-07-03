@@ -1,6 +1,6 @@
-# Stage 2 - Infrastructure placeholder - implementation planned
+# Stage 2 - Infrastructure: AgentShell Implementation
 add_library(elizaos-agentshell STATIC
-    src/placeholder.cpp
+    src/agentshell.cpp
 )
 
 target_include_directories(elizaos-agentshell PUBLIC
@@ -9,4 +9,5 @@ target_include_directories(elizaos-agentshell PUBLIC
 
 target_link_libraries(elizaos-agentshell 
     elizaos-core
+    elizaos-agentlogger
 )
