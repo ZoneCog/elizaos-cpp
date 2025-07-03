@@ -1,6 +1,6 @@
-# Stage 1 placeholder - will be implemented in Stage 3
+# Stage 3 - Action orchestration and processing
 add_library(elizaos-agentaction STATIC
-    src/placeholder.cpp
+    src/agentaction.cpp
 )
 
 target_include_directories(elizaos-agentaction PUBLIC
@@ -9,4 +9,6 @@ target_include_directories(elizaos-agentaction PUBLIC
 
 target_link_libraries(elizaos-agentaction 
     elizaos-core
+    elizaos-agentmemory
+    elizaos-agentlogger
 )
