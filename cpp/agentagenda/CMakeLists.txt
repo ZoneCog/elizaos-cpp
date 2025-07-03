@@ -1,6 +1,6 @@
-# Stage 1 placeholder - will be implemented in Stage 3
+# Stage 3 - Task scheduling with std::chrono
 add_library(elizaos-agentagenda STATIC
-    src/placeholder.cpp
+    src/agentagenda.cpp
 )
 
 target_include_directories(elizaos-agentagenda PUBLIC
@@ -9,4 +9,6 @@ target_include_directories(elizaos-agentagenda PUBLIC
 
 target_link_libraries(elizaos-agentagenda 
     elizaos-core
+    elizaos-agentmemory
+    elizaos-agentlogger
 )

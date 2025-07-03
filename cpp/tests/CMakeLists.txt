@@ -7,6 +7,7 @@ add_executable(elizaos_tests
     src/test_agentmemory.cpp
     src/test_attention_allocation.cpp
     src/test_agentaction.cpp
+    src/test_agentagenda.cpp
 )
 
 target_include_directories(elizaos_tests PRIVATE
@@ -20,6 +21,7 @@ target_link_libraries(elizaos_tests
     elizaos-agentlogger
     elizaos-agentcomms
     elizaos-agentaction
+    elizaos-agentagenda
     gtest_main
     gmock_main
     Threads::Threads
