@@ -263,7 +263,38 @@ public:
         rules.push_back(rule);
     }
     
+    // New PLN-style methods
+    std::vector<InferenceResult> reasonWithUncertainty(const State& state, const std::string& query) override {
+        (void)state;
+        std::vector<InferenceResult> results;
+        InferenceResult result(query, TruthValue(0.8, 0.7), 0.75);
+        result.reasoningChain.push_back("Mock reasoning for: " + query);
+        results.push_back(result);
+        return results;
+    }
+    
+    void addInferenceRule(const InferenceRule& rule) override {
+        inferenceRules.push_back(rule);
+    }
+    
+    std::vector<InferenceRule> getApplicableRules(const std::string& query) const override {
+        std::vector<InferenceRule> applicable;
+        for (const auto& rule : inferenceRules) {
+            if (rule.pattern.find(query) != std::string::npos) {
+                applicable.push_back(rule);
+            }
+        }
+        return applicable;
+    }
+    
+    TruthValue evaluateQuery(const State& state, const std::string& query) override {
+        (void)state;
+        (void)query;
+        return TruthValue(0.8, 0.7);
+    }
+    
     std::vector<std::string> rules;
+    std::vector<InferenceRule> inferenceRules;
 };
 
 class MockConnectionistProcessor : public ConnectionistProcessor {
@@ -310,6 +341,52 @@ public:
             patterns.push_back("test_pattern");
         }
         return patterns;
+    }
+    
+    // New AtomSpace pattern matching methods
+    PatternMatch matchAtomSpacePattern(const AtomSpacePattern& pattern, 
+                                       const std::vector<std::shared_ptr<HypergraphNode>>& nodes,
+                                       const std::vector<std::shared_ptr<HypergraphEdge>>& edges) override {
+        (void)edges;
+        
+        PatternMatch match(false, 0.0, pattern.type);
+        
+        for (const auto& node : nodes) {
+            if (node->getLabel().find(pattern.type) != std::string::npos) {
+                match.isMatch = true;
+                match.confidence = 0.8;
+                match.matchedPattern = pattern.type;
+                
+                for (const auto& var : pattern.variables) {
+                    match.bindings.push_back(VariableBinding(var, node->getLabel()));
+                }
+                break;
+            }
+        }
+        
+        return match;
+    }
+    
+    std::vector<PatternMatch> findAllMatches(const AtomSpacePattern& pattern,
+                                             const std::vector<std::shared_ptr<HypergraphNode>>& nodes,
+                                             const std::vector<std::shared_ptr<HypergraphEdge>>& edges) override {
+        std::vector<PatternMatch> matches;
+        PatternMatch match = matchAtomSpacePattern(pattern, nodes, edges);
+        if (match.isMatch) {
+            matches.push_back(match);
+        }
+        return matches;
+    }
+    
+    std::vector<std::shared_ptr<HypergraphNode>> traverseAtomSpace(const AtomSpacePattern& pattern,
+                                                                   const std::shared_ptr<HypergraphNode>& startNode) override {
+        std::vector<std::shared_ptr<HypergraphNode>> result;
+        
+        if (startNode && startNode->getLabel().find(pattern.type) != std::string::npos) {
+            result.push_back(startNode);
+        }
+        
+        return result;
     }
 };
 
@@ -436,4 +513,187 @@ TEST_F(CognitivePrimitivesTest, HypergraphMemoryTaskFusion) {
     auto relevantMemories = engine.retrieveRelevantMemories("content", 1);
     EXPECT_EQ(relevantMemories.size(), 1);
     EXPECT_EQ(relevantMemories[0]->getId(), "complex-mem-1");
+}
+
+// ============================================================================
+// PLN Inference Engine Tests
+// ============================================================================
+
+TEST_F(CognitivePrimitivesTest, TruthValueOperations) {
+    TruthValue tv1(0.8, 0.9);
+    TruthValue tv2(0.6, 0.7);
+    
+    // Test conjunction
+    auto conjunction = tv1.conjunction(tv2);
+    EXPECT_DOUBLE_EQ(conjunction.strength, 0.6);  // min(0.8, 0.6)
+    EXPECT_DOUBLE_EQ(conjunction.confidence, 0.7);  // min(0.9, 0.7)
+    
+    // Test disjunction
+    auto disjunction = tv1.disjunction(tv2);
+    EXPECT_DOUBLE_EQ(disjunction.strength, 0.8);  // max(0.8, 0.6)
+    EXPECT_DOUBLE_EQ(disjunction.confidence, 0.7);  // min(0.9, 0.7)
+    
+    // Test negation
+    auto negation = tv1.negation();
+    EXPECT_DOUBLE_EQ(negation.strength, 0.2);  // 1 - 0.8
+    EXPECT_DOUBLE_EQ(negation.confidence, 0.9);  // unchanged
+    
+    // Test implication
+    auto implication = tv1.implication(tv2);
+    EXPECT_DOUBLE_EQ(implication.strength, 0.68);  // 1 - 0.8 + 0.8*0.6
+    EXPECT_DOUBLE_EQ(implication.confidence, 0.7);  // min(0.9, 0.7)
+    
+    // Test validity
+    EXPECT_TRUE(tv1.isValid());
+    TruthValue invalid(-0.1, 1.2);
+    EXPECT_FALSE(invalid.isValid());
+}
+
+TEST_F(CognitivePrimitivesTest, PLNInferenceEngineBasicOperations) {
+    PLNInferenceEngine engine;
+    State state(config_);
+    
+    // Add some inference rules
+    InferenceRule rule1("modus_ponens", "?X", "conclusion(?X)", TruthValue(0.9, 0.8));
+    InferenceRule rule2("premise_rule", "test_query", "valid_result", TruthValue(0.8, 0.7));
+    
+    engine.addRule(rule1);
+    engine.addRule(rule2);
+    
+    // Test rule retrieval
+    auto applicableRules = engine.getApplicableRules("test_query");
+    EXPECT_GE(applicableRules.size(), 1);
+    
+    // Test forward chaining
+    auto forwardResults = engine.forwardChain(state, "test_query", 2);
+    EXPECT_GE(forwardResults.size(), 0);
+    
+    // Test backward chaining
+    auto backwardResults = engine.backwardChain(state, "valid_result", 2);
+    EXPECT_GE(backwardResults.size(), 0);
+    
+    // Test best inference
+    auto bestResult = engine.bestInference(state, "test_query");
+    EXPECT_GE(bestResult.confidence, 0.0);
+    EXPECT_LE(bestResult.confidence, 1.0);
+}
+
+TEST_F(CognitivePrimitivesTest, PLNInferenceEngineAtomSpaceIntegration) {
+    PLNInferenceEngine engine;
+    
+    // Create test AtomSpace
+    std::vector<std::shared_ptr<HypergraphNode>> nodes;
+    std::vector<std::shared_ptr<HypergraphEdge>> edges;
+    
+    auto node1 = std::make_shared<HypergraphNode>("node1", "concept_A");
+    auto node2 = std::make_shared<HypergraphNode>("node2", "concept_B");
+    nodes.push_back(node1);
+    nodes.push_back(node2);
+    
+    auto edge1 = std::make_shared<HypergraphEdge>("edge1", "relates", std::vector<std::string>{"node1", "node2"});
+    edges.push_back(edge1);
+    
+    engine.setAtomSpace(nodes, edges);
+    
+    // Test AtomSpace querying
+    auto queryResults = engine.queryAtomSpace("concept");
+    EXPECT_EQ(queryResults.size(), 2);
+    
+    auto specificResults = engine.queryAtomSpace("concept_A");
+    EXPECT_EQ(specificResults.size(), 1);
+    EXPECT_EQ(specificResults[0]->getLabel(), "concept_A");
+}
+
+TEST_F(CognitivePrimitivesTest, PLNTruthValueCombination) {
+    PLNInferenceEngine engine;
+    
+    TruthValue tv1(0.8, 0.9);
+    TruthValue tv2(0.6, 0.7);
+    
+    // Test truth value combination operations
+    auto andResult = engine.combineTruthValues(tv1, tv2, "AND");
+    EXPECT_DOUBLE_EQ(andResult.strength, 0.6);  // conjunction
+    
+    auto orResult = engine.combineTruthValues(tv1, tv2, "OR");
+    EXPECT_DOUBLE_EQ(orResult.strength, 0.8);  // disjunction
+    
+    auto impliesResult = engine.combineTruthValues(tv1, tv2, "IMPLIES");
+    EXPECT_DOUBLE_EQ(impliesResult.strength, 0.68);  // implication
+    
+    // Test confidence propagation
+    auto propagated = engine.propagateConfidence(tv1, tv2);
+    EXPECT_DOUBLE_EQ(propagated.strength, 0.48);  // 0.8 * 0.6
+    EXPECT_DOUBLE_EQ(propagated.confidence, 0.7);  // min(0.9, 0.7)
+}
+
+TEST_F(CognitivePrimitivesTest, EnhancedCognitiveFusionEngineUncertainReasoning) {
+    CognitiveFusionEngine engine;
+    State state(config_);
+    
+    auto symbolicReasoner = std::make_shared<MockSymbolicReasoner>();
+    auto connectionistProcessor = std::make_shared<MockConnectionistProcessor>();
+    auto patternMatcher = std::make_shared<MockPatternMatcher>();
+    
+    engine.registerSymbolicReasoner(symbolicReasoner);
+    engine.registerConnectionistProcessor(connectionistProcessor);
+    engine.registerPatternMatcher(patternMatcher);
+    
+    // Add some inference rules to the mock reasoner
+    InferenceRule testRule("test_rule", "test_query", "test_conclusion", TruthValue(0.8, 0.7));
+    symbolicReasoner->addInferenceRule(testRule);
+    
+    // Test uncertainty-aware reasoning
+    auto result = engine.processQueryWithUncertainty(state, "test_query");
+    
+    EXPECT_GE(result.symbolicResults.size(), 1);
+    EXPECT_GE(result.connectionistResults.size(), 1);
+    EXPECT_GE(result.plnResults.size(), 0);
+    
+    // Confidence should be > 0 even if just based on fused results count
+    // Since we have symbolic and connectionist results, fusedResults should have content
+    EXPECT_GE(result.fusedResults.size(), 2);  // At least symbolic + connectionist results
+    EXPECT_GT(result.confidence, 0.0);  // Should be > 0 with the baseline confidence fix
+    EXPECT_LE(result.confidence, 1.0);
+    
+    // Check that truth values are properly computed
+    EXPECT_GE(result.overallTruth.strength, 0.0);
+    EXPECT_LE(result.overallTruth.strength, 1.0);
+    EXPECT_GE(result.overallTruth.confidence, 0.0);
+    EXPECT_LE(result.overallTruth.confidence, 1.0);
+}
+
+TEST_F(CognitivePrimitivesTest, AtomSpacePatternMatching) {
+    CognitiveFusionEngine engine;
+    
+    // Create test memories and build AtomSpace
+    auto memory1 = std::make_shared<Memory>("mem-1", "test concept A", "entity1", config_.agentId);
+    auto memory2 = std::make_shared<Memory>("mem-2", "test concept B", "entity2", config_.agentId);
+    
+    engine.integrateMemory(memory1);
+    engine.integrateMemory(memory2);
+    engine.buildAtomSpaceFromMemories();
+    
+    auto nodes = engine.getAtomSpaceNodes();
+    auto edges = engine.getAtomSpaceEdges();
+    
+    // Test pattern matching
+    auto patternMatcher = std::make_shared<MockPatternMatcher>();
+    engine.registerPatternMatcher(patternMatcher);
+    
+    AtomSpacePattern pattern("test", {"?X"});
+    auto match = patternMatcher->matchAtomSpacePattern(pattern, nodes, edges);
+    
+    EXPECT_TRUE(match.isMatch);
+    EXPECT_GT(match.confidence, 0.0);
+    EXPECT_EQ(match.matchedPattern, "test");
+    
+    // Test finding all matches
+    auto allMatches = patternMatcher->findAllMatches(pattern, nodes, edges);
+    EXPECT_GE(allMatches.size(), 1);
+    
+    // Test AtomSpace traversal
+    if (!nodes.empty()) {
+        auto traversalResult = patternMatcher->traverseAtomSpace(pattern, nodes[0]);
+        EXPECT_GE(traversalResult.size(), 0);
+    }
 }
