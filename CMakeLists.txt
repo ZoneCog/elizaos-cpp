@@ -102,6 +102,23 @@ add_subdirectory(cpp/plugins_automation)        # Plugin automation
 # Testing
 add_subdirectory(cpp/tests)
 
+# Stage 4 Demo
+add_executable(stage4_demo
+    demo_stage4.cpp
+)
+
+target_include_directories(stage4_demo PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+target_link_libraries(stage4_demo
+    elizaos-core
+    elizaos-agentlogger
+    elizaos-ljspeechtools
+    elizaos-livevideochat
+    Threads::Threads
+)
+
 # Add example executable (optional)
 if(BUILD_EXAMPLES)
     add_subdirectory(examples)
