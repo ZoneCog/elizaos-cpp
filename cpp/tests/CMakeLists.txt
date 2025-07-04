@@ -8,6 +8,8 @@ add_executable(elizaos_tests
     src/test_attention_allocation.cpp
     src/test_agentaction.cpp
     src/test_agentagenda.cpp
+    src/test_ljspeechtools.cpp
+    src/test_livevideochat.cpp
 )
 
 target_include_directories(elizaos_tests PRIVATE
@@ -22,6 +24,8 @@ target_link_libraries(elizaos_tests
     elizaos-agentcomms
     elizaos-agentaction
     elizaos-agentagenda
+    elizaos-ljspeechtools
+    elizaos-livevideochat
     gtest_main
     gmock_main
     Threads::Threads
