@@ -25,3 +25,17 @@ target_link_libraries(cognitive_demo
     elizaos-core
     Threads::Threads
 )
+
+# Reasoning engine demonstration
+add_executable(reasoning_demo
+    reasoning_demo.cpp
+)
+
+target_include_directories(reasoning_demo PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+target_link_libraries(reasoning_demo
+    elizaos-core
+    Threads::Threads
+)
